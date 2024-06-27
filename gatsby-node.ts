@@ -11,4 +11,16 @@ export const onCreateWebpackConfig = ({ actions, loaders, stage }: CreateWebpack
             ],
         },
     });
+    if (stage === 'build-html') {
+        actions.setWebpackConfig({
+            module: {
+                rules: [
+                    {
+                        test: /react-cytoscapejs/,
+                        use: loaders.null(),
+                    },
+                ],
+            },
+        })
+    }
 };
