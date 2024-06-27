@@ -3,7 +3,9 @@ class EventBus{
      * Initialize a new event bus instance.
      */
     constructor(){
-        this.bus = document.createElement('fakeelement');
+        if ( typeof window !== 'undefined' ) {
+            this.bus = document.createElement('fakeelement');
+          }
     }
 
     /**
