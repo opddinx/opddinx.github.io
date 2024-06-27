@@ -1,8 +1,7 @@
+import mainjs from '../js/main.js'
 import * as React from "react"
-import { useEffect, useState } from 'react';
 import { Helmet } from "react-helmet"
 import type { HeadFC, PageProps } from "gatsby"
-import LiquidBackground from "../components/LiquidBackground"
 import PublicationInternationalList from '../components/PublicationInternationalList';
 import PublicationDomesticList from '../components/PublicationDomesticList';
 import WorkExperience from '../components/WorkExperience';
@@ -11,7 +10,6 @@ import Education from '../components/Education';
 import Footer from '../components/Footer';
 import Scholarships from '../components/Achievements';
 import Awards from '../components/Awards';
-import WebGl from '../components/WebGL';
 
 // ToDo:
 // Improve background simulation animation
@@ -22,19 +20,6 @@ import WebGl from '../components/WebGL';
 // redirect
 
 const IndexPage: React.FC<PageProps> = () => {
-  const [screenWidth, setScreenWidth] = useState(null);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setScreenWidth(window.innerWidth);
-    };
-    window.addEventListener('resize', handleResize);
-    handleResize(); // Get initial width
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
   return (
     <>
       <Helmet>
@@ -62,7 +47,7 @@ const IndexPage: React.FC<PageProps> = () => {
         `}
         </style>
       </Helmet>
-      <WebGl/>
+      <script src={mainjs}></script>
       <main className="container">
         <h1 style={{ textDecoration: 'underline' }}>Kohei MIURA</h1>
         <AboutMe />
