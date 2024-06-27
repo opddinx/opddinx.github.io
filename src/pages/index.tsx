@@ -10,8 +10,10 @@ import Education from '../components/Education';
 import Footer from '../components/Footer';
 import Scholarships from '../components/Achievements';
 import Awards from '../components/Awards';
+import WebGl from '../components/WebGL';
 
 // ToDo:
+// Improve background simulation animation
 // Add links as well as notion
 // Add sub major programs
 // Add research interests
@@ -23,12 +25,30 @@ const IndexPage: React.FC<PageProps> = () => {
     <>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>opddinx - Kohei MIURA</title>
+        <meta httpEquiv="X-UA-COMPATIBLE" content="IE=edge" />
         <link rel="canonical" href="http://opddinx.github.io/" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <meta httpEquiv="Content-Language" content="ja" />
+        <meta httpEquiv="x-dns-prefetch-control" content="on" />
+        <style>
+        {`
+          body {
+            overscroll-behavior: none;
+            /* cursor: none; */
+            touch-action: none;
+          }
+
+          canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+          }
+        `}
+        </style>
       </Helmet>
-      <React.Suspense fallback={<div>Loading...</div>}>
-        <LiquidBackground />
-      </React.Suspense>
+      <WebGl/>
       <main className="container">
         <h1 style={{ textDecoration: 'underline' }}>Kohei MIURA</h1>
         <AboutMe />
@@ -38,12 +58,12 @@ const IndexPage: React.FC<PageProps> = () => {
         <PublicationDomesticList />
         <Awards />
         <Scholarships />
+        <Footer />
       </main>
-      <Footer />
     </>
   )
 }
 
 export default IndexPage
 
-export const Head: HeadFC = () => <title>Home Page</title>
+export const Head: HeadFC = () => <title>opddinx - Kohei MIURA</title>
