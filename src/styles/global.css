@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat Variable', sans-serif;
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.6);
+    position: relative;
+    z-index: 1;
+}
+.hover-animate {
+    transition: transform 0.3s ease;
+}
+.hover-animate:hover {
+    transform: scale(1.1); /* Increase size by 10% on hover */
+}
+h1, h2 {
+    text-align: left;
+}
+footer {
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
