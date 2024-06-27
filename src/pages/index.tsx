@@ -1,4 +1,5 @@
 import * as React from "react"
+import { Helmet } from "react-helmet"
 import type { HeadFC, PageProps } from "gatsby"
 import LiquidBackground from "../components/LiquidBackground"
 import PublicationInternationalList from '../components/PublicationInternationalList';
@@ -20,10 +21,15 @@ import Awards from '../components/Awards';
 const IndexPage: React.FC<PageProps> = () => {
   return (
     <>
-    <React.Suspense fallback={<div>Loading...</div>}>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>opddinx - Kohei MIURA</title>
+        <link rel="canonical" href="http://opddinx.github.io/" />
+      </Helmet>
+      <React.Suspense fallback={<div>Loading...</div>}>
         <LiquidBackground />
-    </React.Suspense>
-    <main className="container">
+      </React.Suspense>
+      <main className="container">
         <h1 style={{ textDecoration: 'underline' }}>Kohei MIURA</h1>
         <AboutMe />
         <Education />
@@ -32,9 +38,9 @@ const IndexPage: React.FC<PageProps> = () => {
         <PublicationDomesticList />
         <Awards />
         <Scholarships />
-    </main>
-    <Footer />
-</>
+      </main>
+      <Footer />
+    </>
   )
 }
 
