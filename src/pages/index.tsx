@@ -10,6 +10,13 @@ import Footer from '../components/Footer';
 import Scholarships from '../components/Achievements';
 import Awards from '../components/Awards';
 
+// ToDo:
+// Add links as well as notion
+// Add sub major programs
+// Add research interests
+// Add research projects and works
+// redirect
+
 const IndexPage: React.FC<PageProps> = () => {
   return (
     <>
