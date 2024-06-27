@@ -1,4 +1,5 @@
 import * as React from "react"
+import { useEffect, useState } from 'react';
 import { Helmet } from "react-helmet"
 import type { HeadFC, PageProps } from "gatsby"
 import LiquidBackground from "../components/LiquidBackground"
@@ -21,6 +22,19 @@ import WebGl from '../components/WebGL';
 // redirect
 
 const IndexPage: React.FC<PageProps> = () => {
+  const [screenWidth, setScreenWidth] = useState(null);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
+    window.addEventListener('resize', handleResize);
+    handleResize(); // Get initial width
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
   return (
     <>
       <Helmet>
