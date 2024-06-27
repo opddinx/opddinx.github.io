@@ -36,7 +36,6 @@ const IndexPage: React.FC<PageProps> = () => {
           body {
             overscroll-behavior: none;
             /* cursor: none; */
-            touch-action: none;
           }
 
           canvas {
