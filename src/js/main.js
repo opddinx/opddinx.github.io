@@ -1,4 +1,3 @@
-/* eslint-disable import/first */
 if (typeof window !== 'undefined') {
     import("./utils/EventBus")
     import("./modules/WebGL")
