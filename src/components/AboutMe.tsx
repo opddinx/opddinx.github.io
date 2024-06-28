@@ -5,7 +5,7 @@ const AboutMe = () => {
     return (
     <>
         <h2>Introduction</h2>
-        <div style={{ display: 'flex', alignItems: 'center' }}>
+        <div className='intro-container'>
             <div className="image-container">
                 <img src={avatar} alt="My avatar" width={150} height={150} className="hover-animate"/>
             </div>
