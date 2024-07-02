@@ -43,7 +43,7 @@ const PublicationList: React.FC = () => {
                     attributes: "ポスター発表，査読なし"
                 },
                 {
-                    title: "複数のRGB-Dカメラと熱カメラを用いた非剛体に対する手作業の三次元復元",
+                    title: "腹筋運動するぬいぐるみロボットとの共有体験が与える志向的解釈への影響",
                     authors: "橋川莉乃，三浦康平，高橋英之，田中一敏，簗瀬洋平",
                     journal: "HAIシンポジウム 2022",
                     attributes: "口頭発表，査読なし"
