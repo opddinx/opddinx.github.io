@@ -15,9 +15,15 @@ const AboutMe = () => {
                 <h4>I’m a master student at <a href="https://www.sens.sys.es.osaka-u.ac.jp/" target="_blank" rel="noreferrer noopener">SENSLab</a> in Osaka University majoring in Computer Vision. I want to extend human ability by understanding our culture deeply and using cutting-edge technologies. To achieve this, I want to know how human sense world, feel, think, express our feelings, and interpret what others express. I believe that understanding this process through will give us insights of what we are, how to create new media for communication, in order to live better lives.</h4>
             </div>
         </div>
-        <h3>E-mail</h3>
-        <p>(Public): opddinx[at]gmail.com</p>
-        <p>(Academic): kouhei.miura[at]sens.sys.es.osaka-u.ac.jp</p>
+        <div className='interests'>
+            <h3>Research Interests</h3>
+            <p>Computer Vision, Computer Graphics, Machine Learning, Human-Computer Interaction, Fabrication, Physics Simulation, XR/AR/VR, Cognitive Science for Creativity, (Media Art)</p>
+        </div>
+        <div className='Contacts'>
+            <h3>E-mail</h3>
+            <p>(Public): opddinx[at]gmail.com</p>
+            <p>(Academic): kouhei.miura[at]sens.sys.es.osaka-u.ac.jp</p>
+        </div>
         <div className='affiliation'>
             <h3>Affiliation</h3>
             <p><a href='https://www.es.osaka-u.ac.jp/en/'>Graduate School of Engineering Science, Osaka University</a></p>

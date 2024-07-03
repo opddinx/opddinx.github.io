@@ -16,7 +16,6 @@ import favicon from '../images/favicon.ico';
 
 // ToDo:
 // Improve background simulation animation
-// Add header
 // Add research interests
 // Add research projects and works
 // css animation 
