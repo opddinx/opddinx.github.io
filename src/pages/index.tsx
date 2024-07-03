@@ -11,6 +11,7 @@ import Footer from '../components/Footer';
 import Scholarships from '../components/Achievements';
 import Awards from '../components/Awards';
 import Header from '../components/Header';
+import AnimatedHoverText from '../components/AnimatedHoverText';
 import favicon from '../images/favicon.ico';
 
 // ToDo:
@@ -52,7 +53,7 @@ const IndexPage: React.FC<PageProps> = () => {
       <script src={mainjs}></script>
       <main className="container" style={{ paddingTop: '60px' }}>
       <Header />
-        <h1>κοηει ΜΙυRA</h1>
+        <h1><AnimatedHoverText>κοηει ΜΙυRA</AnimatedHoverText></h1>
         <section id="about">
           <AboutMe />
         </section>

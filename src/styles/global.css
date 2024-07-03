@@ -1,3 +1,36 @@
+.animatedText {
+    position: relative;
+    display: inline-block;
+    color: black;
+    transition: color 0.3s ease;
+    padding: 2px 4px;
+    color: inherit;
+}
+
+.animatedText::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: black;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+    z-index: -1;
+    background-color: var(--hover-bg-color, black);
+}
+
+.animatedText:hover {
+    color: white;
+    color: var(--hover-color, white);
+}
+
+.animatedText:hover::before {
+    transform: scaleX(1);
+}
+
 body {
     margin: 0;
     padding: 0;
