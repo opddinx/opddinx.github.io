@@ -21,6 +21,16 @@ const config: GatsbyConfig = {
           head: true  // headタグに記載されるようにコンフィグを設定します。
         }
       }
+    },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `GFS Didot\:400`, // Replace with your chosen font
+          `source sans pro\:300,400,400i,700` // You can add multiple fonts
+        ],
+        display: 'swap'
+      }
     }
   ]
 };

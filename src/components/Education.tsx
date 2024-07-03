@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 
 interface Education {
@@ -12,13 +10,13 @@ interface Education {
 const Educations: React.FC = () => {
     const educations: Education[] = [
         {
-            title: "Master's Degree",
+            title: "Master's Degree in Engineering",
             faculty: "Division of System Science and Applied Informatics, Department of Systems Innovation Science, Graduate School of Engineering Science, Osaka University (Osaka, Japan)",
             period: "Apr. 2023 - Mar. 2025 (Expected)",
-            description: "Following my undergraduate studies, I am working at SENSLab in the research and development of 3D data processing technology for manual work.",
+            description: "Following my undergraduate studies, I am working at SENSLab in the research and development of 3D data processing technology for manual work. I also study Liberal Arts as Graduate Programs for Advanced Interdisciplinary Studies",
         },
         {
-            title: "Bachelor's Degree",
+            title: "Bachelor's Degree in Engineering",
             faculty: "Intelligent Systems Science Course, Department of Systems Science, School of Engineering Science, Osaka University (Osaka, Japan)",
             period: "Apr. 2019 - Mar. 2023",
             description: "I earned a degree in Systems Science (Intelligent Systems). In my third year of undergraduate studies, I conducted an independent research on HAI under the guidance of Guest Associate Professor.Takahashi and in my fourth year of undergraduate studies, I conducted research and development of 3D data processing technology for manual work by applying computer vision at SENSLab.",

@@ -1,7 +1,10 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Montserrat Variable', sans-serif;
+    /*font-family: 'Montserrat Variable', sans-serif;*/
+    font-family: "GFS Didot", serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .container {
@@ -33,6 +36,21 @@ body {
     /* Increase size by 10% on hover */
 }
 
+.social-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.social-links a {
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #007bff;
+}
+
 h1,
 h2 {
     text-align: left;
@@ -42,6 +60,82 @@ footer {
     bottom: 0;
     width: 100%;
     text-align: center;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.header-toggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    background: none;
+    border: none;
+    font-size: 32px;
+    /* Increased from 24px */
+    cursor: pointer;
+    padding: 10px;
+    /* Added padding */
+    width: 50px;
+    /* Set a fixed width */
+    height: 50px;
+    /* Set a fixed height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(248, 248, 248, 0.8);
+    /* Light background */
+    border-radius: 50%;
+    /* Makes it circular */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    /* Subtle shadow for depth */
+}
+
+.header-toggle:hover {
+    background-color: rgba(248, 248, 248, 1);
+    /* Fully opaque on hover */
+}
+
+.header-toggle:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+    /* Focus indicator */
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 250px;
+    background-color: #f8f8f8;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.header.visible {
+    transform: translateX(0);
+}
+
+.header nav {
+    padding: 60px 20px 20px;
+}
+
+.header nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.header nav ul li {
+    margin: 15px 0;
+}
+
+.header nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
 }
 
 @media screen and (max-width: 767px) {

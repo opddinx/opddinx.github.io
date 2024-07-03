@@ -10,13 +10,15 @@ import Education from '../components/Education';
 import Footer from '../components/Footer';
 import Scholarships from '../components/Achievements';
 import Awards from '../components/Awards';
+import Header from '../components/Header';
+import favicon from '../images/favicon.ico';
 
 // ToDo:
 // Improve background simulation animation
-// Add links as well as notion
-// Add sub major programs
+// Add header
 // Add research interests
 // Add research projects and works
+// css animation 
 // redirect
 
 const IndexPage: React.FC<PageProps> = () => {
@@ -26,6 +28,7 @@ const IndexPage: React.FC<PageProps> = () => {
         <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-COMPATIBLE" content="IE=edge" />
         <link rel="canonical" href="http://opddinx.github.io/" />
+        <link rel="icon" href={favicon} />
         <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -47,15 +50,28 @@ const IndexPage: React.FC<PageProps> = () => {
         </style>
       </Helmet>
       <script src={mainjs}></script>
-      <main className="container">
-        <h1 style={{ textDecoration: 'underline' }}>Kohei MIURA</h1>
-        <AboutMe />
-        <Education />
-        <WorkExperience />
-        <PublicationInternationalList />
-        <PublicationDomesticList />
-        <Awards />
-        <Scholarships />
+      <main className="container" style={{ paddingTop: '60px' }}>
+      <Header />
+        <h1>κοηει ΜΙυRA</h1>
+        <section id="about">
+          <AboutMe />
+        </section>
+        <section id="education">
+          <Education />
+        </section>
+        <section id="workexperience">
+          <WorkExperience />
+        </section>
+        <section id="pubinternational">
+          <PublicationInternationalList />
+          <PublicationDomesticList />
+        </section>
+        <section id="awards">
+          <Awards />
+        </section>
+        <section id="scholarships">
+          <Scholarships />
+        </section>
         <Footer />
       </main>
     </>
