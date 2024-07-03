@@ -5,6 +5,7 @@
     transition: color 0.3s ease;
     padding: 2px 4px;
     color: inherit;
+    z-index: -1;
 }
 
 .animatedText::before {
@@ -18,7 +19,6 @@
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.3s ease;
-    z-index: -1;
     background-color: var(--hover-bg-color, black);
 }
 
