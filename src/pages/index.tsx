@@ -16,9 +16,7 @@ import favicon from '../images/favicon.ico';
 
 // ToDo:
 // Improve background simulation animation
-// Add research interests
 // Add research projects and works
-// css animation 
 // redirect
 
 const IndexPage: React.FC<PageProps> = () => {

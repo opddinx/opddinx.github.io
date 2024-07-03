@@ -28,6 +28,7 @@ const config: GatsbyConfig = {
         fonts: [
           `GFS Didot\:400`, // Replace with your chosen font
           `Vollkorn\:400,400i,700`, // You can add multiple fonts
+          `STIX Two Text\:400,400i,700`, // You can add multiple fonts
           `source sans pro\:300,400,400i,700` // You can add multiple fonts
         ],
         display: 'swap'
