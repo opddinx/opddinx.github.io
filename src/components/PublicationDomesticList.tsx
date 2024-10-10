@@ -17,6 +17,17 @@ interface YearGroup {
 const PublicationList: React.FC = () => {
     const publications: YearGroup[] = [
         {
+            year: 2024,
+            items: [
+                {
+                    title: "手作業における柔軟な物体表面とその接触領域の３次元復元",
+                    authors: "三浦康平，岩井大輔，佐藤宏介",
+                    journal: "第29回 日本バーチャルリアリティ学会大会",
+                    attributes: "3B1-12, 2024, 口頭&ポスター発表, 査読なし"
+                }
+            ]
+        },
+        {
             year: 2023,
             items: [
                 {
@@ -54,7 +65,7 @@ const PublicationList: React.FC = () => {
 
     return (
         <section className="publications">
-            <h2>Publications (Domestic - Japanese description only)</h2>
+            <h2>Publications (Domestic: only in Japanese)</h2>
             {publications.map(yearGroup => (
                 <div key={yearGroup.year} className="year-group">
                     <h3>{yearGroup.year}</h3>

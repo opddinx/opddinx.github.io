@@ -12,6 +12,12 @@ interface Scholarship {
 const Scholarships: React.FC = () => {
     const scholarship: Scholarship[] = [
         {
+            title: "AKATSUKI Project: Kansai Tech Creator Challenge",
+            company: "Ministry of Economy, Trade and Industry, Japan",
+            period: "Sep. 2024 - Feb. 2025",
+            description: "This project aims to aid innovative IT creators in Kansai region (550K yen)."
+        },
+        {
             title: "DAIKIN Corp. Student Researcher Fellowship",
             company: "DAIKIN Corporation",
             period: "Jul. 2024 - Jun. 2025 (Expected)",
@@ -21,13 +27,13 @@ const Scholarships: React.FC = () => {
             title: "Humanware Innovation Program Scholarship",
             company: "Osaka University",
             period: "Apr. 2023 - Mar. 2025 (Expected)",
-            description: "The scholarship for me to concentrate on my research activity (amount is varying by time to time)",
+            description: "The scholarship for me to concentrate on my research activity (amount varies depending on the situation)",
         },
     ];
 
     return (
         <section className="scholarships">
-            <h2>Scholarships and Fellowships</h2>
+            <h2>Scholarships, Fellowships, Grants</h2>
             <div className="timeline">
                 {scholarship.map((exp, index) => (
                     <div key={index} className="timeline-item">

@@ -19,9 +19,27 @@ const PublicationList: React.FC = () => {
         {
             year: 2024,
             items: [
+                // {
+                //     title: "3D Reconstruction of a Soft Object Surface and Contact Areas in Hand-Object Interactions",
+                //     authors: "Kohei Miura, Daisuke Iwai, Kosuke Sato",
+                //     journal: "SIGGRAPH Asia 2024 Posters",
+                //     attributes: "Demonstration, Peer-reviewed"
+                // },
+                // {
+                //     title: "Casper DPM: Cascaded Perceptual Dynamic Projection Mapping onto Hands",
+                //     authors: "Yotam Erel, Or Kozlovsky-Mordenfeld, Hiroki Kusuyama, Kohei Miura, Daisuke Iwai, Kosuke Sato, Amit H. Bermano",
+                //     journal: "SIGGRAPH Asia 2024 Emerging Technologies",
+                //     attributes: "Demonstration, Peer-reviewed"
+                // },
+                {
+                    title: "IntelliCID: Intelligent Caustics Illumination Device",
+                    authors: "Shun Hanai, Kohei Miura(EQUAL CONTRIBUTION)",
+                    journal: "Adjunct Proceedings of the 36th Annual ACM Symposium on User Interface Software and Technology (UIST '24 Adjunct)",
+                    attributes: "Student Innovation Contest (Demonstration), Peer-reviewed"
+                },
                 {
                     title: "Factors of player experience in describing the relationship between remade and original works",
-                    authors: "T. Yokosaka, K. Miura, Y. Isogaya, T. Ohtani, K. Maruya",
+                    authors: "Takumi Yokosaka, Kohei Miura, Yuko Isogaya, Tomoko Ohtani, Kazushi Maruya",
                     journal: "Proceedings of the IEEE 6th Conference on Games (IEEE CoG 2024)",
                     attributes: "Short Paper, Peer-reviewed"
                 }
