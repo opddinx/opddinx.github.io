@@ -17,13 +17,12 @@ const AboutMe = () => {
         </div>
         <div className='interests'>
             <h3>Research Interests</h3>
-            <p>Computer Vision, Computer Graphics, Machine Learning, Human-Computer Interaction, Fabrication, Physics Simulation, XR/AR/VR, Cognitive Science for Creativity, (Media Art)</p>
+            <p>Computer Vision, Computer Graphics, Geometry Processing, Machine Learning, Human-Computer Interaction, Fabrication, Physics Simulation, XR/AR/VR, Cognitive Science</p>
         </div>
         <div className='Contacts'>
             <h3>E-mail</h3>
-            <p>(Public): opddinx[at]gmail.com</p>
-            <p>(Academic1): kouhei.miura[at]sens.sys.es.osaka-u.ac.jp</p>
-            <p>(Academic2): opddinx[at]acm.org</p>
+            <p> 1): kouhei.miura[at]sens.sys.es.osaka-u.ac.jp</p>
+            <p> 2): opddinx[at]acm.org</p>
         </div>
         <div className='affiliation'>
             <h3>Affiliation</h3>
