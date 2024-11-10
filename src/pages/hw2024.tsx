@@ -4,16 +4,16 @@ import { Calendar, Users, FileText, ExternalLink } from 'lucide-react';
 import Timetable from './timetable';
 
 const sessions = [
-    { time: '09:30', title: '開場', speaker: ''},
-    { time: '10:00', title: '開会', speaker: ''},
-    { time: '10:10', title: 'パネルディスカッション', speaker: 'パネル登壇者'},
-    { time: '11:40', title: 'お昼休み', speaker: ''},
-    { time: '12:40', title: 'アイデアソン', speaker: 'ファシリテーター'},
-    { time: '13:30', title: 'チーム発表と審査・講評', speaker: '審査委員'},
-    { time: '14:10', title: '休憩', speaker: ''},
-    { time: '14:20', title: 'ポスターセッション', speaker: ''},
-    { time: '15:30', title: '交流会', speaker: ''},
-    { time: '16:45', title: '閉会式', speaker: '司会'},
+    { time: '09:30', title: '開場'},
+    { time: '10:00', title: '開会'},
+    { time: '10:10', title: 'パネルディスカッション'},
+    { time: '11:40', title: 'お昼休み'},
+    { time: '12:40', title: 'アイデアソン'},
+    { time: '13:30', title: 'チーム発表と審査・講評'},
+    { time: '14:10', title: '休憩'},
+    { time: '14:20', title: 'ポスターセッション'},
+    { time: '15:30', title: '交流会'},
+    { time: '16:45', title: '閉会式'},
   ];
   
 
