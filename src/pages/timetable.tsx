@@ -1,11 +1,6 @@
 import React from 'react';
 import './hw2024.css';
 
-interface Session {
-  time: string;
-  title: string;
-}
-
 const sessions = [
     { time: '09:30', title: '開場'},
     { time: '10:00', title: '開会'},

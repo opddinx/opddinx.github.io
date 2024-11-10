@@ -37,7 +37,7 @@ const PresentationPage = () => {
       </header>
 
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto py-8 px-4">
+      <main className="max-w-7xl mx-auto py-8">
       <Timetable/>
         <div className="space-y-6">
         <h1 className="text-3xl font-bold text-center mb-8">ポスター一覧</h1>
