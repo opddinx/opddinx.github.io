@@ -34,7 +34,7 @@ const presentations = [
 ];
 
 const PresentationPage = () => {
-    const pdfUrl = '../images/hw2024.pdf';
+    const pdfUrl = 'https://drive.google.com/file/d/1kKjl6NNNv3-rp-p8bzpyQQ967j6Cbuos/preview';
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
@@ -51,7 +51,7 @@ const PresentationPage = () => {
 
       {/* Main Content */}
       <main className="max-w-7xl mx-auto py-8 px-4">
-      <Timetable sessions={sessions} pdfUrl={pdfUrl} />
+      <Timetable sessions={sessions}/>
         <div className="space-y-6">
         <h1 className="text-3xl font-bold text-center mb-8">ポスター一覧</h1>
           {presentations.map((presentation, index) => (
@@ -111,6 +111,19 @@ const PresentationPage = () => {
           ))}
         </div>
       </main>
+              {/* Horizontal PDF Preview from Google Drive */}
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 mx-auto my-6 p-4 bg-gray-200">
+            <h2 className="text-xl font-semibold mb-4">Event Guide</h2>
+            <div className="overflow-y-auto">
+            <iframe
+                src={pdfUrl}
+                width="100%"    // Use full width of the container
+                height="600"    // Adjust height for better visibility
+                style={{ border: 'none' }}
+                title="PDF Preview"
+            />
+            </div>
+        </div>
     </div>
   );
 };

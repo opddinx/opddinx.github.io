@@ -1,6 +1,4 @@
 import React from 'react';
-import { Worker, Viewer } from '@react-pdf-viewer/core';
-import '@react-pdf-viewer/core/lib/styles/index.css';
 
 interface Session {
   time: string;
@@ -8,21 +6,11 @@ interface Session {
   speaker: string;
 }
 
-const Timetable: React.FC<{ sessions: Session[], pdfUrl: string }> = ({ sessions, pdfUrl }) => {
+const Timetable: React.FC<{ sessions: Session[]}> = ({ sessions }) => {
   return (
     <div className="container mx-auto py-8">
+
       <h1 className="text-3xl font-bold text-center mb-8">タイムテーブル</h1>
-
-      {/* PDF Preview */}
-      <div className="mb-8 p-4 border rounded-lg shadow-md bg-gray-100">
-        <h2 className="text-xl font-semibold mb-4">チラシ</h2>
-        <Worker workerUrl={`https://unpkg.com/pdfjs-dist@2.12.313/build/pdf.worker.min.js`}>
-          <div className="overflow-y-auto h-64">
-            <Viewer fileUrl={pdfUrl} />
-          </div>
-        </Worker>
-      </div>
-
       {/* Timetable */}
       <div className="space-y-6">
         {sessions.map((session, index) => (
