@@ -18,10 +18,10 @@ const Scholarships: React.FC = () => {
             description: "This project aims to aid innovative IT creators in Kansai region (550K yen)."
         },
         {
-            title: "DAIKIN Corp. Student Researcher Fellowship",
-            company: "DAIKIN Corporation",
+            title: "DAIKIN Industries Ltd. Student Researcher Fellowship",
+            company: "DAIKIN Industries Ltd.",
             period: "Jul. 2024 - Jun. 2025 (Expected)",
-            description: "Offered based on the comprehensive cooperation between Osaka University and DAIKIN Corporation (1.44M yen per year).",
+            description: "Offered based on the comprehensive cooperation between Osaka University and DAIKIN (1.44M yen per year).",
         },
         {
             title: "Humanware Innovation Program Scholarship",

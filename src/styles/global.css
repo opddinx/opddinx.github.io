@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .animatedText {
     position: relative;
     display: inline-block;

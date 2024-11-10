@@ -2604,6 +2604,185 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@react-pdf-viewer/core@npm:3.12.0, @react-pdf-viewer/core@npm:^3.12.0":
+  version: 3.12.0
+  resolution: "@react-pdf-viewer/core@npm:3.12.0"
+  peerDependencies:
+    pdfjs-dist: ^2.16.105 || ^3.0.279
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: 10c0/40c28687c11f2b929ea591806e23066103854ff8427f5af592e2aaedd08a9d401144fa4f9fb8c0c4a82c08d4ace6de16dda0192d8050442e75abb10c9c4a5973
+  languageName: node
+  linkType: hard
+
+"@react-pdf-viewer/full-screen@npm:3.12.0":
+  version: 3.12.0
+  resolution: "@react-pdf-viewer/full-screen@npm:3.12.0"
+  dependencies:
+    "@react-pdf-viewer/core": "npm:3.12.0"
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: 10c0/5a712680c4ff91dcf890792b9d3eac1da916b6b1454dd56e793cd4ab292b066b5ceb435d2f38f573ec76f4b30ea089ec02e3120530d1e54adfef971920ad518a
+  languageName: node
+  linkType: hard
+
+"@react-pdf-viewer/get-file@npm:3.12.0":
+  version: 3.12.0
+  resolution: "@react-pdf-viewer/get-file@npm:3.12.0"
+  dependencies:
+    "@react-pdf-viewer/core": "npm:3.12.0"
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: 10c0/63eb02c1bb91729846c6934f8dcd20bdcf01ebf4605fc6b19ffed096b9a6d074f98e222400838cf8c52ee493485198683b269ea94dbfe25f9fff08e953c24858
+  languageName: node
+  linkType: hard
+
+"@react-pdf-viewer/open@npm:3.12.0":
+  version: 3.12.0
+  resolution: "@react-pdf-viewer/open@npm:3.12.0"
+  dependencies:
+    "@react-pdf-viewer/core": "npm:3.12.0"
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: 10c0/a0b8923ad2cffa058f524f4b0161a1799aa4f41a327b6d89c7b78ee15120b7f7eb43a008c367756252e1e435ff79c5c8be1e393f60ee554d89b94c294ac8a51b
+  languageName: node
+  linkType: hard
+
+"@react-pdf-viewer/page-navigation@npm:3.12.0":
+  version: 3.12.0
+  resolution: "@react-pdf-viewer/page-navigation@npm:3.12.0"
+  dependencies:
+    "@react-pdf-viewer/core": "npm:3.12.0"
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: 10c0/ed2ad58e0f697e632cda845bdddecd55d72d4197450a3372374053f5f4915c95b927eaf77da3fd288003bdf4a6383d1d2881b18477bfbddbdd1c766d281df0d4
+  languageName: node
+  linkType: hard
+
+"@react-pdf-viewer/print@npm:3.12.0":
+  version: 3.12.0
+  resolution: "@react-pdf-viewer/print@npm:3.12.0"
+  dependencies:
+    "@react-pdf-viewer/core": "npm:3.12.0"
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: 10c0/993d2f59a0a960f8c9b8c6018b2490ea104e5ab9023f9618dbd5d0de107d465b56313e44142641a02aad82f9ac8535d6db40d1bdc4272f3e3fb73a73558e9c63
+  languageName: node
+  linkType: hard
+
+"@react-pdf-viewer/properties@npm:3.12.0":
+  version: 3.12.0
+  resolution: "@react-pdf-viewer/properties@npm:3.12.0"
+  dependencies:
+    "@react-pdf-viewer/core": "npm:3.12.0"
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: 10c0/06ea3f1ae044b508587aa5108eb0128b75d8889a0245621d6a69fbbd1128fbe37550c5c6796337c4521333deea22dbe60007df986d7ece9ce5602947c6ce9329
+  languageName: node
+  linkType: hard
+
+"@react-pdf-viewer/rotate@npm:3.12.0":
+  version: 3.12.0
+  resolution: "@react-pdf-viewer/rotate@npm:3.12.0"
+  dependencies:
+    "@react-pdf-viewer/core": "npm:3.12.0"
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: 10c0/69e34da618407e86d4bd2ec83ba9828334d3c9449ed13c1b62c99fddac6d784f35dc671f9f1e3374c5f5fcf45146b959753e20937b89e62f0f551fba09f5e213
+  languageName: node
+  linkType: hard
+
+"@react-pdf-viewer/scroll-mode@npm:3.12.0":
+  version: 3.12.0
+  resolution: "@react-pdf-viewer/scroll-mode@npm:3.12.0"
+  dependencies:
+    "@react-pdf-viewer/core": "npm:3.12.0"
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: 10c0/fa8d3c167791887b0d6f224ee2a23cd815b520dd432e371e15cfd1a4af30fb4899c99418500996b307ccfafd4d93520dd4b3e2cf3868abd8d4091a2d8c57b993
+  languageName: node
+  linkType: hard
+
+"@react-pdf-viewer/search@npm:3.12.0":
+  version: 3.12.0
+  resolution: "@react-pdf-viewer/search@npm:3.12.0"
+  dependencies:
+    "@react-pdf-viewer/core": "npm:3.12.0"
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: 10c0/44da6915df8e6c19c9384699afc92db81bb4d81a795520b5b09dd4bea606d82c0255416d90fa7f1d953d02b430f76b10c0c663dca43e04c2a829ec24e01356fc
+  languageName: node
+  linkType: hard
+
+"@react-pdf-viewer/selection-mode@npm:3.12.0":
+  version: 3.12.0
+  resolution: "@react-pdf-viewer/selection-mode@npm:3.12.0"
+  dependencies:
+    "@react-pdf-viewer/core": "npm:3.12.0"
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: 10c0/f15281b89001733564383c0f43633387cccb938e388e827c4d4b557b2d3e8f39f9cb158249759c2595ccf27cf9500662f1d4b1c9d98d84518627bf64b92032ab
+  languageName: node
+  linkType: hard
+
+"@react-pdf-viewer/theme@npm:3.12.0":
+  version: 3.12.0
+  resolution: "@react-pdf-viewer/theme@npm:3.12.0"
+  dependencies:
+    "@react-pdf-viewer/core": "npm:3.12.0"
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: 10c0/4fcf29c78bced82dccf4d18afd2bd2c77fb224f9f2bea8dfec64dbf953335d58dd85c4760c097fc8f8e9a739fd805fbe681224458ab4c4428400a150b5fb4734
+  languageName: node
+  linkType: hard
+
+"@react-pdf-viewer/toolbar@npm:^3.12.0":
+  version: 3.12.0
+  resolution: "@react-pdf-viewer/toolbar@npm:3.12.0"
+  dependencies:
+    "@react-pdf-viewer/core": "npm:3.12.0"
+    "@react-pdf-viewer/full-screen": "npm:3.12.0"
+    "@react-pdf-viewer/get-file": "npm:3.12.0"
+    "@react-pdf-viewer/open": "npm:3.12.0"
+    "@react-pdf-viewer/page-navigation": "npm:3.12.0"
+    "@react-pdf-viewer/print": "npm:3.12.0"
+    "@react-pdf-viewer/properties": "npm:3.12.0"
+    "@react-pdf-viewer/rotate": "npm:3.12.0"
+    "@react-pdf-viewer/scroll-mode": "npm:3.12.0"
+    "@react-pdf-viewer/search": "npm:3.12.0"
+    "@react-pdf-viewer/selection-mode": "npm:3.12.0"
+    "@react-pdf-viewer/theme": "npm:3.12.0"
+    "@react-pdf-viewer/zoom": "npm:3.12.0"
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: 10c0/183158736c793ed600fc24f02bc6a2184a8d629fb96e3ae33c947923acfbbd33920423dc4ecbbcf846b7edc8b56b894fe548f50dcbe85cbb93cdbbae4d403411
+  languageName: node
+  linkType: hard
+
+"@react-pdf-viewer/zoom@npm:3.12.0":
+  version: 3.12.0
+  resolution: "@react-pdf-viewer/zoom@npm:3.12.0"
+  dependencies:
+    "@react-pdf-viewer/core": "npm:3.12.0"
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: 10c0/8d17710da92b0acc24beb55ebdec9ff70d173004ab483dcfd34e508a36ccff21bdcd8e9c2f353f9c30eebc54b46e62820e93c6a74a456f15fbc6f94f1a9c4dfe
+  languageName: node
+  linkType: hard
+
 "@react-spring/animated@npm:~9.6.1":
   version: 9.6.1
   resolution: "@react-spring/animated@npm:9.6.1"
@@ -4010,7 +4189,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"autoprefixer@npm:^10.4.14, autoprefixer@npm:^10.4.19":
+"autoprefixer@npm:^10.4.14":
   version: 10.4.19
   resolution: "autoprefixer@npm:10.4.19"
   dependencies:
@@ -4025,6 +4204,24 @@ __metadata:
   bin:
     autoprefixer: bin/autoprefixer
   checksum: 10c0/fe0178eb8b1da4f15c6535cd329926609b22d1811e047371dccce50563623f8075dd06fb167daff059e4228da651b0bdff6d9b44281541eaf0ce0b79125bfd19
+  languageName: node
+  linkType: hard
+
+"autoprefixer@npm:^10.4.20":
+  version: 10.4.20
+  resolution: "autoprefixer@npm:10.4.20"
+  dependencies:
+    browserslist: "npm:^4.23.3"
+    caniuse-lite: "npm:^1.0.30001646"
+    fraction.js: "npm:^4.3.7"
+    normalize-range: "npm:^0.1.2"
+    picocolors: "npm:^1.0.1"
+    postcss-value-parser: "npm:^4.2.0"
+  peerDependencies:
+    postcss: ^8.1.0
+  bin:
+    autoprefixer: bin/autoprefixer
+  checksum: 10c0/e1f00978a26e7c5b54ab12036d8c13833fad7222828fc90914771b1263f51b28c7ddb5803049de4e77696cbd02bb25cfc3634e80533025bb26c26aacdf938940
   languageName: node
   linkType: hard
 
@@ -4428,6 +4625,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"browserslist@npm:^4.23.3":
+  version: 4.24.2
+  resolution: "browserslist@npm:4.24.2"
+  dependencies:
+    caniuse-lite: "npm:^1.0.30001669"
+    electron-to-chromium: "npm:^1.5.41"
+    node-releases: "npm:^2.0.18"
+    update-browserslist-db: "npm:^1.1.1"
+  bin:
+    browserslist: cli.js
+  checksum: 10c0/d747c9fb65ed7b4f1abcae4959405707ed9a7b835639f8a9ba0da2911995a6ab9b0648fd05baf2a4d4e3cf7f9fdbad56d3753f91881e365992c1d49c8d88ff7a
+  languageName: node
+  linkType: hard
+
 "bser@npm:2.1.1":
   version: 2.1.1
   resolution: "bser@npm:2.1.1"
@@ -4635,6 +4846,25 @@ __metadata:
   version: 1.0.30001637
   resolution: "caniuse-lite@npm:1.0.30001637"
   checksum: 10c0/46285695de7a6c63fae1d5860e10dd4446e5fca4253456e467e184300cc09e9e9d7f6f0a454aced1ff74c5f3f97670f01ce13bdc3edc19eb46778c22fffbf4bc
+  languageName: node
+  linkType: hard
+
+"caniuse-lite@npm:^1.0.30001646, caniuse-lite@npm:^1.0.30001669":
+  version: 1.0.30001679
+  resolution: "caniuse-lite@npm:1.0.30001679"
+  checksum: 10c0/87fb89c5cb5130e40fa97b110fe175ea1104c359e4882aa5e277f824fbd33aa024f26d41a25f7d214db985f43d5b148c44e363965d17b36660b126a03e75e6e0
+  languageName: node
+  linkType: hard
+
+"canvas@npm:^3.0.0-rc2":
+  version: 3.0.0-rc2
+  resolution: "canvas@npm:3.0.0-rc2"
+  dependencies:
+    node-addon-api: "npm:^7.0.0"
+    node-gyp: "npm:latest"
+    prebuild-install: "npm:^7.1.1"
+    simple-get: "npm:^3.0.3"
+  checksum: 10c0/102f99bd0852c1b8c8e069d2a907cf54d214c9ebc49105476d49eccf29fe0f8ef1cfe9ea5e764a6941ddcc528be27809c94f55b3197d7f9135177d2b2c2dc549
   languageName: node
   linkType: hard
 
@@ -5551,6 +5781,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"decompress-response@npm:^4.2.0":
+  version: 4.2.1
+  resolution: "decompress-response@npm:4.2.1"
+  dependencies:
+    mimic-response: "npm:^2.0.0"
+  checksum: 10c0/5e4821be332e80e3639acee2441c41d245fc07ac3ee85a6f28893c10c079d66d9bf09e8d84bffeae5656a4625e09e9b93fb4a5705adbe6b07202eea64fae1c8d
+  languageName: node
+  linkType: hard
+
 "decompress-response@npm:^6.0.0":
   version: 6.0.0
   resolution: "decompress-response@npm:6.0.0"
@@ -5910,6 +6149,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"electron-to-chromium@npm:^1.5.41":
+  version: 1.5.55
+  resolution: "electron-to-chromium@npm:1.5.55"
+  checksum: 10c0/1b9e0970a591d342cf4d4c95b63bcdb8bffed01edb7c8baed8dd54ea769c8b33c07484c94a031a20363a8129ca2ad1d612ce4ca55ec831244240ae1e6bcdf07c
+  languageName: node
+  linkType: hard
+
 "email-addresses@npm:^5.0.0":
   version: 5.0.0
   resolution: "email-addresses@npm:5.0.0"
@@ -6227,6 +6473,13 @@ __metadata:
   version: 3.1.2
   resolution: "escalade@npm:3.1.2"
   checksum: 10c0/6b4adafecd0682f3aa1cd1106b8fff30e492c7015b178bc81b2d2f75106dabea6c6d6e8508fc491bd58e597c74abb0e8e2368f943ecb9393d4162e3c2f3cf287
+  languageName: node
+  linkType: hard
+
+"escalade@npm:^3.2.0":
+  version: 3.2.0
+  resolution: "escalade@npm:3.2.0"
+  checksum: 10c0/ced4dd3a78e15897ed3be74e635110bbf3b08877b0a41be50dcb325ee0e0b5f65fc2d50e9845194d7c4633f327e2e1c6cce00a71b617c5673df0374201d67f65
   languageName: node
   linkType: hard
 
@@ -7396,16 +7649,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby-plugin-postcss@npm:^6.13.1":
-  version: 6.13.1
-  resolution: "gatsby-plugin-postcss@npm:6.13.1"
+"gatsby-plugin-postcss@npm:^6.14.0":
+  version: 6.14.0
+  resolution: "gatsby-plugin-postcss@npm:6.14.0"
   dependencies:
     "@babel/runtime": "npm:^7.20.13"
-    postcss-loader: "npm:^7.3.3"
+    postcss-loader: "npm:^7.3.4"
   peerDependencies:
     gatsby: ^5.0.0-next
     postcss: ^8.0.5
-  checksum: 10c0/6c66a5a4ea169ad0a169992c99f14ae9efab274eade33cc24998b82dbefc0790bae0412b9eccad56cf210443066d4a54dbc78a1cbdd730700559656e3e877e2c
+  checksum: 10c0/4618c52830d2296ba9b52c95e0155836c07c90e2b6eca216bf5f0a460201d53e6c79e8ee6613194ecc180511ff9cc1ee357d021cbe7269ba7bb1ad8d95b816ab
   languageName: node
   linkType: hard
 
@@ -9604,6 +9857,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lucide-react@npm:^0.456.0":
+  version: 0.456.0
+  resolution: "lucide-react@npm:0.456.0"
+  peerDependencies:
+    react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0-rc
+  checksum: 10c0/a56f6922381ff529f1df93c3fca47766682a8e427ec266fd1f4bcf063f65f93460f9e7982abf79d79e5f7bb50b8013d0493a26f78677de9b1c06b6b5a6343d56
+  languageName: node
+  linkType: hard
+
 "maath@npm:^0.10.7":
   version: 0.10.7
   resolution: "maath@npm:0.10.7"
@@ -9828,6 +10090,13 @@ __metadata:
   version: 1.0.1
   resolution: "mimic-response@npm:1.0.1"
   checksum: 10c0/c5381a5eae997f1c3b5e90ca7f209ed58c3615caeee850e85329c598f0c000ae7bec40196580eef1781c60c709f47258131dab237cad8786f8f56750594f27fa
+  languageName: node
+  linkType: hard
+
+"mimic-response@npm:^2.0.0":
+  version: 2.1.0
+  resolution: "mimic-response@npm:2.1.0"
+  checksum: 10c0/717475c840f20deca87a16cb2f7561f9115f5de225ea2377739e09890c81aec72f43c81fd4984650c4044e66be5a846fa7a517ac7908f01009e1e624e19864d5
   languageName: node
   linkType: hard
 
@@ -10209,6 +10478,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"node-addon-api@npm:^7.0.0":
+  version: 7.1.1
+  resolution: "node-addon-api@npm:7.1.1"
+  dependencies:
+    node-gyp: "npm:latest"
+  checksum: 10c0/fb32a206276d608037fa1bcd7e9921e177fe992fc610d098aa3128baca3c0050fc1e014fa007e9b3874cf865ddb4f5bd9f43ccb7cbbbe4efaff6a83e920b17e9
+  languageName: node
+  linkType: hard
+
 "node-fetch@npm:^2.6.11":
   version: 2.6.11
   resolution: "node-fetch@npm:2.6.11"
@@ -10306,6 +10584,13 @@ __metadata:
   version: 2.0.14
   resolution: "node-releases@npm:2.0.14"
   checksum: 10c0/199fc93773ae70ec9969bc6d5ac5b2bbd6eb986ed1907d751f411fef3ede0e4bfdb45ceb43711f8078bea237b6036db8b1bf208f6ff2b70c7d615afd157f3ab9
+  languageName: node
+  linkType: hard
+
+"node-releases@npm:^2.0.18":
+  version: 2.0.18
+  resolution: "node-releases@npm:2.0.18"
+  checksum: 10c0/786ac9db9d7226339e1dc84bbb42007cb054a346bd9257e6aa154d294f01bc6a6cddb1348fa099f079be6580acbb470e3c048effd5f719325abd0179e566fd27
   languageName: node
   linkType: hard
 
@@ -10544,6 +10829,8 @@ __metadata:
   resolution: "opddinx-personal-website@workspace:."
   dependencies:
     "@fontsource-variable/montserrat": "npm:^5.0.19"
+    "@react-pdf-viewer/core": "npm:^3.12.0"
+    "@react-pdf-viewer/toolbar": "npm:^3.12.0"
     "@react-three/drei": "npm:^9.107.2"
     "@react-three/fiber": "npm:^8.16.8"
     "@types/dat.gui": "npm:^0"
@@ -10552,21 +10839,23 @@ __metadata:
     "@types/react-dom": "npm:^18.2.19"
     "@types/react-helmet": "npm:^6.1.11"
     "@types/three": "npm:^0.165.0"
-    autoprefixer: "npm:^10.4.19"
+    autoprefixer: "npm:^10.4.20"
     dat.gui: "npm:^0.7.9"
     gatsby: "npm:^5.13.5"
     gatsby-plugin-google-fonts: "npm:^1.0.1"
     gatsby-plugin-google-gtag: "npm:^5.13.1"
-    gatsby-plugin-postcss: "npm:^6.13.1"
+    gatsby-plugin-postcss: "npm:^6.14.0"
     gatsby-plugin-react-helmet: "npm:^6.13.1"
     gh-pages: "npm:^6.1.1"
-    postcss: "npm:^8.4.38"
+    lucide-react: "npm:^0.456.0"
+    pdfjs-dist: "npm:^4.8.69"
+    postcss: "npm:^8.4.47"
     raw-loader: "npm:^4.0.2"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
     react-helmet: "npm:^6.1.0"
     react-icons: "npm:^5.2.1"
-    tailwindcss: "npm:^3.4.4"
+    tailwindcss: "npm:^3.4.14"
     three: "npm:^0.165.0"
     typescript: "npm:^5.3.3"
   languageName: unknown
@@ -10922,6 +11211,28 @@ __metadata:
   languageName: node
   linkType: hard
 
+"path2d@npm:^0.2.1":
+  version: 0.2.2
+  resolution: "path2d@npm:0.2.2"
+  checksum: 10c0/1bb76c7f275d07f1bc7ca12171d828e91bf8a12596f0765a52e9d4d47fe1a428455dc1dd4c9002924a9bc554f6ac25e09a6c22eaecf32e5e33fba2985b5168f8
+  languageName: node
+  linkType: hard
+
+"pdfjs-dist@npm:^4.8.69":
+  version: 4.8.69
+  resolution: "pdfjs-dist@npm:4.8.69"
+  dependencies:
+    canvas: "npm:^3.0.0-rc2"
+    path2d: "npm:^0.2.1"
+  dependenciesMeta:
+    canvas:
+      optional: true
+    path2d:
+      optional: true
+  checksum: 10c0/dc297f2a36aa36834a2892cb78c3cafc7ac01753a2e7c4316a1f6e8c1d337a52a3bfbf7fdff7aaba615893b53f2d06a0efc2176525592b4d7b51021279c101be
+  languageName: node
+  linkType: hard
+
 "peek-readable@npm:^4.1.0":
   version: 4.1.0
   resolution: "peek-readable@npm:4.1.0"
@@ -10940,6 +11251,13 @@ __metadata:
   version: 1.0.1
   resolution: "picocolors@npm:1.0.1"
   checksum: 10c0/c63cdad2bf812ef0d66c8db29583802355d4ca67b9285d846f390cc15c2f6ccb94e8cb7eb6a6e97fc5990a6d3ad4ae42d86c84d3146e667c739a4234ed50d400
+  languageName: node
+  linkType: hard
+
+"picocolors@npm:^1.1.0":
+  version: 1.1.1
+  resolution: "picocolors@npm:1.1.1"
+  checksum: 10c0/e2e3e8170ab9d7c7421969adaa7e1b31434f789afb9b3f115f6b96d91945041ac3ceb02e9ec6fe6510ff036bcc0bf91e69a1772edc0b707e12b19c0f2d6bcf58
   languageName: node
   linkType: hard
 
@@ -11144,7 +11462,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-loader@npm:^7.3.3":
+"postcss-loader@npm:^7.3.4":
   version: 7.3.4
   resolution: "postcss-loader@npm:7.3.4"
   dependencies:
@@ -11461,7 +11779,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.2.15, postcss@npm:^8.2.9, postcss@npm:^8.4.23, postcss@npm:^8.4.24, postcss@npm:^8.4.38":
+"postcss@npm:^8.2.15, postcss@npm:^8.2.9, postcss@npm:^8.4.23, postcss@npm:^8.4.24":
   version: 8.4.38
   resolution: "postcss@npm:8.4.38"
   dependencies:
@@ -11469,6 +11787,17 @@ __metadata:
     picocolors: "npm:^1.0.0"
     source-map-js: "npm:^1.2.0"
   checksum: 10c0/955407b8f70cf0c14acf35dab3615899a2a60a26718a63c848cf3c29f2467b0533991b985a2b994430d890bd7ec2b1963e36352b0774a19143b5f591540f7c06
+  languageName: node
+  linkType: hard
+
+"postcss@npm:^8.4.47":
+  version: 8.4.47
+  resolution: "postcss@npm:8.4.47"
+  dependencies:
+    nanoid: "npm:^3.3.7"
+    picocolors: "npm:^1.1.0"
+    source-map-js: "npm:^1.2.1"
+  checksum: 10c0/929f68b5081b7202709456532cee2a145c1843d391508c5a09de2517e8c4791638f71dd63b1898dba6712f8839d7a6da046c72a5e44c162e908f5911f57b5f44
   languageName: node
   linkType: hard
 
@@ -12661,6 +12990,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"simple-get@npm:^3.0.3":
+  version: 3.1.1
+  resolution: "simple-get@npm:3.1.1"
+  dependencies:
+    decompress-response: "npm:^4.2.0"
+    once: "npm:^1.3.1"
+    simple-concat: "npm:^1.0.0"
+  checksum: 10c0/438c78844ea1b1e7268d13ee0b3a39c7d644183367aec916aed3b676b45d3037a61d9f975c200a49b42eb851f29f03745118af1e13c01e60a7b4044f2fd60be7
+  languageName: node
+  linkType: hard
+
 "simple-get@npm:^4.0.0, simple-get@npm:^4.0.1":
   version: 4.0.1
   resolution: "simple-get@npm:4.0.1"
@@ -12809,6 +13149,13 @@ __metadata:
   version: 1.2.0
   resolution: "source-map-js@npm:1.2.0"
   checksum: 10c0/7e5f896ac10a3a50fe2898e5009c58ff0dc102dcb056ed27a354623a0ece8954d4b2649e1a1b2b52ef2e161d26f8859c7710350930751640e71e374fe2d321a4
+  languageName: node
+  linkType: hard
+
+"source-map-js@npm:^1.2.1":
+  version: 1.2.1
+  resolution: "source-map-js@npm:1.2.1"
+  checksum: 10c0/7bda1fc4c197e3c6ff17de1b8b2c20e60af81b63a52cb32ec5a5d67a20a7d42651e2cb34ebe93833c5a2a084377e17455854fee3e21e7925c64a51b6a52b0faf
   languageName: node
   linkType: hard
 
@@ -13278,9 +13625,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tailwindcss@npm:^3.4.4":
-  version: 3.4.4
-  resolution: "tailwindcss@npm:3.4.4"
+"tailwindcss@npm:^3.4.14":
+  version: 3.4.14
+  resolution: "tailwindcss@npm:3.4.14"
   dependencies:
     "@alloc/quick-lru": "npm:^5.2.0"
     arg: "npm:^5.0.2"
@@ -13307,7 +13654,7 @@ __metadata:
   bin:
     tailwind: lib/cli.js
     tailwindcss: lib/cli.js
-  checksum: 10c0/e4f7e1a2e1897871a4744f421ccb5639e8d51012e3644b0c35cf723527fdc8f9cddd3fa3b0fc28c198b0ea6ce44ead21c89cfec549d80bad9b1f3dd9d8bf2d54
+  checksum: 10c0/f6c23f8a3293ce3b2511bca1e50008ac94bd8562cb09fec32fe4f8e8a4f54d9e9fc10e567b7f974abdd4b33e550564a2616d4e793c736955432f28448141ce45
   languageName: node
   linkType: hard
 
@@ -13911,6 +14258,20 @@ __metadata:
   bin:
     update-browserslist-db: cli.js
   checksum: 10c0/5995399fc202adbb51567e4810e146cdf7af630a92cc969365a099150cb00597e425cc14987ca7080b09a4d0cfd2a3de53fbe72eebff171aed7f9bb81f9bf405
+  languageName: node
+  linkType: hard
+
+"update-browserslist-db@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "update-browserslist-db@npm:1.1.1"
+  dependencies:
+    escalade: "npm:^3.2.0"
+    picocolors: "npm:^1.1.0"
+  peerDependencies:
+    browserslist: ">= 4.21.0"
+  bin:
+    update-browserslist-db: cli.js
+  checksum: 10c0/536a2979adda2b4be81b07e311bd2f3ad5e978690987956bc5f514130ad50cac87cd22c710b686d79731e00fbee8ef43efe5fcd72baa241045209195d43dcc80
   languageName: node
   linkType: hard
 
