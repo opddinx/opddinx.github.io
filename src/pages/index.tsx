@@ -44,6 +44,7 @@ const IndexPage: React.FC<PageProps> = () => {
             top: 0;
             left: 0;
           }
+          
         `}
         </style>
       </Helmet>

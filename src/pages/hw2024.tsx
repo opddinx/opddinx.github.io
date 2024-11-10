@@ -1,6 +1,6 @@
 import React from 'react';
 import { Calendar, Users, FileText, ExternalLink } from 'lucide-react';
-
+import './hw2024.css';
 import Timetable from './timetable';
 
 
