@@ -5,7 +5,20 @@ interface Session {
   title: string;
 }
 
-const Timetable: React.FC<{ sessions: Session[]}> = ({ sessions }) => {
+const sessions = [
+    { time: '09:30', title: '開場'},
+    { time: '10:00', title: '開会'},
+    { time: '10:10', title: 'パネルディスカッション'},
+    { time: '11:40', title: 'お昼休み'},
+    { time: '12:40', title: 'アイデアソン'},
+    { time: '13:30', title: 'チーム発表と審査・講評'},
+    { time: '14:10', title: '休憩'},
+    { time: '14:20', title: 'ポスターセッション'},
+    { time: '15:30', title: '交流会'},
+    { time: '16:45', title: '閉会式'},
+  ];
+
+const Timetable: React.FC<{}> = ({}) => {
   return (
     <div className="container mx-auto py-8">
 
