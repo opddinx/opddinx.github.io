@@ -16,7 +16,7 @@ const sessions = [
 
 const Timetable: React.FC<{}> = ({}) => {
   return (
-    <div className="container mx-auto py-8">
+    <div className="mx-auto px-8 py-8">
 
       <h1 className="text-3xl font-bold text-center mb-8">タイムテーブル</h1>
       {/* Timetable */}
