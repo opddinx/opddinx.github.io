@@ -24,7 +24,7 @@ const PresentationPage = () => {
   const pdfUrl = 'https://drive.google.com/file/d/1kKjl6NNNv3-rp-p8bzpyQQ967j6Cbuos/preview';
   
   return (
-    <div className="max-w-screen-xl min-h-screen max-w-full bg-gray-50">
+    <div className="min-h-screen max-w-full bg-gray-50">
       {/* Header */}
       <header className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto py-6 px-4">
