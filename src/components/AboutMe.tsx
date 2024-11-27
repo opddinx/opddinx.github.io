@@ -12,7 +12,7 @@ const AboutMe = () => {
                 <SocialLinks />
             </div>
             <div className='introduction' style={{ marginLeft: '10px' }}> 
-                <h4>I'm a master student at <a href="https://www.sens.sys.es.osaka-u.ac.jp/" target="_blank" rel="noreferrer noopener">SENSLab</a> in Osaka University majoring in Computer Vision. I want to extend human ability by fusing our culture and cutting-edge technologies deeply. To achieve this, I want to know how human sense world, feel, think, express our feelings, and interpret what others express. I believe that understanding this process through will give us insights of what we are, how to create new media for communication, in order to live better lives.</h4>
+                <h4>I'm a master student at <a href="https://www.sens.sys.es.osaka-u.ac.jp/" target="_blank" rel="noreferrer noopener">SENSLab</a> at the university of Osaka majoring in Computer Vision. I want to extend human ability by fusing our culture and cutting-edge technologies deeply. To achieve this, I want to know how human sense world, feel, think, express our feelings, and interpret what others express. I believe that understanding this process through will give us insights of what we are, how to create new media for communication, in order to live better lives.</h4>
             </div>
         </div>
         <div className='interests'>
@@ -22,7 +22,7 @@ const AboutMe = () => {
         <div className='Contacts'>
             <h3>E-mail</h3>
             <p> 1): kouhei.miura[at]sens.sys.es.osaka-u.ac.jp</p>
-            <p> 2): opddinx[at]acm.org</p>
+            <p> 2): opddinx[at]gmail.org</p>
         </div>
         <div className='affiliation'>
             <h3>Affiliation</h3>
