@@ -22,7 +22,7 @@ const AboutMe = () => {
         <div className='Contacts'>
             <h3>E-mail</h3>
             <p> 1): kouhei.miura[at]sens.sys.es.osaka-u.ac.jp</p>
-            <p> 2): opddinx[at]gmail.org</p>
+            <p> 2): opddinx[at]gmail.com</p>
         </div>
         <div className='affiliation'>
             <h3>Affiliation</h3>

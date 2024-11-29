@@ -23,7 +23,7 @@ const PublicationList: React.FC = () => {
                     title: "3D Reconstruction of a Soft Object Surface and Contact Areas in Hand-Object Interactions",
                     authors: "Kohei Miura, Daisuke Iwai, Kosuke Sato",
                     journal: "SIGGRAPH Asia 2024 Posters",
-                    attributes: "Demonstration, Peer-reviewed"
+                    attributes: "Poster, Peer-reviewed"
                 },
                 {
                     title: "Casper DPM: Cascaded Perceptual Dynamic Projection Mapping onto Hands",
