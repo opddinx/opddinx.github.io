@@ -3,7 +3,6 @@ import * as React from "react"
 import { Helmet } from "react-helmet"
 import type { HeadFC, PageProps } from "gatsby"
 import PublicationInternationalList from '../components/PublicationInternationalList';
-import PublicationDomesticList from '../components/PublicationDomesticList';
 import WorkExperience from '../components/WorkExperience';
 import AboutMe from '../components/AboutMe';
 import Education from '../components/Education';
@@ -63,7 +62,6 @@ const IndexPage: React.FC<PageProps> = () => {
         </section>
         <section id="pubinternational">
           <PublicationInternationalList />
-          <PublicationDomesticList />
         </section>
         <section id="awards">
           <Awards />

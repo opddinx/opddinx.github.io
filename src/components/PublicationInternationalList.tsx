@@ -29,11 +29,11 @@ const PublicationList: React.FC = () => {
                     title: "Casper DPM: Cascaded Perceptual Dynamic Projection Mapping onto Hands",
                     authors: "Yotam Erel, Or Kozlovsky-Mordenfeld, Hiroki Kusuyama, Kohei Miura, Daisuke Iwai, Kosuke Sato, Amit H. Bermano",
                     journal: "SIGGRAPH Asia 2024 Emerging Technologies",
-                    attributes: "Demonstration, Peer-reviewed"
+                    attributes: "Emerging Technologies (Demonstration), Peer-reviewed"
                 },
                 {
                     title: "IntelliCID: Intelligent Caustics Illumination Device",
-                    authors: "Shun Hanai, Kohei Miura(EQUAL CONTRIBUTION)",
+                    authors: "Shun Hanai, Kohei Miura (EQUAL CONTRIBUTION)",
                     journal: "Adjunct Proceedings of the 36th Annual ACM Symposium on User Interface Software and Technology (UIST '24 Adjunct)",
                     attributes: "Student Innovation Contest (Demonstration), Peer-reviewed"
                 },
@@ -65,6 +65,7 @@ const PublicationList: React.FC = () => {
                     </ul>
                 </div>
             ))}
+            <p>To see all publication lists (CV) including domestic conferences, please contact me via e-mail.</p>
         </section>
     );
 };
