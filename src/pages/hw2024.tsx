@@ -87,6 +87,14 @@ const PresentationPage = () => {
           >
             4:3のスライドテンプレート
           </a>
+          <a 
+            href="https://docs.google.com/forms/d/e/1FAIpQLSctmGJ3HV2nBnvXUEXowMc9ybRmQ3RXZ-3DCYiRO3bWAc_hgw/viewform" 
+            className="text-red-600 hover:text-red-800 underline"
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            事後アンケート
+          </a>
         </div>
         </div>
       </header>
