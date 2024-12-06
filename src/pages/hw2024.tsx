@@ -25,7 +25,7 @@ const presentations = [
     pdfLink: "https://drive.google.com/file/d/13lvDY3cjSteBIcAVAn2h6CTiuiWh3V7J/view?usp=drive_link"
   },
   {
-    title: "A proposal for real-time communication using a sign language translation system with motion prediction.",
+    title: "【発表なし】A proposal for real-time communication using a sign language translation system with motion prediction.",
     members: ["○渡邉 理翔 情報科学研究科 D1", "横山 喜大 情報科学研究科 M2", "藤田 杏樹 生命機能研究科 D2/5", "前田 千結 生命機能研究科 D2/5"],
     abstract: "Deaf people are forced to use alternative communication methods such as written communication with non-signers due to the lack of a system to translate sign language, which is a substitute for speech for the deaf. In this study, we examined whether this motion prediction is valid in sign language translation using rock-paper-scissors-paper and maneuvering motion intention extraction technology as the basic technology, by performing a series of finger-writing tasks. In addition, to address the issue of non-verbal information transfer, which does not allow the transfer of emotion and degree, we interviewed deaf people and obtained statistics.",
     pdfLink: ""
@@ -70,6 +70,24 @@ const PresentationPage = () => {
           <p className="mt-2 text-gray-600">
             2024年12月6日（金）に開催されるヒューマンウェアシンポジウム2024のタイムテーブルおよびポスターの一覧です。
           </p>
+          <div className="flex space-x-4 p-4">
+          <a 
+            href="https://docs.google.com/presentation/d/1eFiPQq-WtW3-ZngFoPjEL5WD7P3erXmRickirUF8gKE/edit?usp=sharing" 
+            className="text-blue-600 hover:text-blue-800 underline"
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            16:9のスライドテンプレート
+          </a>
+          <a 
+            href="https://docs.google.com/presentation/d/16PnXOYZbGv-U8Os5HnlKYaCjOOdT-P6wonDXV8ib9j0/edit?usp=sharing" 
+            className="text-green-600 hover:text-green-800 underline"
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            4:3のスライドテンプレート
+          </a>
+        </div>
         </div>
       </header>
 
