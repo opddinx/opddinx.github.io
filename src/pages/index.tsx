@@ -1,4 +1,3 @@
-import mainjs from '../js/main.js'
 import * as React from "react"
 import { Helmet } from "react-helmet"
 import type { HeadFC, PageProps } from "gatsby"
@@ -11,6 +10,9 @@ import Scholarships from '../components/Achievements';
 import Awards from '../components/Awards';
 import Header from '../components/Header';
 import AnimatedHoverText from '../components/AnimatedHoverText';
+import WebGPUBackground from '../components/WebGPUBackground';
+import News from '../components/News';
+import ProjectsTeaser from '../components/ProjectsTeaser';
 import favicon from '../images/favicon.ico';
 
 // ToDo:
@@ -37,23 +39,19 @@ const IndexPage: React.FC<PageProps> = () => {
             overscroll-behavior: none;
             /* cursor: none; */
           }
-
-          canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-          }
           
         `}
         </style>
       </Helmet>
-      <script src={mainjs}></script>
+      <WebGPUBackground />
       <main className="container" style={{ paddingTop: '60px' }}>
       <Header />
-        <h1><AnimatedHoverText>κοηει ΜΙυRA</AnimatedHoverText></h1>
+        <h1><AnimatedHoverText>KOHEI MIURA</AnimatedHoverText></h1>
         <section id="about">
           <AboutMe />
         </section>
+        <News />
+        <ProjectsTeaser />
         <section id="education">
           <Education />
         </section>

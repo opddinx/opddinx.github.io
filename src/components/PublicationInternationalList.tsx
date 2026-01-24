@@ -65,7 +65,7 @@ const PublicationList: React.FC = () => {
                     </ul>
                 </div>
             ))}
-            <p>To see all publication lists (CV) including domestic conferences, please contact me via e-mail.</p>
+            <p>To see all achievement lists (CV) including domestic conferences and other small achievements, please contact me via e-mail or see <a href='https://researchmap.jp/koheimiura'>Researchmap</a> for domestic conferences.</p>
         </section>
     );
 };
