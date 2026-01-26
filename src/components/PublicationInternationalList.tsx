@@ -17,6 +17,23 @@ interface YearGroup {
 const PublicationList: React.FC = () => {
     const publications: YearGroup[] = [
         {
+            year: 2026,
+            items: [
+                {
+                    title: "Exploring thermal contact potentials for Hand-Object Interaction refinement",
+                    authors: "Kohei Miura and Daisuke Iwai",
+                    journal: "SPIE Photonics West (Optical Architectures for Displays and Sensing in Augmented, Virtual, and Mixed Reality (AR, VR, MR) VII)",
+                    attributes: "Oral Presentation, Peer-reviewed"
+                },
+                {
+                    title: "Effects of view-dependent highlights and specular intensity on gloss perception in projection mapping",
+                    authors: "Masaki Takeuchi, Kohei Miura, Daisuke Iwai",
+                    journal: "SPIE Photonics West (Optical Architectures for Displays and Sensing in Augmented, Virtual, and Mixed Reality (AR, VR, MR) VII)",
+                    attributes: "Oral Presentation, Peer-reviewed"
+                },
+            ]
+        },
+        {
             year: 2024,
             items: [
                 {
