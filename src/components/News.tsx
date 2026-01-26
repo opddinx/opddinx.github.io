@@ -12,7 +12,7 @@ const newsItems: NewsItem[] = [
     {
         id: 'news1',
         title: 'Joined XRGroup at Osaka University as a PhD Student',
-        date: 'April 2024',
+        date: 'April 2025',
         summary: 'I have started my PhD studies at the XRGroup in the Graduate School of Engineering Science, Osaka University.',
         details: 'I am excited to join the XRGroup and look forward to contributing to cutting-edge research in computer science and graphics.',
     },
@@ -39,7 +39,7 @@ const News: React.FC = () => {
             <div className="news-header">
                 <div>
                     <h2>News</h2>
-                    <p>Latest updates</p>
+                    <p>Latest update</p>
                 </div>
                 {canToggle ? (
                     <button
