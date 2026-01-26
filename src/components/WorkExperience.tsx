@@ -30,14 +30,14 @@ const WorkExperience: React.FC = () => {
         {
             title: "Teaching Assistant",
             company: "School of Engineering Science, Osaka University (Osaka, Japan)",
-            period: "Apr. 2023 - Feb. 2024",
+            period: "Apr. 2023 - Feb. 2024, Apr. 2025 - Aug. 2025",
             description: "I assist undergraduate students in the class of C language basic programming exercises, and how to read technical books and academic papers.",
         },
         {
             title: "Research Assistant",
             company: "Kyoto Research, Sony Computer Science Laboratories, Inc. (Kyoto, Japan)",
             period: "Mar. 2023 - Present",
-            description: "As a research assistant, I’m working on a project called AnyLight (PI: Yuichiro Takeuchi), which reproduces illumination effects from any light source. Additionally, I edit some videos for public relations.",
+            description: "As a research assistant, I'm working on a project called AnyLight (PI: Yuichiro Takeuchi), which reproduces illumination effects. Additionally, I edit some videos for public relations.",
         },
     ];
 

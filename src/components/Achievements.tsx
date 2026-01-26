@@ -12,22 +12,34 @@ interface Scholarship {
 const Scholarships: React.FC = () => {
     const scholarship: Scholarship[] = [
         {
+            title: "SPIE Photonics West Student Travel Support",
+            company: "SPIE, the international society for optics and photonics",
+            period: "Jan. 2026",
+            description: "To present my research at SPIE Photonics West 2026 (1000 USD)."
+        },
+        {
+            title: "NEDO Entrepreneurs Program",
+            company: "National Research and Development Agency (NEDO), Japan",
+            period: "Apr. 2025 - Mar. 2026",
+            description: "To implement my R&D project into society by launching a startup (3M JPY)."
+        },
+        {
             title: "AKATSUKI Project: Kansai Tech Creator Challenge",
             company: "Ministry of Economy, Trade and Industry, Japan",
             period: "Sep. 2024 - Feb. 2025",
-            description: "This project aims to aid innovative IT creators in Kansai region (550K yen)."
+            description: "This project aims to aid innovative IT creators in Kansai region (550K JPY)."
         },
         {
             title: "DAIKIN Industries Ltd. Student Researcher Fellowship",
             company: "DAIKIN Industries Ltd.",
-            period: "Jul. 2024 - Jun. 2025 (Expected)",
-            description: "Offered based on the comprehensive cooperation between Osaka University and DAIKIN (1.44M yen per year).",
+            period: "Jul. 2024 - Mar. 2025",
+            description: "Offered based on the comprehensive cooperation between Osaka University and DAIKIN (120K JPY/month).",
         },
         {
             title: "Humanware Innovation Program Scholarship",
             company: "Osaka University",
-            period: "Apr. 2023 - Mar. 2025 (Expected)",
-            description: "The scholarship for me to concentrate on my research activity (amount varies depending on the situation)",
+            period: "Apr. 2023 - Mar. 2025",
+            description: "To concentrate on my research activity (amount varies depending on the situation)",
         },
     ];
 

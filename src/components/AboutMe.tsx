@@ -30,8 +30,8 @@ const AboutMe = () => {
             </div>
             <div className='Contacts'>
                 <h3>E-mail</h3>
-                <p> 1): miura.kohei.h75[at]ecs.osaka-u.ac.jp</p>
-                <p> 2): opddinx[at]gmail.com</p>
+                <p> miura.kohei.h75[at]ecs.osaka-u.ac.jp</p>
+                <p> opddinx[at]gmail.com</p>
             </div>
             <div className='affiliation'>
                 <h3>Affiliation</h3>
