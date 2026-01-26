@@ -10,7 +10,7 @@ import Scholarships from '../components/Achievements';
 import Awards from '../components/Awards';
 import Header from '../components/Header';
 import AnimatedHoverText from '../components/AnimatedHoverText';
-import WebGPUBackground from '../components/WebGPUBackground';
+import Background from '../components/Background';
 import News from '../components/News';
 import ProjectsTeaser from '../components/ProjectsTeaser';
 import favicon from '../images/favicon.ico';
@@ -43,7 +43,7 @@ const IndexPage: React.FC<PageProps> = () => {
         `}
         </style>
       </Helmet>
-      <WebGPUBackground />
+      <Background />
       <main className="container" style={{ paddingTop: '60px' }}>
       <Header />
         <h1><AnimatedHoverText>KOHEI MIURA</AnimatedHoverText></h1>

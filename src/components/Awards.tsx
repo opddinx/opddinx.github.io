@@ -12,6 +12,12 @@ interface Award {
 const Awards: React.FC = () => {
     const awards: Award[] = [
         {
+            title: "Outstanding Student Award in the Division of System Science and Applied Informatics (Magna cum laude)",
+            givenby: "Graduate School of Engineering Science, the University of Osaka",
+            time: "March 2025",
+            description: "Awarded for the outstanding achievements in academic performance and research activities during the Master's program",
+        },
+        {
             title: "Best Student Demo in Show Award",
             givenby: "The 17th ACM SIGGRAPH Conference and Exhibition on Computer Graphics and Interactive Techniques in Asia (SIGGRAPH Asia 2024)",
             time: "December 2024",

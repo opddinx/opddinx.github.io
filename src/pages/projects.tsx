@@ -1,7 +1,7 @@
 import * as React from "react";
 import type { HeadFC, PageProps } from "gatsby";
 import Header from "../components/Header";
-import WebGPUBackground from "../components/WebGPUBackground";
+import Background from "../components/Background";
 
 type Project = {
     title: string;
@@ -16,7 +16,7 @@ const projects: Project[] = [];
 const ProjectsPage: React.FC<PageProps> = () => {
     return (
         <>
-            <WebGPUBackground />
+            <Background />
             <main className="container" style={{ paddingTop: '60px' }}>
                 <Header variant="page" />
                 <section className="mt-6">

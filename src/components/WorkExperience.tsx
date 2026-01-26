@@ -24,7 +24,7 @@ const WorkExperience: React.FC = () => {
         {
             title: "Student Assistant & Teaching Assistant",
             company: "Center for Education in Liberal Arts and Sciences, Osaka University (Osaka, Japan)",
-            period: "Nov. 2023 - Present",
+            period: "Nov. 2023 - Mar. 2025",
             description: "I encourage high school students to have lively and invaluable scientific experiences in SEEDS program of Osaka University.",
         },
         {
