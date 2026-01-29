@@ -166,7 +166,7 @@ body {
 .container {
     max-width: 920px;
     margin: 0 auto;
-    padding: 1.8rem 1.6rem 2.4rem;
+    padding: 1.8rem 0 2.4rem;
     background: var(--paper-strong);
     border-radius: 12px;
     border: 1px solid var(--paper-border);
