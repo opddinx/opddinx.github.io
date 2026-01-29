@@ -18,6 +18,12 @@ const Scholarships: React.FC = () => {
             description: "To present my research at SPIE Photonics West 2026 (1000 USD)."
         },
         {
+            title: "Half Exemption from Return for Particularly Outstanding Achievement",
+            company: "Japan Student Services Organization, Japan",
+            period: "Mar. 2025",
+            description: "For academic achievement in MSc (1M JPY)."
+        },
+        {
             title: "NEDO Entrepreneurs Program",
             company: "National Research and Development Agency (NEDO), Japan",
             period: "Apr. 2025 - Mar. 2026",
