@@ -15,10 +15,11 @@ const projects: Project[] = [];
 
 const ProjectsPage: React.FC<PageProps> = () => {
     return (
-        <>
+        <div className="page-shell">
             <Background />
+            <div className="cg-glow" aria-hidden="true" />
+            <Header variant="page" />
             <main className="container" style={{ paddingTop: '60px' }}>
-                <Header variant="page" />
                 <section className="mt-6">
                     <div className="flex flex-wrap items-end justify-between gap-4">
                         <h1 className="text-balance text-3xl font-semibold text-slate-900">Projects</h1>
@@ -65,7 +66,7 @@ const ProjectsPage: React.FC<PageProps> = () => {
                     )}
                 </section>
             </main>
-        </>
+        </div>
     );
 };
 

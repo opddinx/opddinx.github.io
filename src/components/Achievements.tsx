@@ -24,6 +24,12 @@ const Scholarships: React.FC = () => {
             description: "To implement my R&D project into society by launching a startup (3M JPY)."
         },
         {
+            title: "JST BOOST Program",
+            company: "The University of Osaka",
+            period: "Apr. 2025 - Mar. 2028 (Expected)",
+            description: "Support AI related research activities (900K (research) + 3M (living / year) JPY)."
+        },
+        {
             title: "AKATSUKI Project: Kansai Tech Creator Challenge",
             company: "Ministry of Economy, Trade and Industry, Japan",
             period: "Sep. 2024 - Feb. 2025",

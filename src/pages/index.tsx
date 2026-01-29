@@ -22,7 +22,7 @@ import favicon from '../images/favicon.ico';
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
-    <>
+    <div className="page-shell">
       <Helmet>
         <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-COMPATIBLE" content="IE=edge" />
@@ -44,9 +44,10 @@ const IndexPage: React.FC<PageProps> = () => {
         </style>
       </Helmet>
       <Background />
-      <main className="container" style={{ paddingTop: '60px' }}>
+      <div className="cg-glow" aria-hidden="true" />
       <Header />
-        <h1><AnimatedHoverText>KOHEI MIURA</AnimatedHoverText></h1>
+      <main className="container" style={{ paddingTop: '60px' }}>
+        <h1 className="hero-name"><AnimatedHoverText>Kohei Miura</AnimatedHoverText></h1>
         <section id="about">
           <AboutMe />
         </section>
@@ -69,7 +70,7 @@ const IndexPage: React.FC<PageProps> = () => {
         </section>
         <Footer />
       </main>
-    </>
+    </div>
   )
 }
 
