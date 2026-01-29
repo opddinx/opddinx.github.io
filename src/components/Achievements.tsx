@@ -51,7 +51,6 @@ const Scholarships: React.FC = () => {
 
     return (
         <section className="scholarships">
-            <h2>Scholarships, Fellowships, Grants</h2>
             <div className="timeline">
                 {scholarship.map((exp, index) => (
                     <div key={index} className="timeline-item">

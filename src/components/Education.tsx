@@ -38,7 +38,6 @@ const Educations: React.FC = () => {
 
     return (
         <section className="Education">
-            <h2>Education</h2>
             <div className="timeline">
                 {educations.map((exp, index) => (
                     <div key={index} className="timeline-item">

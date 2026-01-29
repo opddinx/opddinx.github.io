@@ -54,18 +54,23 @@ const IndexPage: React.FC<PageProps> = () => {
         <News />
         <ProjectsTeaser />
         <section id="education">
+          <h2>Education</h2>
           <Education />
         </section>
         <section id="workexperience">
+          <h2>Work Experience</h2>
           <WorkExperience />
         </section>
         <section id="pubinternational">
+          <h2>Publications</h2>
           <PublicationInternationalList />
         </section>
         <section id="awards">
+          <h2>Awards</h2>
           <Awards />
         </section>
         <section id="scholarships">
+          <h2>Grants, Fellowship, Scholarship</h2>
           <Scholarships />
         </section>
         <Footer />

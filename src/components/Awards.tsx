@@ -33,7 +33,6 @@ const Awards: React.FC = () => {
 
     return (
         <section className="awards">
-            <h2>Awards</h2>
             <div className="timeline">
                 {awards.map((exp, index) => (
                     <div key={index} className="timeline-item">

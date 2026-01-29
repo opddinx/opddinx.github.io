@@ -19,13 +19,15 @@ float hash(vec2 p) {
     return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453123);
 }
 
-float circle(vec2 uv, vec2 center, float radius, float softness) {
-    float d = length(uv - center);
+float circle(vec2 uv, vec2 center, float radius, float softness, vec2 aspect) {
+    vec2 diff = (uv - center) * aspect;
+    float d = length(diff);
     return smoothstep(radius, radius - softness, d);
 }
 
-float ring(vec2 uv, vec2 center, float radius, float thickness, float softness) {
-    float d = length(uv - center);
+float ring(vec2 uv, vec2 center, float radius, float thickness, float softness, vec2 aspect) {
+    vec2 diff = (uv - center) * aspect;
+    float d = length(diff);
     float inner = radius - thickness;
     float outer = radius + thickness;
     float innerEdge = smoothstep(inner - softness, inner + softness, d);
@@ -35,31 +37,32 @@ float ring(vec2 uv, vec2 center, float radius, float thickness, float softness) 
 
 void main() {
     vec2 uv = gl_FragCoord.xy / u_resolution;
+    vec2 aspect = vec2(u_resolution.x / u_resolution.y, 1.0);
     vec2 pointer = u_pointer;
     vec2 center = vec2(0.5);
     vec2 dir = normalize(center - pointer);
 
     float dist = length(uv - pointer);
-    float core = exp(-dist * dist * 14.0);
+    float core = exp(-dist * dist * 20.0);
 
-    float streak = exp(-abs(uv.y - pointer.y) * 20.0) * exp(-abs(uv.x - pointer.x) * 2.1);
+    float streak = exp(-abs(uv.y - pointer.y) * 55.0) * exp(-abs(uv.x - pointer.x) * 6.5);
 
-    float ghost1 = circle(uv, mix(pointer, center, 0.2), 0.16, 0.1);
-    float ghost2 = circle(uv, mix(pointer, center, 0.55) + dir * 0.08, 0.12, 0.08);
-    float ghost3 = circle(uv, mix(pointer, center, 0.78) - dir * 0.12, 0.2, 0.12);
+    float ghost1 = circle(uv, mix(pointer, center, 0.2), 0.075, 0.035, aspect);
+    float ghost2 = circle(uv, mix(pointer, center, 0.55) + dir * 0.08, 0.06, 0.03, aspect);
+    float ghost3 = circle(uv, mix(pointer, center, 0.78) - dir * 0.12, 0.085, 0.04, aspect);
 
     vec2 arcCenter = mix(pointer, center, 0.32) + vec2(-0.1, 0.06);
-    float arc = ring(uv, arcCenter, 0.5, 0.12, 0.08);
+    float arc = ring(uv, arcCenter, 0.44, 0.06, 0.025, aspect);
 
     vec3 leakColor = vec3(0.42, 0.86, 0.78);
     vec3 pink = vec3(0.78, 0.42, 0.62);
     vec3 violet = vec3(0.35, 0.44, 0.74);
 
     vec3 color = leakColor * core * 0.9;
-    color += violet * streak * 0.55;
-    color += pink * ghost1 * 0.45;
-    color += leakColor * ghost2 * 0.42;
-    color += violet * ghost3 * 0.38;
+    color += violet * streak * 1.05;
+    color += pink * ghost1 * 0.5;
+    color += leakColor * ghost2 * 0.45;
+    color += violet * ghost3 * 0.4;
 
     float bokeh = 0.0;
     for (int i = 0; i < 3; i++) {
@@ -67,13 +70,13 @@ void main() {
         vec2 seed = vec2(fi * 1.31, fi * 2.71);
         vec2 pos = vec2(hash(seed + 0.1), hash(seed + 0.7));
         pos += vec2(sin(u_time * 0.15 + fi), cos(u_time * 0.12 + fi)) * 0.02;
-        float size = 0.08 + hash(seed + 1.3) * 0.06;
-        bokeh += circle(uv, pos, size, size * 0.9) * 0.18;
+        float size = 0.05 + hash(seed + 1.3) * 0.03;
+        bokeh += circle(uv, pos, size, size, aspect) * 0.22;
     }
-    color += leakColor * bokeh * 0.35;
-    color += vec3(0.82, 0.8, 0.92) * arc * 0.5;
+    color += leakColor * bokeh * 0.22;
+    color += vec3(0.82, 0.8, 0.92) * arc * 0.4;
 
-    float alpha = clamp(core * 0.6 + streak * 0.4 + ghost1 * 0.6 + ghost2 * 0.5 + ghost3 * 0.5 + bokeh * 0.5 + arc * 0.55, 0.0, 1.0);
+    float alpha = clamp(core * 0.95 + streak * 0.8 + ghost1 * 0.55 + ghost2 * 0.5 + ghost3 * 0.45 + bokeh * 0.5 + arc * 0.9, 0.0, 1.0);
     gl_FragColor = vec4(color, alpha);
 }
 `;
@@ -171,7 +174,7 @@ const LensFlareOverlay: React.FC = () => {
         gl.enable(gl.BLEND);
         gl.blendFunc(gl.ONE, gl.ONE);
 
-        const frameInterval = isLowPower ? 60 : 33;
+        const frameInterval = isLowPower ? 100 : 33;
         let lastFrame = 0;
         const render = (time: number) => {
             if (time - lastFrame < frameInterval) {
@@ -179,9 +182,9 @@ const LensFlareOverlay: React.FC = () => {
                 return;
             }
             lastFrame = time;
-            const t = time * 0.00014;
-            pointerX = 0.35 + Math.sin(t * 2.2) * 0.22;
-            pointerY = 0.55 + Math.cos(t * 1.7) * 0.18;
+            const t = time * 0.00012;
+            pointerX = 0.35 + Math.sin(t * 2.0) * 0.18;
+            pointerY = 0.55 + Math.cos(t * 1.5) * 0.14;
             gl.clearColor(0, 0, 0, 0);
             gl.clear(gl.COLOR_BUFFER_BIT);
             gl.uniform2f(resolutionLoc, width, height);
@@ -256,13 +259,13 @@ const WebGPUBackground: React.FC = () => {
                 (navigator as { deviceMemory?: number }).deviceMemory <= 4);
 
         const settings = {
-            iterationsPoisson: isLowPower ? 16 : 32,
-            iterationsViscous: isLowPower ? 8 : 32,
-            mouseForce: isLowPower ? 12 : 20,
-            resolution: isLowPower ? 0.32 : 0.5,
-            cursorSize: isLowPower ? 70 : 100,
+            iterationsPoisson: isLowPower ? 12 : 32,
+            iterationsViscous: isLowPower ? 4 : 32,
+            mouseForce: isLowPower ? 10 : 20,
+            resolution: isLowPower ? 0.26 : 0.5,
+            cursorSize: isLowPower ? 60 : 100,
             viscous: 30,
-            dt: isLowPower ? 0.016 : 0.014,
+            dt: isLowPower ? 0.018 : 0.014,
             isBounce: false,
             isViscous: false,
             BFECC: !isLowPower,
@@ -583,8 +586,10 @@ fn fs_main(input: VertexOut) -> @location(0) vec4<f32> {
 
     let color = vec3<f32>(velNorm.x, velNorm.y, 1.0);
     let mixed = mix(vec3<f32>(1.0, 1.0, 1.0), color, len);
+    let boosted = clamp((mixed - vec3<f32>(0.5)) * 1.35 + vec3<f32>(0.5), vec3<f32>(0.0), vec3<f32>(1.0));
+    let gamma = pow(boosted, vec3<f32>(0.85));
 
-    return vec4<f32>(mixed, 1.0);
+    return vec4<f32>(gamma, 1.0);
 }
 `;
 
@@ -1170,7 +1175,7 @@ fn fs_main(input: VertexOut) -> @location(0) vec4<f32> {
                 device.queue.submit([encoder.finish()]);
             };
 
-            const frameInterval = isLowPower ? 50 : 16;
+            const frameInterval = isLowPower ? 80 : 16;
             let lastFrame = 0;
             const tick = () => {
                 if (!isVisible || !isRunning) return;
@@ -1262,11 +1267,11 @@ const WebGLBackground: React.FC = () => {
                 (navigator as { deviceMemory?: number }).deviceMemory <= 4);
 
         const settings = {
-            iterationsPoisson: isLowPower ? 16 : 32,
-            mouseForce: isLowPower ? 12 : 20,
-            resolution: isLowPower ? 0.32 : 0.5,
-            cursorSize: isLowPower ? 70 : 100,
-            dt: isLowPower ? 0.016 : 0.014,
+            iterationsPoisson: isLowPower ? 12 : 32,
+            mouseForce: isLowPower ? 10 : 20,
+            resolution: isLowPower ? 0.26 : 0.5,
+            cursorSize: isLowPower ? 60 : 100,
+            dt: isLowPower ? 0.018 : 0.014,
             isBounce: false,
             BFECC: !isLowPower,
         };
@@ -1482,7 +1487,9 @@ void main(){
     vel = vel * 0.5 + 0.5;
     vec3 color = vec3(vel.x, vel.y, 1.0);
     color = mix(vec3(1.0), color, len);
-    gl_FragColor = vec4(color,  1.0);
+    vec3 boosted = clamp((color - 0.5) * 1.35 + 0.5, 0.0, 1.0);
+    vec3 gamma = pow(boosted, vec3(0.85));
+    gl_FragColor = vec4(gamma, 1.0);
 }
 `;
 
@@ -1728,7 +1735,7 @@ void main(){
             gl.drawArrays(gl.TRIANGLES, 0, 6);
         };
 
-        const frameInterval = isLowPower ? 50 : 16;
+        const frameInterval = isLowPower ? 80 : 16;
         let lastFrame = 0;
         const tick = () => {
             if (!isVisible || !isRunning) return;
@@ -1803,7 +1810,7 @@ const Background: React.FC = () => {
             window.matchMedia('(max-width: 768px)').matches ||
             (typeof (navigator as { deviceMemory?: number }).deviceMemory === 'number' &&
                 (navigator as { deviceMemory?: number }).deviceMemory <= 4);
-        const frameInterval = isLowPower ? 80 : 50;
+        const frameInterval = isLowPower ? 120 : 50;
 
         const animate = (time: number) => {
             if (!start) {
@@ -1814,9 +1821,9 @@ const Background: React.FC = () => {
                 return;
             }
             lastFrame = time;
-            const t = (time - start) * 0.00009;
-            const x = 35 + Math.sin(t * 2.6) * 20;
-            const y = 60 + Math.cos(t * 2.1) * 14;
+            const t = (time - start) * 0.00008;
+            const x = 35 + Math.sin(t * 2.3) * 18;
+            const y = 60 + Math.cos(t * 1.9) * 12;
             root.style.setProperty('--leak-x', `${x.toFixed(2)}%`);
             root.style.setProperty('--leak-y', `${y.toFixed(2)}%`);
             rafId = window.requestAnimationFrame(animate);

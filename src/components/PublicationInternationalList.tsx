@@ -66,7 +66,6 @@ const PublicationList: React.FC = () => {
 
     return (
         <section className="publications">
-            <h2>Publications (International)</h2>
             {publications.map(yearGroup => (
                 <div key={yearGroup.year} className="year-group">
                     <h3>{yearGroup.year}</h3>
