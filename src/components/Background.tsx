@@ -87,6 +87,17 @@ const LensFlareOverlay: React.FC = () => {
             return undefined;
         }
 
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const isLowPower =
+            prefersReducedMotion ||
+            window.matchMedia('(max-width: 768px)').matches ||
+            (typeof (navigator as { deviceMemory?: number }).deviceMemory === 'number' &&
+                (navigator as { deviceMemory?: number }).deviceMemory <= 4);
+
+        if (prefersReducedMotion) {
+            return undefined;
+        }
+
         const gl = canvas.getContext('webgl', { alpha: true, antialias: false });
         if (!gl) {
             return undefined;
@@ -144,7 +155,7 @@ const LensFlareOverlay: React.FC = () => {
         let rafId = 0;
 
         const resize = () => {
-            const dpr = Math.min(window.devicePixelRatio || 1, 1.25);
+            const dpr = Math.min(window.devicePixelRatio || 1, isLowPower ? 1 : 1.25);
             width = Math.max(1, Math.floor(canvas.clientWidth * dpr));
             height = Math.max(1, Math.floor(canvas.clientHeight * dpr));
             canvas.width = width;
@@ -160,9 +171,10 @@ const LensFlareOverlay: React.FC = () => {
         gl.enable(gl.BLEND);
         gl.blendFunc(gl.ONE, gl.ONE);
 
+        const frameInterval = isLowPower ? 60 : 33;
         let lastFrame = 0;
         const render = (time: number) => {
-            if (time - lastFrame < 33) {
+            if (time - lastFrame < frameInterval) {
                 rafId = window.requestAnimationFrame(render);
                 return;
             }
@@ -237,18 +249,23 @@ const WebGPUBackground: React.FC = () => {
         let isRunning = true;
 
         const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const isLowPower =
+            prefersReducedMotion ||
+            window.matchMedia('(max-width: 768px)').matches ||
+            (typeof (navigator as { deviceMemory?: number }).deviceMemory === 'number' &&
+                (navigator as { deviceMemory?: number }).deviceMemory <= 4);
 
         const settings = {
-            iterationsPoisson: 32,
-            iterationsViscous: 32,
-            mouseForce: 20,
-            resolution: 0.5,
-            cursorSize: 100,
+            iterationsPoisson: isLowPower ? 16 : 32,
+            iterationsViscous: isLowPower ? 8 : 32,
+            mouseForce: isLowPower ? 12 : 20,
+            resolution: isLowPower ? 0.32 : 0.5,
+            cursorSize: isLowPower ? 70 : 100,
             viscous: 30,
-            dt: 0.014,
+            dt: isLowPower ? 0.016 : 0.014,
             isBounce: false,
             isViscous: false,
-            BFECC: true,
+            BFECC: !isLowPower,
         };
 
         const mouse = {
@@ -1153,8 +1170,16 @@ fn fs_main(input: VertexOut) -> @location(0) vec4<f32> {
                 device.queue.submit([encoder.finish()]);
             };
 
+            const frameInterval = isLowPower ? 50 : 16;
+            let lastFrame = 0;
             const tick = () => {
                 if (!isVisible || !isRunning) return;
+                const now = performance.now();
+                if (now - lastFrame < frameInterval) {
+                    animationFrame = requestAnimationFrame(tick);
+                    return;
+                }
+                lastFrame = now;
                 stepSimulation();
                 if (!prefersReducedMotion) {
                     animationFrame = requestAnimationFrame(tick);
@@ -1230,15 +1255,20 @@ const WebGLBackground: React.FC = () => {
         let isRunning = true;
 
         const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const isLowPower =
+            prefersReducedMotion ||
+            window.matchMedia('(max-width: 768px)').matches ||
+            (typeof (navigator as { deviceMemory?: number }).deviceMemory === 'number' &&
+                (navigator as { deviceMemory?: number }).deviceMemory <= 4);
 
         const settings = {
-            iterationsPoisson: 32,
-            mouseForce: 20,
-            resolution: 0.5,
-            cursorSize: 100,
-            dt: 0.014,
+            iterationsPoisson: isLowPower ? 16 : 32,
+            mouseForce: isLowPower ? 12 : 20,
+            resolution: isLowPower ? 0.32 : 0.5,
+            cursorSize: isLowPower ? 70 : 100,
+            dt: isLowPower ? 0.016 : 0.014,
             isBounce: false,
-            BFECC: true,
+            BFECC: !isLowPower,
         };
 
         const mouse = {
@@ -1698,8 +1728,16 @@ void main(){
             gl.drawArrays(gl.TRIANGLES, 0, 6);
         };
 
+        const frameInterval = isLowPower ? 50 : 16;
+        let lastFrame = 0;
         const tick = () => {
             if (!isVisible || !isRunning) return;
+            const now = performance.now();
+            if (now - lastFrame < frameInterval) {
+                animationFrame = requestAnimationFrame(tick);
+                return;
+            }
+            lastFrame = now;
             render();
             if (!prefersReducedMotion) {
                 animationFrame = requestAnimationFrame(tick);
@@ -1759,19 +1797,26 @@ const Background: React.FC = () => {
         let rafId = 0;
         let start = 0;
         let lastFrame = 0;
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const isLowPower =
+            prefersReducedMotion ||
+            window.matchMedia('(max-width: 768px)').matches ||
+            (typeof (navigator as { deviceMemory?: number }).deviceMemory === 'number' &&
+                (navigator as { deviceMemory?: number }).deviceMemory <= 4);
+        const frameInterval = isLowPower ? 80 : 50;
 
         const animate = (time: number) => {
             if (!start) {
                 start = time;
             }
-            if (time - lastFrame < 33) {
+            if (time - lastFrame < frameInterval) {
                 rafId = window.requestAnimationFrame(animate);
                 return;
             }
             lastFrame = time;
-            const t = (time - start) * 0.00012;
-            const x = 35 + Math.sin(t * 3.1) * 24;
-            const y = 60 + Math.cos(t * 2.6) * 18;
+            const t = (time - start) * 0.00009;
+            const x = 35 + Math.sin(t * 2.6) * 20;
+            const y = 60 + Math.cos(t * 2.1) * 14;
             root.style.setProperty('--leak-x', `${x.toFixed(2)}%`);
             root.style.setProperty('--leak-y', `${y.toFixed(2)}%`);
             rafId = window.requestAnimationFrame(animate);

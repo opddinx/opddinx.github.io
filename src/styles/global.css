@@ -743,6 +743,18 @@ html {
 }
 
 @media screen and (max-width: 767px) {
+    :root {
+        --heading-size: clamp(1.4rem, 6vw, 1.8rem);
+    }
+
+    body {
+        font-size: 0.95rem;
+    }
+
+    .container {
+        padding: 1.3rem 1.1rem 1.8rem;
+    }
+
     .news-item {
         padding: 1.2rem 1.4rem;
         grid-template-columns: 1fr;
