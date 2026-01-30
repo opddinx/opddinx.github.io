@@ -43,40 +43,20 @@ void main() {
     vec2 dir = normalize(center - pointer);
 
     float dist = length(uv - pointer);
-    float core = exp(-dist * dist * 20.0);
-
-    float streak = exp(-abs(uv.y - pointer.y) * 55.0) * exp(-abs(uv.x - pointer.x) * 6.5);
-
-    float ghost1 = circle(uv, mix(pointer, center, 0.2), 0.075, 0.035, aspect);
-    float ghost2 = circle(uv, mix(pointer, center, 0.55) + dir * 0.08, 0.06, 0.03, aspect);
-    float ghost3 = circle(uv, mix(pointer, center, 0.78) - dir * 0.12, 0.085, 0.04, aspect);
-
-    vec2 arcCenter = mix(pointer, center, 0.32) + vec2(-0.1, 0.06);
-    float arc = ring(uv, arcCenter, 0.44, 0.06, 0.025, aspect);
+    float core = exp(-dist * dist * 12.0);
+    float streak = exp(-abs(uv.y - pointer.y) * 28.0) * exp(-abs(uv.x - pointer.x) * 3.2);
+    vec2 arcCenter = mix(pointer, center, 0.32) + vec2(-0.08, 0.04);
+    float arc = ring(uv, arcCenter, 0.5, 0.06, 0.03, aspect);
 
     vec3 leakColor = vec3(0.42, 0.86, 0.78);
     vec3 pink = vec3(0.78, 0.42, 0.62);
     vec3 violet = vec3(0.35, 0.44, 0.74);
 
     vec3 color = leakColor * core * 0.9;
-    color += violet * streak * 1.05;
-    color += pink * ghost1 * 0.5;
-    color += leakColor * ghost2 * 0.45;
-    color += violet * ghost3 * 0.4;
+    color += violet * streak * 0.45;
+    color += vec3(0.82, 0.8, 0.92) * arc * 0.28;
 
-    float bokeh = 0.0;
-    for (int i = 0; i < 3; i++) {
-        float fi = float(i);
-        vec2 seed = vec2(fi * 1.31, fi * 2.71);
-        vec2 pos = vec2(hash(seed + 0.1), hash(seed + 0.7));
-        pos += vec2(sin(u_time * 0.15 + fi), cos(u_time * 0.12 + fi)) * 0.02;
-        float size = 0.05 + hash(seed + 1.3) * 0.03;
-        bokeh += circle(uv, pos, size, size, aspect) * 0.22;
-    }
-    color += leakColor * bokeh * 0.22;
-    color += vec3(0.82, 0.8, 0.92) * arc * 0.4;
-
-    float alpha = clamp(core * 0.95 + streak * 0.8 + ghost1 * 0.55 + ghost2 * 0.5 + ghost3 * 0.45 + bokeh * 0.5 + arc * 0.9, 0.0, 1.0);
+    float alpha = clamp(core * 0.6 + streak * 0.5 + arc * 0.45, 0.0, 1.0);
     gl_FragColor = vec4(color, alpha);
 }
 `;
@@ -259,47 +239,22 @@ const WebGPUBackground: React.FC = () => {
                 (navigator as { deviceMemory?: number }).deviceMemory <= 4);
 
         const settings = {
-            iterationsPoisson: isLowPower ? 12 : 32,
-            iterationsViscous: isLowPower ? 4 : 32,
-            mouseForce: isLowPower ? 10 : 20,
-            resolution: isLowPower ? 0.26 : 0.5,
-            cursorSize: isLowPower ? 60 : 100,
+            iterationsPoisson: isLowPower ? 4 : 8,
+            iterationsViscous: isLowPower ? 2 : 4,
+            mouseForce: 0,
+            resolution: isLowPower ? 0.16 : 0.22,
+            cursorSize: isLowPower ? 55 : 90,
             viscous: 30,
-            dt: isLowPower ? 0.018 : 0.014,
+            dt: isLowPower ? 0.018 : 0.012,
             isBounce: false,
             isViscous: false,
-            BFECC: !isLowPower,
+            BFECC: false,
         };
 
         const mouse = {
             coords: { x: 0, y: 0 },
             prev: { x: 0, y: 0 },
             diff: { x: 0, y: 0 },
-            timer: null as number | null,
-        };
-
-        const updateMouseCoords = (clientX: number, clientY: number) => {
-            const width = window.innerWidth || 1;
-            const height = window.innerHeight || 1;
-            mouse.coords.x = (clientX / width) * 2 - 1;
-            mouse.coords.y = -(clientY / height) * 2 + 1;
-            if (mouse.timer) {
-                window.clearTimeout(mouse.timer);
-            }
-            mouse.timer = window.setTimeout(() => {
-                mouse.diff.x = 0;
-                mouse.diff.y = 0;
-            }, 100);
-        };
-
-        const handlePointerMove = (event: PointerEvent) => {
-            updateMouseCoords(event.clientX, event.clientY);
-        };
-
-        const handleTouchMove = (event: TouchEvent) => {
-            if (event.touches.length === 1) {
-                updateMouseCoords(event.touches[0].pageX, event.touches[0].pageY);
-            }
         };
 
         const clearWGSL = `
@@ -777,8 +732,8 @@ fn fs_main(input: VertexOut) -> @location(0) vec4<f32> {
                     1 - cursorSizeY - px.y * 2
                 );
 
-                const forceX = (mouse.diff.x / 2) * settings.mouseForce;
-                const forceY = (mouse.diff.y / 2) * settings.mouseForce;
+                const forceX = 0;
+                const forceY = 0;
 
                 const data = new Float32Array([
                     forceX,
@@ -795,15 +750,23 @@ fn fs_main(input: VertexOut) -> @location(0) vec4<f32> {
 
             const createResources = () => {
                 if (!device || !context || !format) return null;
-                const dpr = Math.min(window.devicePixelRatio || 1, 2);
-                const width = Math.max(1, Math.floor(canvas.clientWidth * dpr));
-                const height = Math.max(1, Math.floor(canvas.clientHeight * dpr));
+                const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+                const maxDim = device.limits.maxTextureDimension2D;
+                const widthRaw = Math.max(1, Math.floor(canvas.clientWidth * dpr));
+                const heightRaw = Math.max(1, Math.floor(canvas.clientHeight * dpr));
+                const width = Math.min(widthRaw, maxDim);
+                const height = Math.min(heightRaw, maxDim);
                 canvas.width = width;
                 canvas.height = height;
                 context.configure({ device, format, alphaMode: 'opaque' });
 
-                const fboWidth = Math.max(1, Math.round(settings.resolution * width));
-                const fboHeight = Math.max(1, Math.round(settings.resolution * height));
+                let fboWidth = Math.max(1, Math.round(settings.resolution * width));
+                let fboHeight = Math.max(1, Math.round(settings.resolution * height));
+                if (fboWidth > maxDim || fboHeight > maxDim) {
+                    const scale = Math.min(maxDim / fboWidth, maxDim / fboHeight, 1);
+                    fboWidth = Math.max(1, Math.floor(fboWidth * scale));
+                    fboHeight = Math.max(1, Math.floor(fboHeight * scale));
+                }
                 const px = { x: 1 / fboWidth, y: 1 / fboHeight };
                 const boundary = settings.isBounce ? { x: 0, y: 0 } : px;
 
@@ -1175,11 +1138,19 @@ fn fs_main(input: VertexOut) -> @location(0) vec4<f32> {
                 device.queue.submit([encoder.finish()]);
             };
 
-            const frameInterval = isLowPower ? 80 : 16;
+            const frameInterval = isLowPower ? 120 : 80;
             let lastFrame = 0;
+            let lastScroll = 0;
+            const handleScroll = () => {
+                lastScroll = performance.now();
+            };
             const tick = () => {
                 if (!isVisible || !isRunning) return;
                 const now = performance.now();
+                if (now - lastScroll < 180) {
+                    animationFrame = requestAnimationFrame(tick);
+                    return;
+                }
                 if (now - lastFrame < frameInterval) {
                     animationFrame = requestAnimationFrame(tick);
                     return;
@@ -1208,8 +1179,7 @@ fn fs_main(input: VertexOut) -> @location(0) vec4<f32> {
             observer.observe(canvas);
             window.addEventListener('resize', handleResize);
             document.addEventListener('visibilitychange', handleVisibility);
-            window.addEventListener('pointermove', handlePointerMove);
-            window.addEventListener('touchmove', handleTouchMove, { passive: true });
+            window.addEventListener('scroll', handleScroll, { passive: true });
 
             tick();
 
@@ -1217,8 +1187,7 @@ fn fs_main(input: VertexOut) -> @location(0) vec4<f32> {
                 observer.disconnect();
                 window.removeEventListener('resize', handleResize);
                 document.removeEventListener('visibilitychange', handleVisibility);
-                window.removeEventListener('pointermove', handlePointerMove);
-                window.removeEventListener('touchmove', handleTouchMove);
+                window.removeEventListener('scroll', handleScroll);
                 if (animationFrame) {
                     cancelAnimationFrame(animationFrame);
                 }
@@ -1267,44 +1236,19 @@ const WebGLBackground: React.FC = () => {
                 (navigator as { deviceMemory?: number }).deviceMemory <= 4);
 
         const settings = {
-            iterationsPoisson: isLowPower ? 12 : 32,
-            mouseForce: isLowPower ? 10 : 20,
-            resolution: isLowPower ? 0.26 : 0.5,
-            cursorSize: isLowPower ? 60 : 100,
-            dt: isLowPower ? 0.018 : 0.014,
+            iterationsPoisson: isLowPower ? 4 : 8,
+            mouseForce: 0,
+            resolution: isLowPower ? 0.16 : 0.22,
+            cursorSize: isLowPower ? 55 : 90,
+            dt: isLowPower ? 0.018 : 0.012,
             isBounce: false,
-            BFECC: !isLowPower,
+            BFECC: false,
         };
 
         const mouse = {
             coords: { x: 0, y: 0 },
             prev: { x: 0, y: 0 },
             diff: { x: 0, y: 0 },
-            timer: null as number | null,
-        };
-
-        const updateMouseCoords = (clientX: number, clientY: number) => {
-            const width = window.innerWidth || 1;
-            const height = window.innerHeight || 1;
-            mouse.coords.x = (clientX / width) * 2 - 1;
-            mouse.coords.y = -(clientY / height) * 2 + 1;
-            if (mouse.timer) {
-                window.clearTimeout(mouse.timer);
-            }
-            mouse.timer = window.setTimeout(() => {
-                mouse.diff.x = 0;
-                mouse.diff.y = 0;
-            }, 100);
-        };
-
-        const handlePointerMove = (event: PointerEvent) => {
-            updateMouseCoords(event.clientX, event.clientY);
-        };
-
-        const handleTouchMove = (event: TouchEvent) => {
-            if (event.touches.length === 1) {
-                updateMouseCoords(event.touches[0].pageX, event.touches[0].pageY);
-            }
         };
 
         const getExtension = (name: string) => gl.getExtension(name);
@@ -1578,15 +1522,23 @@ void main(){
         };
 
         const resize = () => {
-            const dpr = Math.min(window.devicePixelRatio || 1, 2);
-            width = Math.max(1, Math.floor(canvas.clientWidth * dpr));
-            height = Math.max(1, Math.floor(canvas.clientHeight * dpr));
+            const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+            const maxDim = gl.getParameter(gl.MAX_TEXTURE_SIZE) || 4096;
+            const widthRaw = Math.max(1, Math.floor(canvas.clientWidth * dpr));
+            const heightRaw = Math.max(1, Math.floor(canvas.clientHeight * dpr));
+            width = Math.min(widthRaw, maxDim);
+            height = Math.min(heightRaw, maxDim);
             canvas.width = width;
             canvas.height = height;
             gl.viewport(0, 0, width, height);
 
             fboWidth = Math.max(1, Math.round(settings.resolution * width));
             fboHeight = Math.max(1, Math.round(settings.resolution * height));
+            if (fboWidth > maxDim || fboHeight > maxDim) {
+                const scale = Math.min(maxDim / fboWidth, maxDim / fboHeight, 1);
+                fboWidth = Math.max(1, Math.floor(fboWidth * scale));
+                fboHeight = Math.max(1, Math.floor(fboHeight * scale));
+            }
 
             vel0 = createTexture(fboWidth, fboHeight);
             vel1 = createTexture(fboWidth, fboHeight);
@@ -1663,8 +1615,8 @@ void main(){
             gl.viewport(0, 0, fboWidth, fboHeight);
             bindMouse(externalProgram);
 
-            const forceX = (mouse.diff.x / 2) * settings.mouseForce;
-            const forceY = (mouse.diff.y / 2) * settings.mouseForce;
+            const forceX = 0;
+            const forceY = 0;
             const cursorSizeX = settings.cursorSize * px[0];
             const cursorSizeY = settings.cursorSize * px[1];
             const centerX = Math.min(Math.max(mouse.coords.x, -1 + cursorSizeX + px[0] * 2), 1 - cursorSizeX - px[0] * 2);
@@ -1735,11 +1687,19 @@ void main(){
             gl.drawArrays(gl.TRIANGLES, 0, 6);
         };
 
-        const frameInterval = isLowPower ? 80 : 16;
+        const frameInterval = isLowPower ? 120 : 80;
         let lastFrame = 0;
+        let lastScroll = 0;
+        const handleScroll = () => {
+            lastScroll = performance.now();
+        };
         const tick = () => {
             if (!isVisible || !isRunning) return;
             const now = performance.now();
+            if (now - lastScroll < 180) {
+                animationFrame = requestAnimationFrame(tick);
+                return;
+            }
             if (now - lastFrame < frameInterval) {
                 animationFrame = requestAnimationFrame(tick);
                 return;
@@ -1769,8 +1729,7 @@ void main(){
         observer.observe(canvas);
         window.addEventListener('resize', resize);
         document.addEventListener('visibilitychange', handleVisibility);
-        window.addEventListener('pointermove', handlePointerMove);
-        window.addEventListener('touchmove', handleTouchMove, { passive: true });
+        window.addEventListener('scroll', handleScroll, { passive: true });
 
         tick();
 
@@ -1779,8 +1738,7 @@ void main(){
             observer.disconnect();
             window.removeEventListener('resize', resize);
             document.removeEventListener('visibilitychange', handleVisibility);
-            window.removeEventListener('pointermove', handlePointerMove);
-            window.removeEventListener('touchmove', handleTouchMove);
+            window.removeEventListener('scroll', handleScroll);
             if (animationFrame) {
                 cancelAnimationFrame(animationFrame);
             }
