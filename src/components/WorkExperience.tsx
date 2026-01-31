@@ -13,13 +13,13 @@ const WorkExperience: React.FC = () => {
             title: "R&D Internship Student",
             company: "Nippon Telegraph and Telephone Corporation (NTT R&D)",
             period: "Feb. 2024 - Mar. 2024 (3 weeks)",
-            description: "Data Science, Cognitive Science, Human-Computer Interaction (the detail is not open due to NDA).",
+            description: "Data Science, Cognitive Science, Human-Computer Interaction.",
         },
         {
             title: "R&D Internship Student",
             company: "Sony Corporation",
             period: "Feb. 2024 (3weeks)",
-            description: "3D Computer Vision and Radiance Fields (the detail is not open due to NDA)",
+            description: "3D Computer Vision and Radiance Fields",
         },
         {
             title: "Student Assistant & Teaching Assistant",
@@ -46,12 +46,10 @@ const WorkExperience: React.FC = () => {
             <div className="timeline">
                 {experiences.map((exp, index) => (
                     <div key={index} className="timeline-item">
-                        <div className="timeline-content">
-                            <h3>{exp.title}</h3>
-                            <h4>{exp.company}</h4>
-                            <p className="period">{exp.period}</p>
-                            <p className="description">{exp.description}</p>
-                        </div>
+                        <h3>{exp.title}</h3>
+                        <h4>{exp.company}</h4>
+                        <p className="period">{exp.period}</p>
+                        <p className="description">{exp.description}</p>
                     </div>
                 ))}
             </div>

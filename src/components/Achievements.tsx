@@ -66,12 +66,10 @@ const Achievements: React.FC = () => {
             <div className="timeline">
                 {achievements.map((exp, index) => (
                     <div key={index} className="timeline-item">
-                        <div className="timeline-content">
-                            <h3>{exp.title}</h3>
-                            <h4>{exp.company}</h4>
-                            <p className="period">{exp.period}</p>
-                            <p className="description">{exp.description}</p>
-                        </div>
+                        <h3>{exp.title}</h3>
+                        <h4>{exp.company}</h4>
+                        <p className="period">{exp.period}</p>
+                        <p className="description">{exp.description}</p>
                     </div>
                 ))}
             </div>

@@ -36,12 +36,10 @@ const Awards: React.FC = () => {
             <div className="timeline">
                 {awards.map((exp, index) => (
                     <div key={index} className="timeline-item">
-                        <div className="timeline-content">
-                            <h3>{exp.title}</h3>
-                            <h4>{exp.givenby}</h4>
-                            <p className="time">{exp.time}</p>
-                            <p className="description">{exp.description}</p>
-                        </div>
+                        <h3>{exp.title}</h3>
+                        <h4>{exp.givenby}</h4>
+                        <p className="time">{exp.time}</p>
+                        <p className="description">{exp.description}</p>
                     </div>
                 ))}
             </div>

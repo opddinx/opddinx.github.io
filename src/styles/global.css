@@ -362,11 +362,11 @@ a:hover {
 .awards,
 .publications {
     margin-top: 1.6rem;
-    padding: 1.6rem;
-    background: var(--paper);
-    border-radius: 14px;
-    border: 1px solid var(--paper-border);
-    box-shadow: 0 18px 36px -30px rgb(15 23 42 / 0.35);
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
 }
 
 .timeline {
@@ -381,19 +381,11 @@ a:hover {
     border-left: 2px solid var(--accent-soft);
 }
 
-.timeline-content {
-    background: transparent;
-    border-radius: 10px;
-    border: none;
-    padding: 0.4rem 0 0.6rem;
-    box-shadow: none;
-}
-
-.timeline-content h3 {
+.timeline-item h3 {
     margin: 0 0 0.35rem;
 }
 
-.timeline-content h4 {
+.timeline-item h4 {
     margin: 0 0 0.6rem;
     color: var(--ink-muted);
 }
@@ -411,20 +403,16 @@ a:hover {
     color: var(--ink-muted);
 }
 
-.publications .year-group {
-    margin-top: 1rem;
-    padding: 0.6rem 0;
-    border-radius: 0;
-    border: none;
-    background: transparent;
-}
-
 .publications ul {
     list-style: none;
     padding: 0;
     margin: 0.8rem 0 0;
     display: grid;
     gap: 0.8rem;
+}
+
+.publication-year {
+    margin: 1.6rem 0 0.8rem;
 }
 
 .publications li {

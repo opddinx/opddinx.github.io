@@ -31,7 +31,7 @@ const Educations: React.FC = () => {
             title: "Bachelor's Degree in Engineering",
             faculty: "Intelligent Systems Science Course, Department of Systems Science, School of Engineering Science, Osaka University (Osaka, Japan)",
             period: "Apr. 2019 - Mar. 2023",
-            description: "I earned a degree in Systems Science (Intelligent Systems). In my third year of undergraduate studies, I conducted an independent research on HAI under the guidance of Guest Associate Professor Takahashi and in my fourth year of undergraduate studies, I did research on 3D data processing technology for manual work by applying computer vision at SENSLab.",
+            description: "In my third year of undergraduate studies, I conducted an independent research on HAI under the guidance of Guest Associate Professor Takahashi and in my fourth year of undergraduate studies, I did research on 3D data processing technology for manual work by applying computer vision at SENSLab.",
         },
         // More experiences...
     ];
@@ -41,12 +41,10 @@ const Educations: React.FC = () => {
             <div className="timeline">
                 {educations.map((exp, index) => (
                     <div key={index} className="timeline-item">
-                        <div className="timeline-content">
-                            <h3>{exp.title}</h3>
-                            <h4>{exp.faculty}</h4>
-                            <p className="period">{exp.period}</p>
-                            <p className="description">{exp.description}</p>
-                        </div>
+                        <h3>{exp.title}</h3>
+                        <h4>{exp.faculty}</h4>
+                        <p className="period">{exp.period}</p>
+                        <p className="description">{exp.description}</p>
                     </div>
                 ))}
             </div>
