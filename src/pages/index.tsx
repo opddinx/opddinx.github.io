@@ -6,7 +6,6 @@ import WorkExperience from '../components/WorkExperience';
 import AboutMe from '../components/AboutMe';
 import Education from '../components/Education';
 import Footer from '../components/Footer';
-import Scholarships from '../components/Achievements';
 import Awards from '../components/Awards';
 import Header from '../components/Header';
 import AnimatedHoverText from '../components/AnimatedHoverText';
@@ -14,6 +13,7 @@ import Background from '../components/Background';
 import News from '../components/News';
 import ProjectsTeaser from '../components/ProjectsTeaser';
 import favicon from '../images/favicon.ico';
+import Achievements from "../components/Achievements";
 
 // ToDo:
 // Improve background simulation animation
@@ -69,9 +69,9 @@ const IndexPage: React.FC<PageProps> = () => {
           <h2>Awards</h2>
           <Awards />
         </section>
-        <section id="scholarships">
+        <section id="achievements">
           <h2>Grants, Fellowship, Scholarship</h2>
-          <Scholarships />
+          <Achievements />
         </section>
         <Footer />
       </main>

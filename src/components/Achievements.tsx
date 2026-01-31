@@ -2,15 +2,15 @@
 
 import React from 'react';
 
-interface Scholarship {
+interface Achievements {
     title: string;
     company: string;
     period: string;
     description: string;
 }
 
-const Scholarships: React.FC = () => {
-    const scholarship: Scholarship[] = [
+const Achievements: React.FC = () => {
+    const achievements: Achievements[] = [
         {
             title: "SPIE Photonics West Student Travel Support",
             company: "SPIE, the international society for optics and photonics",
@@ -18,9 +18,15 @@ const Scholarships: React.FC = () => {
             description: "To present my research at SPIE Photonics West 2026 (1000 USD)."
         },
         {
+            title: "Innovative, Educational Research Grant, Program for Leading Graduate Schools (co-applicant)",
+            company: "The University of Osaka, Japan",
+            period: "Jul. 2025 - Mar. 2026",
+            description: "900K JPY for the research titled \"Unperceptive Action Guidance in the Real Environment using Subliminal Saliency Modulation\"."
+        },
+        {
             title: "Half Exemption from Return for Particularly Outstanding Achievement",
             company: "Japan Student Services Organization, Japan",
-            period: "Mar. 2025",
+            period: "May. 2025",
             description: "For academic achievement in MSc (1M JPY)."
         },
         {
@@ -56,9 +62,9 @@ const Scholarships: React.FC = () => {
     ];
 
     return (
-        <section className="scholarships">
+        <section className="achievements">
             <div className="timeline">
-                {scholarship.map((exp, index) => (
+                {achievements.map((exp, index) => (
                     <div key={index} className="timeline-item">
                         <div className="timeline-content">
                             <h3>{exp.title}</h3>
@@ -73,4 +79,4 @@ const Scholarships: React.FC = () => {
     );
 };
 
-export default Scholarships;
+export default Achievements;
