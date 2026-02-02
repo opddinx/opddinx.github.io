@@ -14,6 +14,8 @@ import News from '../components/News';
 import ProjectsTeaser from '../components/ProjectsTeaser';
 import favicon from '../images/favicon.ico';
 import Achievements from "../components/Achievements";
+import AcademicService from "../components/AcademicService";
+import Press from "../components/Press";
 
 // ToDo:
 // Improve background simulation animation
@@ -61,17 +63,25 @@ const IndexPage: React.FC<PageProps> = () => {
           <h2>Work Experience</h2>
           <WorkExperience />
         </section>
-        <section id="pubinternational">
-          <h2>Publications</h2>
-          <PublicationInternationalList />
-        </section>
         <section id="awards">
           <h2>Awards</h2>
           <Awards />
         </section>
+        <section id="press-invited">
+          <h2>Press and Invited Contents</h2>
+          <Press />
+        </section>
+        <section id="pubinternational">
+          <h2>Publications</h2>
+          <PublicationInternationalList />
+        </section>
         <section id="achievements">
           <h2>Grants, Fellowship, Scholarship</h2>
           <Achievements />
+        </section>
+        <section id="academic-service">
+          <h2>Academic Service and Teaching Experience</h2>
+          <AcademicService />
         </section>
         <Footer />
       </main>

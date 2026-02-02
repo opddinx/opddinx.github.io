@@ -22,22 +22,10 @@ const WorkExperience: React.FC = () => {
             description: "3D Computer Vision and Radiance Fields",
         },
         {
-            title: "Student Assistant & Teaching Assistant",
-            company: "Center for Education in Liberal Arts and Sciences, Osaka University (Osaka, Japan)",
-            period: "Nov. 2023 - Mar. 2025",
-            description: "I encourage high school students to have lively and invaluable scientific experiences in SEEDS program of Osaka University.",
-        },
-        {
-            title: "Teaching Assistant",
-            company: "School of Engineering Science, Osaka University (Osaka, Japan)",
-            period: "Apr. 2023 - Feb. 2024, Apr. 2025 - Aug. 2025",
-            description: "I assist undergraduate students in the class of C language basic programming exercises, and how to read technical books and academic papers.",
-        },
-        {
             title: "Research Assistant",
             company: "Kyoto Research, Sony Computer Science Laboratories, Inc. (Kyoto, Japan)",
             period: "Mar. 2023 - Present",
-            description: "As a research assistant, I'm working on a project called AnyLight (PI: Yuichiro Takeuchi), which reproduces illumination effects. Additionally, I edit some videos for public relations.",
+            description: "I'm working on a project called AnyLight (PI: Yuichiro Takeuchi), which reproduces illumination effects. I also edit some videos for public relations.",
         },
     ];
 

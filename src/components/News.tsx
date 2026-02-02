@@ -5,23 +5,44 @@ type NewsItem = {
     title: string;
     date: string;
     summary: string;
-    details: string;
 };
 
 const newsItems: NewsItem[] = [
     {
-        id: 'news1',
-        title: 'Joined XRGroup at Osaka University as a PhD Student',
-        date: 'April 2025',
-        summary: 'I have started my PhD studies at the XRGroup in the Graduate School of Engineering Science, Osaka University.',
-        details: 'I am excited to join the XRGroup and look forward to contributing to cutting-edge research in computer science and graphics.',
+        id: 'pw2026',
+        title: 'Presented a first-authored and co-authored oral presentation at Photonic West AR | VR | MR 2026',
+        date: 'Jan. 2026',
+        summary: '',
     },
     {
-        id: 'news2',
+        id: 'miru2025',
+        title: 'Presented first-authored poster at MIRU 2025',
+        date: 'Jul. 2025',
+        summary: '',
+    },
+    {
+        id: 'pocchan',
+        title: '"Pocchan" starts to be exhibited at Miraikan',
+        date: 'Jun. 2025',
+        summary: 'I developed its thermography-based interaction, and it is now part of the permanent exhibition "Hello! Robot" at Miraikan, The National Museum of Emerging Science and Innovation, Japan.',
+    },
+    {
+        id: 'nepfr',
+        title: 'Adapted for NEDO Entrepreneus Program',
+        date: 'Apr. 2025',
+        summary: 'My R&D project "Construction of an Immersive Story Editing Experience using Deep Generative Models and Virtual Reality" has been selected for the NEDO Entrepreneurs Program to implement it into society by launching a startup.',
+    },
+    {
+        id: 'joinxr',
+        title: 'Joined XRGroup at Osaka University as a PhD Student',
+        date: 'Apr. 2025',
+        summary: 'I have started my PhD studies at the XRGroup in the Graduate School of Engineering Science, Osaka University.',
+    },
+    {
+        id: 'siggraphasia2024',
         title: 'Presented Research at SIGGRAPH Asia 2024',
-        date: 'December 2024',
-        summary: 'Co-authored a student demo presentation at SIGGRAPH Asia 2024.',
-        details: 'Our work on "Casper DPM: Cascaded Perceptual Dynamic Projection Mapping onto Hands" was recognized with the Best Student Demo in Show Award.',
+        date: 'Dec. 2024',
+        summary: 'First-authored a poster and co-authored a student demo presentation at SIGGRAPH Asia 2024.',
     }
 ];
 
