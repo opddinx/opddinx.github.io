@@ -17,8 +17,8 @@ const AboutMe = () => {
                             XRGroup
                         </a>{" "}
                         at the University of Osaka, majoring in Computer Vision, Graphics, Interaction. 
-                        I investigate how humans sense the world, feel, think, express our feelings, and interpret what others express computationally, by creating new capture/display systems and experimental experiences. 
-                        I believe that understanding this process will give us insights into who we are, and how to create new media for communication in order to live better lives.
+                        I investigate how humans sense the world, feel, think, express our feelings, and interpret what others express, by creating new capture/display systems and experimental experiences. 
+                        I believe that understanding this process will give us insights into who we are, the better relationship with computers, and how to create new media for communication in order to live better lives.
                     </h4>
                 </div>
             </div>

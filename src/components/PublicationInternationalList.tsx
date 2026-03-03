@@ -7,6 +7,7 @@ interface Publication {
     authors: string;
     journal: string;
     attributes: string;
+    url?: string;
 }
 
 interface YearGroup {
@@ -20,10 +21,23 @@ const PublicationList: React.FC = () => {
             year: 2026,
             items: [
                 {
+                    title: "Preliminary Study on a Real-time CSF-based Blur Filter for Unobtrusively Saliency-modulated Augmented Reality",
+                    authors: "Kohei Miura, Seiya Mori, Hiroki Kusuyama, Masaki Takeuchi, Yoshihiro Yokoyama, Yuto Fukui, and Takashi Amesaka",
+                    journal: "Augmented Humans 2026 (AH '26) Poster",
+                    attributes: "Poster, Peer-reviewed"
+                },
+                {
+                    title: "A Pilot Study for Walking Direction Guidance using Subtle Blur Effects",
+                    authors: "Yoshihiro Yokoyama*, Stephan Kingsbery*, Masaki Takeuchi, Hiroki Kusuyama, Yuto Fukui, Kohei Miura, Seiya Mori, and Takashi Amesaka",
+                    journal: "Augmented Humans 2026 (AH '26) Poster",
+                    attributes: "Poster, Peer-reviewed"
+                },
+                {
                     title: "Exploring thermal contact potentials for Hand-Object Interaction refinement",
                     authors: "Kohei Miura and Daisuke Iwai",
                     journal: "SPIE Photonics West (Optical Architectures for Displays and Sensing in Augmented, Virtual, and Mixed Reality (AR, VR, MR) VII)",
-                    attributes: "Oral Presentation, Peer-reviewed"
+                    attributes: "Oral Presentation, Peer-reviewed",
+                    url: "https://spie.org/photonics-west/presentation/An-Attempt-to-Improve-3D-Mesh-in-Hand-Object-Interactions/13821-46"
                 },
                 {
                     title: "Effects of view-dependent highlights and specular intensity on gloss perception in projection mapping",
@@ -50,7 +64,7 @@ const PublicationList: React.FC = () => {
                 },
                 {
                     title: "IntelliCID: Intelligent Caustics Illumination Device",
-                    authors: "Shun Hanai, Kohei Miura (EQUAL CONTRIBUTION)",
+                    authors: "Shun Hanai and Kohei Miura (equal contribution)",
                     journal: "Adjunct Proceedings of the 36th Annual ACM Symposium on User Interface Software and Technology (UIST '24 Adjunct)",
                     attributes: "Student Innovation Contest (Demonstration), Peer-reviewed"
                 },
@@ -74,7 +88,15 @@ const PublicationList: React.FC = () => {
                             <li key={index}>
                                 <p className="title" style={{ fontWeight: 900 }}>{pub.title}</p>
                                 <p className="authors">{pub.authors}</p>
-                                <p className="journal">{pub.journal}</p>
+                                <p className="journal">
+                                    {pub.url ? (
+                                        <a href={pub.url} target="_blank" rel="noreferrer">
+                                            {pub.journal}
+                                        </a>
+                                    ) : (
+                                        pub.journal
+                                    )}
+                                </p>
                                 <p className="attributes">{pub.attributes}</p>
                             </li>
                         ))}

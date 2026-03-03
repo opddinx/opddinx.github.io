@@ -9,8 +9,20 @@ type NewsItem = {
 
 const newsItems: NewsItem[] = [
     {
+        id: 'cvpr2026-accepted',
+        title: 'My co-authored paper was accepted to CVPR 2026, see you in Denver',
+        date: 'Mar. 2026',
+        summary: '',
+    },
+    {
+        id: 'ahs2026',
+        title: 'My first-authored and co-authored poster presentations are accepted to Augmented Humans 2026, see you in Okinawa',
+        date: 'Mar. 2026',
+        summary: '',
+    },
+    {
         id: 'pw2026',
-        title: 'Presented a first-authored and co-authored oral presentation at Photonic West AR | VR | MR 2026',
+        title: 'Presented a first-authored and co-authored oral presentation at SPIE Photonics West AR | VR | MR 2026',
         date: 'Jan. 2026',
         summary: '',
     },
@@ -28,7 +40,7 @@ const newsItems: NewsItem[] = [
     },
     {
         id: 'nepfr',
-        title: 'Adapted for NEDO Entrepreneus Program',
+        title: 'Adopted for NEDO Entrepreneus Program',
         date: 'Apr. 2025',
         summary: 'My R&D project "Construction of an Immersive Story Editing Experience using Deep Generative Models and Virtual Reality" has been selected for the NEDO Entrepreneurs Program to implement it into society by launching a startup.',
     },

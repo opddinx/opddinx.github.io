@@ -44,7 +44,7 @@ const Header: React.FC<HeaderProps> = ({ variant = 'home' }) => {
                                 <li><ScrollLink to="#workexperience" onNavigate={closeMenu}>Work Experience</ScrollLink></li>
                                 <li><ScrollLink to="#pubinternational" onNavigate={closeMenu}>Publications</ScrollLink></li>
                                 <li><ScrollLink to="#awards" onNavigate={closeMenu}>Awards</ScrollLink></li>
-                                <li><ScrollLink to="#press-invitation" onNavigate={closeMenu}>Press/Invited Talk</ScrollLink></li>
+                                <li><ScrollLink to="#press-invited" onNavigate={closeMenu}>Press/Invited</ScrollLink></li>
                                 <li><ScrollLink to="#achievements" onNavigate={closeMenu}>Achievements</ScrollLink></li>
                                 <li><ScrollLink to="#academic-service" onNavigate={closeMenu}>Academic Services</ScrollLink></li>
                             </>

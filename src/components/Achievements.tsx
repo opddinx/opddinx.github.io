@@ -18,7 +18,7 @@ const Achievements: React.FC = () => {
             description: "\"Exploring thermal contact potentials for Hand-Object Interaction refinement\" at SPIE Photonics West 2026 (1000 USD)."
         },
         {
-            title: "\"Unperceptive Action Guidance in the Real Environment using Subliminal Saliency Modulation,\" Innovative, Educational Research Grant, Program for Leading Graduate Schools (co-applicant)",
+            title: "\"Unobtrusive Behavioral Guidance in the Real Environment using Subliminal Saliency Modulation,\" Innovative, Educational Research Grant, Program for Leading Graduate Schools (co-applicant)",
             company: "The University of Osaka, Japan",
             period: "Jul. 2025 - Mar. 2026",
             description: "900K JPY."
