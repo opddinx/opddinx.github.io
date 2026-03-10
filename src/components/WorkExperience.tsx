@@ -24,8 +24,8 @@ const WorkExperience: React.FC = () => {
         {
             title: "Research Assistant",
             company: "Kyoto Research, Sony Computer Science Laboratories, Inc. (Kyoto, Japan)",
-            period: "Mar. 2023 - Present",
-            description: "I'm working on a project called AnyLight (PI: Yuichiro Takeuchi), which reproduces illumination effects. I also edit some videos for public relations.",
+            period: "Jan. 2023 - Mar. 2026",
+            description: "I was working on a project called AnyLight (PI: Yuichiro Takeuchi), which reproduces illumination effects. I also edit some videos for public relations.",
         },
     ];
 

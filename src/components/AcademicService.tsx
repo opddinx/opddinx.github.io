@@ -17,7 +17,7 @@ const AcademicService: React.FC = () => {
         },
         {
             title: "Reviewer",
-            time: "VR-HSA 2026",
+            time: "IEEE VR workshop (VR-HSA 2026), ACM DIS 2026",
             description: "",
         },
         {

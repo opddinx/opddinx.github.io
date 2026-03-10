@@ -10,13 +10,13 @@ type NewsItem = {
 const newsItems: NewsItem[] = [
     {
         id: 'cvpr2026-accepted',
-        title: 'My co-authored paper was accepted to CVPR 2026, see you in Denver',
+        title: 'My co-authored paper was accepted to CVPR 2026, see you in Denver!',
         date: 'Mar. 2026',
         summary: '',
     },
     {
         id: 'ahs2026',
-        title: 'My first-authored and co-authored poster presentations are accepted to Augmented Humans 2026, see you in Okinawa',
+        title: 'My first-authored and co-authored poster presentations were accepted to Augmented Humans 2026, see you in Okinawa!',
         date: 'Mar. 2026',
         summary: '',
     },
