@@ -85,3 +85,38 @@ button {
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(241, 238, 230, 0.28);
 }
+
+/* ─── Responsive layout helpers ─────────────────────────────────────────────
+   Grid layouts that must reflow at breakpoints live here so @media rules can
+   override them. Colors and typography stay inline in the components.        */
+
+.l-nav-links   { display: flex; gap: 22px; flex-wrap: wrap; justify-content: flex-end; align-items: center; }
+.l-hero        { display: grid; grid-template-columns: 1.45fr 1fr; gap: 56px; align-items: start; }
+.l-meta-grid   { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.l-row         { display: grid; grid-template-columns: 140px 1fr; gap: 28px; }
+.l-row-date    { padding-top: 6px; }
+.l-pub-row     { display: grid; grid-template-columns: 50px 1fr 160px; gap: 24px; }
+.l-pub-year    { font-size: 88px; }
+.l-service-row { display: grid; grid-template-columns: 1fr 1.5fr; gap: 28px; }
+
+/* Tablet — up to 900 px */
+@media (max-width: 900px) {
+  .l-hero        { grid-template-columns: 1fr; gap: 40px; }
+  .l-meta-grid   { grid-template-columns: repeat(2, 1fr); }
+  .l-pub-row     { grid-template-columns: 50px 1fr; }
+  .l-pub-attrs   { display: none; }
+}
+
+/* Mobile — up to 640 px */
+@media (max-width: 640px) {
+  .l-nav-links      { gap: 14px; }
+  .l-nav-links li a { font-size: 13px; }
+  .l-hero           { gap: 28px; }
+  .l-meta-grid      { grid-template-columns: 1fr; gap: 16px; }
+  .l-row            { grid-template-columns: 1fr; gap: 6px; }
+  .l-row-date       { padding-top: 0; font-size: 13px; }
+  .l-pub-row        { grid-template-columns: 1fr; }
+  .l-pub-index      { display: none; }
+  .l-pub-year       { font-size: 52px; }
+  .l-service-row    { grid-template-columns: 1fr; gap: 6px; }
+}

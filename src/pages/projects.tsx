@@ -53,8 +53,8 @@ const ProjectsPage: React.FC<PageProps> = () => {
                     ) : (
                         <div>
                             {projects.map((project) => (
-                                <div key={project.title} style={{ display: 'grid', gridTemplateColumns: '140px 1fr', gap: 28, padding: '24px 0', borderTop: `1px solid ${T.rule}` }}>
-                                    <div style={{ fontFamily: T.serif, fontStyle: 'italic', fontSize: 14, color: T.fgMute, paddingTop: 6 }}>
+                                <div key={project.title} className="l-row" style={{ padding: '24px 0', borderTop: `1px solid ${T.rule}` }}>
+                                    <div className="l-row-date" style={{ fontFamily: T.serif, fontStyle: 'italic', fontSize: 14, color: T.fgMute }}>
                                         {project.timeframe}
                                     </div>
                                     <div>

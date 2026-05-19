@@ -42,8 +42,8 @@ function Row({
   left, title, sub, body, right,
 }: { left: string; title: string; sub?: string; body?: string; right?: React.ReactNode }) {
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: '140px 1fr', gap: 28, padding: '24px 0', borderTop: `1px solid ${T.rule}` }}>
-      <div style={{ fontFamily: T.serif, fontStyle: 'italic', fontSize: 14, color: T.fgMute, paddingTop: 6, letterSpacing: '0.01em' }}>
+    <div className="l-row" style={{ padding: '24px 0', borderTop: `1px solid ${T.rule}` }}>
+      <div className="l-row-date" style={{ fontFamily: T.serif, fontStyle: 'italic', fontSize: 14, color: T.fgMute, letterSpacing: '0.01em' }}>
         {left}
       </div>
       <div>
@@ -94,7 +94,7 @@ const IndexPage: React.FC<PageProps> = () => {
           borderBottom: `1px solid ${T.rule}`,
         }}>
           <Signature size={28} color={T.fg} />
-          <ul style={{ display: 'flex', gap: 22, listStyle: 'none', margin: 0, fontFamily: T.serif, fontStyle: 'italic', fontSize: 15 }}>
+          <ul className="l-nav-links" style={{ listStyle: 'none', margin: 0, fontFamily: T.serif, fontStyle: 'italic', fontSize: 15 }}>
             {['About', 'News', 'Publications', 'Awards', 'Service'].map((x) => (
               <li key={x}>
                 <a href={`#${x.toLowerCase()}`} style={{ color: T.fg, textDecoration: 'none', opacity: 0.85 }}>{x}</a>
@@ -104,13 +104,7 @@ const IndexPage: React.FC<PageProps> = () => {
         </nav>
 
         {/* ── Fused Hero + About ── */}
-        <section id="about" style={{
-          display: 'grid',
-          gridTemplateColumns: '1.45fr 1fr',
-          gap: 56,
-          alignItems: 'start',
-          padding: '40px 0 24px',
-        }}>
+        <section id="about" className="l-hero" style={{ padding: '40px 0 24px' }}>
           {/* LEFT */}
           <div>
             <Signature size={60} color={T.fg} />
@@ -127,7 +121,7 @@ const IndexPage: React.FC<PageProps> = () => {
               {ABOUT_DATA.bio}
             </p>
 
-            <div style={{ marginTop: 28, display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 24 }}>
+            <div className="l-meta-grid" style={{ marginTop: 28 }}>
               <div>
                 <div style={{ fontFamily: T.serif, fontStyle: 'italic', fontSize: 14, color: T.fgMute }}>Research Interests</div>
                 <p style={{ color: T.fgDim, fontSize: 14, lineHeight: 1.55, marginTop: 6 }}>{ABOUT_DATA.interests}</p>
@@ -171,8 +165,8 @@ const IndexPage: React.FC<PageProps> = () => {
         <section id="news" style={{ marginTop: 72, marginBottom: 24 }}>
           <SectionHeading>News.</SectionHeading>
           {visibleNews.map((n) => (
-            <div key={n.id} style={{ display: 'grid', gridTemplateColumns: '140px 1fr', gap: 28, padding: '24px 0', borderTop: `1px solid ${T.rule}` }}>
-              <div style={{ fontFamily: T.serif, fontStyle: 'italic', fontSize: 14, color: T.fgMute, paddingTop: 6 }}>{n.date}</div>
+            <div key={n.id} className="l-row" style={{ padding: '24px 0', borderTop: `1px solid ${T.rule}` }}>
+              <div className="l-row-date" style={{ fontFamily: T.serif, fontStyle: 'italic', fontSize: 14, color: T.fgMute }}>{n.date}</div>
               <div>
                 <h4 style={{ fontFamily: T.serif, fontSize: 21, fontWeight: 400, color: T.fg, margin: 0, lineHeight: 1.3 }}>{n.title}</h4>
                 {n.summary && <p style={{ color: T.fgDim, fontSize: 14.5, marginTop: 8, lineHeight: 1.6, maxWidth: 640 }}>{n.summary}</p>}
@@ -248,12 +242,12 @@ const IndexPage: React.FC<PageProps> = () => {
           <SectionHeading>Publications.</SectionHeading>
           {publications.map((yg) => (
             <div key={yg.year} style={{ marginTop: 24 }}>
-              <div style={{ fontFamily: T.serif, fontStyle: 'italic', fontWeight: 300, fontSize: 88, color: T.fg, lineHeight: 1, margin: '20px 0 4px', letterSpacing: '-0.04em', opacity: 0.18 }}>
+              <div className="l-pub-year" style={{ fontFamily: T.serif, fontStyle: 'italic', fontWeight: 300, color: T.fg, lineHeight: 1, margin: '20px 0 4px', letterSpacing: '-0.04em', opacity: 0.18 }}>
                 {yg.year}
               </div>
               {yg.items.map((p, i) => (
-                <div key={i} style={{ display: 'grid', gridTemplateColumns: '50px 1fr 160px', gap: 24, padding: '22px 0', borderTop: `1px solid ${T.rule}` }}>
-                  <div style={{ fontFamily: T.serif, fontStyle: 'italic', fontSize: 14, color: T.fgMute, paddingTop: 6 }}>
+                <div key={i} className="l-pub-row" style={{ padding: '22px 0', borderTop: `1px solid ${T.rule}` }}>
+                  <div className="l-pub-index" style={{ fontFamily: T.serif, fontStyle: 'italic', fontSize: 14, color: T.fgMute, paddingTop: 6 }}>
                     {String(i + 1).padStart(2, '0')}
                   </div>
                   <div>
@@ -265,7 +259,7 @@ const IndexPage: React.FC<PageProps> = () => {
                         : p.journal}
                     </p>
                   </div>
-                  <div style={{ fontFamily: T.serif, fontStyle: 'italic', fontSize: 14, color: T.fgMute, paddingTop: 6, textAlign: 'right', lineHeight: 1.5 }}>
+                  <div className="l-pub-attrs" style={{ fontFamily: T.serif, fontStyle: 'italic', fontSize: 14, color: T.fgMute, paddingTop: 6, textAlign: 'right', lineHeight: 1.5 }}>
                     {p.attributes}
                   </div>
                 </div>
@@ -289,7 +283,7 @@ const IndexPage: React.FC<PageProps> = () => {
         <section id="service" style={{ marginTop: 72, marginBottom: 24 }}>
           <SectionHeading>Academic Service &amp; Teaching.</SectionHeading>
           {academicService.map((s, i) => (
-            <div key={i} style={{ display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: 28, padding: '24px 0', borderTop: `1px solid ${T.rule}` }}>
+            <div key={i} className="l-service-row" style={{ padding: '24px 0', borderTop: `1px solid ${T.rule}` }}>
               <h4 style={{ fontFamily: T.serif, fontSize: 21, fontWeight: 400, color: T.fg, margin: 0, lineHeight: 1.3 }}>
                 {s.title}
               </h4>
