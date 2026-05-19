@@ -1,41 +1,40 @@
 import React from 'react';
 
-interface Education {
+export interface Education {
     title: string;
     faculty: string;
     period: string;
     description: string;
 }
 
-const Educations: React.FC = () => {
-    const educations: Education[] = [
-        {
-            title: "Ph.D. in Engineering",
-            faculty: "Department of Systems Innovation Science, Graduate School of Engineering Science, the University of Osaka (Osaka, Japan)",
-            period: "Apr. 2025 - Mar. 2028 (Expected)",
-            description: "Pursuing advanced research on 3D data processing technology for manual work, aiming to contribute to the field of computer vision and its applications in human-computer interaction.",
-        },
-        {
-            title: "Master's Degree in Engineering",
-            faculty: "Department of Systems Innovation Science, Graduate School of Engineering Science, the University of Osaka (Osaka, Japan)",
-            period: "Apr. 2023 - Mar. 2025",
-            description: "Deepen the research and development of 3D data processing technology for manual work. I also study Liberal Arts as Graduate Programs for Advanced Interdisciplinary Studies",
-        },
-        {
-            title: "Italian Design Summer School, Non-degree program",
-            faculty: "Department of Industrial Engineering, University of Bologna (Bologna, Italy)",
-            period: "Aug. 2024 - Sep. 2024",
-            description: "I learned the history of Italian art, design and the design process of products, practicing the design method and tools. I also visited the headquarters of Italian design companies and design museums.",
-        },
-        {
-            title: "Bachelor's Degree in Engineering",
-            faculty: "School of Engineering Science, the University of Osaka (Osaka, Japan)",
-            period: "Apr. 2019 - Mar. 2023",
-            description: "In my third year of undergraduate studies, I conducted an independent research on HAI under the guidance of Guest Associate Professor Takahashi and in my fourth year of undergraduate studies, I did research on 3D data processing technology for manual work by applying computer vision at SENSLab.",
-        },
-        // More experiences...
-    ];
+export const educations: Education[] = [
+    {
+        title: "Ph.D. in Engineering",
+        faculty: "Department of Systems Innovation Science, Graduate School of Engineering Science, the University of Osaka (Osaka, Japan)",
+        period: "Apr. 2025 - Mar. 2028 (Expected)",
+        description: "Pursuing advanced research on 3D data processing technology for manual work, aiming to contribute to the field of computer vision and its applications in human-computer interaction.",
+    },
+    {
+        title: "Master's Degree in Engineering",
+        faculty: "Department of Systems Innovation Science, Graduate School of Engineering Science, the University of Osaka (Osaka, Japan)",
+        period: "Apr. 2023 - Mar. 2025",
+        description: "Deepen the research and development of 3D data processing technology for manual work. I also study Liberal Arts as Graduate Programs for Advanced Interdisciplinary Studies",
+    },
+    {
+        title: "Italian Design Summer School, Non-degree program",
+        faculty: "Department of Industrial Engineering, University of Bologna (Bologna, Italy)",
+        period: "Aug. 2024 - Sep. 2024",
+        description: "I learned the history of Italian art, design and the design process of products, practicing the design method and tools. I also visited the headquarters of Italian design companies and design museums.",
+    },
+    {
+        title: "Bachelor's Degree in Engineering",
+        faculty: "School of Engineering Science, the University of Osaka (Osaka, Japan)",
+        period: "Apr. 2019 - Mar. 2023",
+        description: "In my third year of undergraduate studies, I conducted an independent research on HAI under the guidance of Guest Associate Professor Takahashi and in my fourth year of undergraduate studies, I did research on 3D data processing technology for manual work by applying computer vision at SENSLab.",
+    },
+];
 
+const Educations: React.FC = () => {
     return (
         <section className="Education">
             <div className="timeline">

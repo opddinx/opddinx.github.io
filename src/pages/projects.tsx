@@ -1,7 +1,17 @@
 import * as React from "react";
+import { Link } from "gatsby";
 import type { HeadFC, PageProps } from "gatsby";
-import Header from "../components/Header";
-import Background from "../components/Background";
+import LightLeakBG from "../components/LightLeakBG";
+import Signature from "../components/Signature";
+
+const T = {
+    bg: '#0c0e16',
+    fg: '#f1eee6',
+    fgDim: '#bdb5a8',
+    fgMute: '#8a8276',
+    rule: 'rgba(241,238,230,0.12)',
+    serif: '"Newsreader", Georgia, serif',
+} as const;
 
 type Project = {
     title: string;
@@ -15,61 +25,68 @@ const projects: Project[] = [];
 
 const ProjectsPage: React.FC<PageProps> = () => {
     return (
-        <div className="page-shell">
-            <Background />
-            <div className="cg-glow" aria-hidden="true" />
-            <Header variant="page" />
-            <main className="container" style={{ paddingTop: '60px' }}>
-                <section className="mt-6">
-                    <div className="flex flex-wrap items-end justify-between gap-4">
-                        <h1 className="text-balance text-3xl font-semibold text-slate-900">Projects</h1>
-                        <div className="text-right text-sm text-slate-500">
-                            <p className="text-pretty">Selected systems, prototypes, and tools.</p>
-                            <a className="text-sm font-medium text-indigo-600" href="/">Back to home</a>
-                        </div>
-                    </div>
+        <div style={{ position: 'relative', color: T.fg, fontFamily: T.serif, minHeight: '100%', fontSize: 15, lineHeight: 1.6, background: T.bg }}>
+            <div style={{ position: 'fixed', inset: 0, zIndex: 0 }}>
+                <LightLeakBG intensity={0.95} grain={0.18} />
+            </div>
+
+            <div style={{ position: 'relative', zIndex: 1, padding: '0 clamp(24px, 6vw, 80px)' }}>
+                <nav style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '22px 0', borderBottom: `1px solid ${T.rule}` }}>
+                    <Signature size={28} color={T.fg} />
+                    <Link to="/" style={{ fontFamily: T.serif, fontStyle: 'italic', fontSize: 14, color: T.fg, textDecoration: 'none', opacity: 0.85 }}>
+                        ← Home
+                    </Link>
+                </nav>
+
+                <section style={{ marginTop: 72, marginBottom: 120 }}>
+                    <h1 style={{ fontFamily: T.serif, fontSize: 30, fontWeight: 400, color: T.fg, margin: '0 0 24px', lineHeight: 1.15 }}>
+                        Projects.
+                    </h1>
+                    <p style={{ color: T.fgMute, fontStyle: 'italic', fontSize: 15, margin: '-12px 0 32px', lineHeight: 1.6 }}>
+                        Selected systems, prototypes, and tools.
+                    </p>
+
                     {projects.length === 0 ? (
-                        <div className="mt-6 rounded-md border border-slate-200 bg-white/80 p-6">
-                            <p className="text-pretty text-sm text-slate-600">No projects listed yet.</p>
-                            <p className="text-pretty text-sm text-slate-600">Add entries in `src/pages/projects.tsx`.</p>
+                        <div style={{ padding: '24px 0', borderTop: `1px solid ${T.rule}`, color: T.fgMute, fontFamily: T.serif, fontStyle: 'italic', fontSize: 15 }}>
+                            No projects listed yet — add entries in <code style={{ fontFamily: 'monospace', fontSize: 14, opacity: 0.7 }}>src/pages/projects.tsx</code>.
                         </div>
                     ) : (
-                        <div className="mt-6 grid gap-4">
+                        <div>
                             {projects.map((project) => (
-                                <article key={project.title} className="rounded-md border border-slate-200 bg-white/80 p-5">
-                                    <div className="flex flex-wrap items-center justify-between gap-3">
-                                        <h2 className="text-balance text-xl font-semibold text-slate-900">
+                                <div key={project.title} style={{ display: 'grid', gridTemplateColumns: '140px 1fr', gap: 28, padding: '24px 0', borderTop: `1px solid ${T.rule}` }}>
+                                    <div style={{ fontFamily: T.serif, fontStyle: 'italic', fontSize: 14, color: T.fgMute, paddingTop: 6 }}>
+                                        {project.timeframe}
+                                    </div>
+                                    <div>
+                                        <h2 style={{ fontFamily: T.serif, fontSize: 21, fontWeight: 400, color: T.fg, margin: '0 0 8px', lineHeight: 1.3 }}>
                                             {project.title}
                                         </h2>
-                                        <span className="text-xs font-medium text-slate-500 tabular-nums">
-                                            {project.timeframe}
-                                        </span>
+                                        <p style={{ color: T.fgDim, fontSize: 15, margin: 0, lineHeight: 1.6, maxWidth: 640 }}>{project.summary}</p>
+                                        {project.tags.length > 0 && (
+                                            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginTop: 12 }}>
+                                                {project.tags.map((tag) => (
+                                                    <span key={tag} style={{ border: `1px solid ${T.rule}`, borderRadius: 999, padding: '2px 10px', fontSize: 13, color: T.fgMute, fontFamily: T.serif, fontStyle: 'italic' }}>
+                                                        {tag}
+                                                    </span>
+                                                ))}
+                                            </div>
+                                        )}
+                                        {project.link && (
+                                            <a href={project.link} style={{ display: 'inline-block', marginTop: 12, fontFamily: T.serif, fontStyle: 'italic', fontSize: 14, color: T.fg, textDecorationColor: T.rule, textUnderlineOffset: 3 }}>
+                                                View project ↗
+                                            </a>
+                                        )}
                                     </div>
-                                    <p className="mt-2 text-pretty text-sm text-slate-600">{project.summary}</p>
-                                    {project.tags.length > 0 ? (
-                                        <div className="mt-3 flex flex-wrap gap-2">
-                                            {project.tags.map((tag) => (
-                                                <span key={tag} className="rounded border border-slate-200 bg-white px-2 py-0.5 text-xs text-slate-500">
-                                                    {tag}
-                                                </span>
-                                            ))}
-                                        </div>
-                                    ) : null}
-                                    {project.link ? (
-                                        <a className="mt-4 inline-flex text-sm font-medium text-indigo-600" href={project.link}>
-                                            View project
-                                        </a>
-                                    ) : null}
-                                </article>
+                                </div>
                             ))}
                         </div>
                     )}
                 </section>
-            </main>
+            </div>
         </div>
     );
 };
 
 export default ProjectsPage;
 
-export const Head: HeadFC = () => <title>Projects | opddinx</title>;
+export const Head: HeadFC = () => <title>Projects — Kohei Miura</title>;

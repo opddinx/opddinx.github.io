@@ -21,6 +21,12 @@ const PublicationList: React.FC = () => {
             year: 2026,
             items: [
                 {
+                    title: "Breaking the Scalability Limit of Multi-projector Calibration with Embedded Cameras",
+                    authors: "Takkumi Kawano, Kohei Miura, Daisuke Iwai",
+                    journal: "The IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2026",
+                    attributes: "Main(Oral, <1.0%), Peer-reviewed"
+                },
+                {
                     title: "Preliminary Study on a Real-time CSF-based Blur Filter for Unobtrusively Saliency-modulated Augmented Reality",
                     authors: "Kohei Miura, Seiya Mori, Hiroki Kusuyama, Masaki Takeuchi, Yoshihiro Yokoyama, Yuto Fukui, and Takashi Amesaka",
                     journal: "Augmented Humans 2026 (AHs '26)",

@@ -1,21 +1,23 @@
 'use strict';
 import React from 'react';
-interface PressItem {
+
+export interface PressItem {
     title: string;
     source: string;
     time: string;
     link: string;
 }
-const Press: React.FC = () => {
-    const pressItems: PressItem[] = [
-        {
-            title: "Renewal of the Permanent Exhibition 'Hello! Robot' at Miraikan (Only in Japanese)",
-            source: "Miraikan - The National Museum of Emerging Science and Innovation, Japan",
-            time: "Jon 12 , 2025",
-            link: "https://www.miraikan.jst.go.jp/news/general/202506124091.html",
-        },
-    ];
 
+export const pressItems: PressItem[] = [
+    {
+        title: "Renewal of the Permanent Exhibition 'Hello! Robot' at Miraikan (Only in Japanese)",
+        source: "Miraikan - The National Museum of Emerging Science and Innovation, Japan",
+        time: "Jon 12 , 2025",
+        link: "https://www.miraikan.jst.go.jp/news/general/202506124091.html",
+    },
+];
+
+const Press: React.FC = () => {
     return (
         <section className="press">
             <div className="timeline">

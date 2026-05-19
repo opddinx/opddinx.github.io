@@ -7,7 +7,7 @@ type NewsItem = {
     summary: string;
 };
 
-const newsItems: NewsItem[] = [
+export const newsItems: NewsItem[] = [
     {
         id: 'cvpr2026-accepted',
         title: 'My co-authored paper was accepted to CVPR 2026, see you in Denver!',
