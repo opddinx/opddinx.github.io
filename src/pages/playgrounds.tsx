@@ -1,9 +1,8 @@
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
 import type { HeadFC, PageProps } from 'gatsby';
-import LightLeakBG from '../components/LightLeakBG';
-import DiffractionNav from '../components/DiffractionNav';
-import Signature from '../components/Signature';
+import { PageShell, SectionHeading } from '../components/PortfolioLayout';
+import Footer from '../components/Footer';
 import { T } from '../styles/theme';
 import '../styles/global.css';
 
@@ -268,7 +267,7 @@ function ShaderTile({ title, note, src }: TileProps) {
       </div>
       <figcaption style={{ marginTop: 14 }}>
         <div style={{ fontFamily: T.serif, fontSize: 17, fontWeight: 400, color: T.fg, fontStyle: 'italic' }}>{title}</div>
-        <div style={{ fontFamily: T.serif, fontSize: 13.5, color: T.fgMute, marginTop: 3, lineHeight: 1.4 }}>{note}</div>
+        <div style={{ fontFamily: T.serif, fontSize: 14, color: T.fgMute, marginTop: 3, lineHeight: 1.4 }}>{note}</div>
       </figcaption>
     </figure>
   );
@@ -277,7 +276,7 @@ function ShaderTile({ title, note, src }: TileProps) {
 // ─── Page ─────────────────────────────────────────────────────────────────
 
 const PlaygroundsPage: React.FC<PageProps> = () => (
-  <div style={{ position: 'relative', color: T.fg, fontFamily: T.serif, minHeight: '100%', fontSize: 15, lineHeight: 1.6, background: T.bg }}>
+  <PageShell active="playgrounds">
     <Helmet>
       <meta charSet="utf-8" />
       <link rel="canonical" href="https://opddinx.github.io/playgrounds" />
@@ -288,37 +287,21 @@ const PlaygroundsPage: React.FC<PageProps> = () => (
       <title>Playgrounds — Kohei Miura</title>
     </Helmet>
 
-    <div style={{ position: 'fixed', inset: 0, zIndex: 0 }}>
-      <LightLeakBG intensity={0.95} grain={0.18} />
-    </div>
+    <section style={{ marginTop: 72, marginBottom: 24 }}>
+      <SectionHeading>Playgrounds.</SectionHeading>
+      <p style={{ color: T.fgMute, fontFamily: T.serif, fontStyle: 'italic', fontSize: 15, margin: '-12px 0 48px', lineHeight: 1.6, maxWidth: 560 }}>
+        A working notebook on visual materiality — interactive GLSL sketches. Move the cursor over each tile to interact.
+      </p>
 
-    <div style={{ position: 'relative', zIndex: 1, padding: '0 clamp(24px, 6vw, 80px)' }}>
-      <DiffractionNav active="playgrounds" />
-
-      <section style={{ marginTop: 72, marginBottom: 120 }}>
-        <h1 style={{ fontFamily: T.serif, fontSize: 30, fontWeight: 400, color: T.fg, margin: '0 0 12px', lineHeight: 1.15 }}>
-          Playgrounds.
-        </h1>
-        <p style={{ color: T.fgMute, fontFamily: T.serif, fontStyle: 'italic', fontSize: 15, margin: '0 0 48px', lineHeight: 1.6, maxWidth: 560 }}>
-          A working notebook on visual materiality — interactive GLSL sketches. Move the cursor over each tile to interact.
-        </p>
-
-        <div className="l-shader-grid">
-          {SHADERS.map((s) => (
-            <ShaderTile key={s.id} title={s.title} note={s.note} src={s.src} />
-          ))}
-        </div>
-      </section>
-
-      {/* ── Footer ── */}
-      <div style={{ paddingTop: 28, borderTop: `1px solid ${T.rule}`, display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', flexWrap: 'wrap', gap: 16, marginBottom: 48 }}>
-        <Signature size={36} color={T.fg} opacity={0.85} />
-        <div style={{ color: T.fgMute, fontSize: 14, fontFamily: T.serif, fontStyle: 'italic' }}>
-          © Kohei Miura · {new Date().getFullYear()}
-        </div>
+      <div className="l-shader-grid">
+        {SHADERS.map((s) => (
+          <ShaderTile key={s.id} title={s.title} note={s.note} src={s.src} />
+        ))}
       </div>
-    </div>
-  </div>
+    </section>
+
+    <Footer />
+  </PageShell>
 );
 
 export default PlaygroundsPage;

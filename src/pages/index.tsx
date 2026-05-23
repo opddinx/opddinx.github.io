@@ -2,11 +2,10 @@ import * as React from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'gatsby';
 import type { HeadFC, PageProps } from 'gatsby';
-import LightLeakBG from '../components/LightLeakBG';
 import ShaderCircle from '../components/ShaderCircle';
 import Signature from '../components/Signature';
-import DiffractionNav from '../components/DiffractionNav';
-import { SectionHeading } from '../components/PortfolioLayout';
+import { PageShell, SectionHeading, Row } from '../components/PortfolioLayout';
+import Footer from '../components/Footer';
 import { T } from '../styles/theme';
 import { ABOUT_DATA } from '../components/AboutMe';
 import { SOCIAL_LINKS } from '../components/SocialLinks';
@@ -18,7 +17,7 @@ const IndexPage: React.FC<PageProps> = () => {
   const visibleNews = newsExpanded ? newsItems : newsItems.slice(0, 4);
 
   return (
-    <div style={{ position: 'relative', color: T.fg, fontFamily: T.serif, minHeight: '100%', fontSize: 15, lineHeight: 1.6, background: T.bg }}>
+    <PageShell active="top">
       <Helmet>
         <meta charSet="utf-8" />
         <link rel="canonical" href="https://opddinx.github.io/" />
@@ -30,116 +29,96 @@ const IndexPage: React.FC<PageProps> = () => {
         <meta name="description" content="PhD student at XRGroup, Osaka University. Computer Vision, Graphics, Interaction." />
       </Helmet>
 
-      <div style={{ position: 'fixed', inset: 0, zIndex: 0 }}>
-        <LightLeakBG intensity={0.95} grain={0.18} />
-      </div>
+      {/* ── Fused Hero + About ── */}
+      <section id="about" className="l-hero" style={{ padding: '40px 0 24px' }}>
+        {/* LEFT */}
+        <div>
+          <Signature size={48} color={T.fg} />
 
-      <div style={{ position: 'relative', zIndex: 1, padding: '0 clamp(24px, 6vw, 80px)' }}>
-        <DiffractionNav active="top" />
+          <p style={{ fontFamily: T.serif, fontSize: 19, fontWeight: 300, fontStyle: 'italic', lineHeight: 1.4, color: T.fg, margin: '32px 0 0', letterSpacing: '-0.005em', maxWidth: 600 }}>
+            I am a PhD student at{' '}
+            <a href={ABOUT_DATA.xrgroupUrl} target="_blank" rel="noreferrer" style={{ color: T.fg, textDecorationColor: T.rule, textUnderlineOffset: 4 }}>
+              XRGroup
+            </a>{' '}
+            at the University of Osaka, majoring in Computer Vision, Graphics, Interaction.
+          </p>
 
-        {/* ── Fused Hero + About ── */}
-        <section id="about" className="l-hero" style={{ padding: '40px 0 24px' }}>
-          {/* LEFT */}
-          <div>
-            <Signature size={60} color={T.fg} />
+          <p style={{ color: T.fgDim, fontSize: 15, lineHeight: 1.65, marginTop: 18, maxWidth: 620 }}>
+            {ABOUT_DATA.bio}
+          </p>
 
-            <p style={{ fontFamily: T.serif, fontSize: 23, fontWeight: 300, fontStyle: 'italic', lineHeight: 1.4, color: T.fg, margin: '32px 0 0', letterSpacing: '-0.005em', maxWidth: 600 }}>
-              I am a PhD student at{' '}
-              <a href={ABOUT_DATA.xrgroupUrl} target="_blank" rel="noreferrer" style={{ color: T.fg, textDecorationColor: T.rule, textUnderlineOffset: 4 }}>
-                XRGroup
-              </a>{' '}
-              at the University of Osaka, majoring in Computer Vision, Graphics, Interaction.
-            </p>
-
-            <p style={{ color: T.fgDim, fontSize: 15, lineHeight: 1.65, marginTop: 18, maxWidth: 620 }}>
-              {ABOUT_DATA.bio}
-            </p>
-
-            <div className="l-meta-grid" style={{ marginTop: 28 }}>
-              <div>
-                <div style={{ fontFamily: T.serif, fontStyle: 'italic', fontSize: 14, color: T.fgMute }}>Research Interests</div>
-                <p style={{ color: T.fgDim, fontSize: 14, lineHeight: 1.55, marginTop: 6 }}>{ABOUT_DATA.interests}</p>
-              </div>
-              <div>
-                <div style={{ fontFamily: T.serif, fontStyle: 'italic', fontSize: 14, color: T.fgMute }}>E-mail</div>
-                {ABOUT_DATA.emails.map((e) => (
-                  <p key={e} style={{ marginTop: 6, fontSize: 14, color: T.fg, textIndent: 0, paddingLeft: 0 }}>{e}</p>
-                ))}
-              </div>
-              <div>
-                <div style={{ fontFamily: T.serif, fontStyle: 'italic', fontSize: 14, color: T.fgMute }}>Affiliation</div>
-                {ABOUT_DATA.affiliations.map((a) => (
-                  <p key={a.name} style={{ marginTop: 6, fontSize: 14, color: T.fgDim, lineHeight: 1.5 }}>
-                    {a.url
-                      ? <a href={a.url} style={{ color: T.fgDim, textDecorationColor: T.rule, textUnderlineOffset: 3 }}>{a.name}</a>
-                      : a.name}
-                  </p>
-                ))}
-              </div>
+          <div className="l-meta-grid" style={{ marginTop: 28 }}>
+            <div>
+              <div style={{ fontFamily: T.serif, fontStyle: 'italic', fontSize: 14, color: T.fgMute }}>Research Interests</div>
+              <p style={{ color: T.fgDim, fontSize: 14, lineHeight: 1.55, marginTop: 6 }}>{ABOUT_DATA.interests}</p>
             </div>
-          </div>
-
-          {/* RIGHT — rotating diffraction circle + socials */}
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 22, paddingTop: 12 }}>
-            <ShaderCircle diameter={300} intensity={1.1} grain={0.22} rotateDuration={70} />
-            <div style={{ display: 'flex', gap: 18, marginTop: 8 }}>
-              {SOCIAL_LINKS.map((s) => (
-                <a key={s.label} href={s.url} target="_blank" rel="noreferrer" style={{
-                  color: T.fg, textDecoration: 'none', borderBottom: `1px solid ${T.rule}`,
-                  fontSize: 14, paddingBottom: 2, fontFamily: T.serif, fontStyle: 'italic',
-                }}>
-                  {s.label} ↗
-                </a>
+            <div>
+              <div style={{ fontFamily: T.serif, fontStyle: 'italic', fontSize: 14, color: T.fgMute }}>E-mail</div>
+              {ABOUT_DATA.emails.map((e) => (
+                <p key={e} style={{ marginTop: 6, fontSize: 14, color: T.fg, textIndent: 0, paddingLeft: 0 }}>{e}</p>
+              ))}
+            </div>
+            <div>
+              <div style={{ fontFamily: T.serif, fontStyle: 'italic', fontSize: 14, color: T.fgMute }}>Affiliation</div>
+              {ABOUT_DATA.affiliations.map((a) => (
+                <p key={a.name} style={{ marginTop: 6, fontSize: 14, color: T.fgDim, lineHeight: 1.5 }}>
+                  {a.url
+                    ? <a href={a.url} style={{ color: T.fgDim, textDecorationColor: T.rule, textUnderlineOffset: 3 }}>{a.name}</a>
+                    : a.name}
+                </p>
               ))}
             </div>
           </div>
-        </section>
+        </div>
 
-        {/* ── News ── */}
-        <section id="news" style={{ marginTop: 72, marginBottom: 24 }}>
-          <SectionHeading>News.</SectionHeading>
-          {visibleNews.map((n) => (
-            <div key={n.id} className="l-row" style={{ padding: '24px 0', borderTop: `1px solid ${T.rule}` }}>
-              <div className="l-row-date" style={{ fontFamily: T.serif, fontStyle: 'italic', fontSize: 14, color: T.fgMute }}>{n.date}</div>
-              <div>
-                <h4 style={{ fontFamily: T.serif, fontSize: 21, fontWeight: 400, color: T.fg, margin: 0, lineHeight: 1.3 }}>{n.title}</h4>
-                {n.summary && <p style={{ color: T.fgDim, fontSize: 14.5, marginTop: 8, lineHeight: 1.6, maxWidth: 640 }}>{n.summary}</p>}
-              </div>
-            </div>
-          ))}
-          {newsItems.length > 4 && (
-            <button
-              type="button"
-              onClick={() => setNewsExpanded((v) => !v)}
-              style={{ marginTop: 20, background: 'transparent', border: `1px solid ${T.rule}`, color: T.fg, padding: '10px 18px', fontFamily: T.serif, fontStyle: 'italic', fontSize: 14, cursor: 'pointer', borderRadius: 999 }}
-            >
-              {newsExpanded ? 'Show fewer' : `Show all (${newsItems.length})`}
-            </button>
-          )}
-        </section>
-
-        {/* ── Projects ── */}
-        <section id="projects" style={{ marginTop: 72, marginBottom: 24 }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 24 }}>
-            <SectionHeading>Projects.</SectionHeading>
-            <Link to="/projects" style={{ fontFamily: T.serif, fontStyle: 'italic', fontSize: 14, color: T.fgMute, textDecoration: 'none', borderBottom: `1px solid ${T.rule}`, paddingBottom: 2 }}>
-              View all ↗
-            </Link>
-          </div>
-          <div style={{ padding: '24px 0', borderTop: `1px solid ${T.rule}`, color: T.fgMute, fontFamily: T.serif, fontStyle: 'italic', fontSize: 15 }}>
-            Coming soon — add entries in <code style={{ fontFamily: 'monospace', fontSize: 14, opacity: 0.7 }}>src/components/ProjectsTeaser.tsx</code>.
-          </div>
-        </section>
-
-        {/* ── Footer ── */}
-        <div style={{ marginTop: 120, paddingTop: 28, borderTop: `1px solid ${T.rule}`, display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', flexWrap: 'wrap', gap: 16, marginBottom: 48 }}>
-          <Signature size={36} color={T.fg} opacity={0.85} />
-          <div style={{ color: T.fgMute, fontSize: 14, fontFamily: T.serif, fontStyle: 'italic' }}>
-            © Kohei Miura · {new Date().getFullYear()} — last revised May 2026
+        {/* RIGHT — rotating diffraction circle + socials */}
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 22, paddingTop: 12 }}>
+          <ShaderCircle diameter={300} intensity={1.1} grain={0.22} rotateDuration={70} />
+          <div style={{ display: 'flex', gap: 18, marginTop: 8 }}>
+            {SOCIAL_LINKS.map((s) => (
+              <a key={s.label} href={s.url} target="_blank" rel="noreferrer" style={{
+                color: T.fg, textDecoration: 'none', borderBottom: `1px solid ${T.rule}`,
+                fontSize: 14, paddingBottom: 2, fontFamily: T.serif, fontStyle: 'italic',
+              }}>
+                {s.label} ↗
+              </a>
+            ))}
           </div>
         </div>
-      </div>
-    </div>
+      </section>
+
+      {/* ── News ── */}
+      <section id="news" style={{ marginTop: 72, marginBottom: 24 }}>
+        <SectionHeading>News.</SectionHeading>
+        {visibleNews.map((n) => (
+          <Row key={n.id} left={n.date} title={n.title} body={n.summary} />
+        ))}
+        {newsItems.length > 4 && (
+          <button
+            type="button"
+            onClick={() => setNewsExpanded((v) => !v)}
+            style={{ marginTop: 20, background: 'transparent', border: `1px solid ${T.rule}`, color: T.fg, padding: '10px 18px', fontFamily: T.serif, fontStyle: 'italic', fontSize: 14, cursor: 'pointer', borderRadius: 999 }}
+          >
+            {newsExpanded ? 'Show fewer' : `Show all (${newsItems.length})`}
+          </button>
+        )}
+      </section>
+
+      {/* ── Projects ── */}
+      <section id="projects" style={{ marginTop: 72, marginBottom: 24 }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 24 }}>
+          <SectionHeading>Projects.</SectionHeading>
+          <Link to="/projects" style={{ fontFamily: T.serif, fontStyle: 'italic', fontSize: 14, color: T.fgMute, textDecoration: 'none', borderBottom: `1px solid ${T.rule}`, paddingBottom: 2 }}>
+            View all ↗
+          </Link>
+        </div>
+        <div style={{ padding: '24px 0', borderTop: `1px solid ${T.rule}`, color: T.fgMute, fontFamily: T.serif, fontStyle: 'italic', fontSize: 15 }}>
+          Coming soon — add entries in <code style={{ fontFamily: 'monospace', fontSize: 14, opacity: 0.7 }}>src/components/ProjectsTeaser.tsx</code>.
+        </div>
+      </section>
+
+      <Footer revised="May 2026" />
+    </PageShell>
   );
 };
 

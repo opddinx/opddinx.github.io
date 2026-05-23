@@ -1,9 +1,25 @@
 import React from 'react';
 import { T } from '../styles/theme';
+import LightLeakBG from './LightLeakBG';
+import DiffractionNav, { NavPage } from './DiffractionNav';
+
+export function PageShell({ active, children }: { active: NavPage; children: React.ReactNode }) {
+  return (
+    <div style={{ position: 'relative', color: T.fg, fontFamily: T.serif, minHeight: '100%', fontSize: 15, lineHeight: 1.6, background: T.bg }}>
+      <div style={{ position: 'fixed', inset: 0, zIndex: 0 }}>
+        <LightLeakBG intensity={0.95} grain={0.18} />
+      </div>
+      <div style={{ position: 'relative', zIndex: 1, padding: '0 clamp(24px, 6vw, 80px)' }}>
+        <DiffractionNav active={active} />
+        {children}
+      </div>
+    </div>
+  );
+}
 
 export function SectionHeading({ children }: { children: React.ReactNode }) {
   return (
-    <h2 style={{ fontFamily: T.serif, fontSize: 30, fontWeight: 400, color: T.fg, margin: '0 0 24px', lineHeight: 1.15 }}>
+    <h2 style={{ fontFamily: T.serif, fontSize: 24, fontWeight: 400, color: T.fg, margin: '0 0 24px', lineHeight: 1.15 }}>
       {children}
     </h2>
   );
@@ -18,11 +34,11 @@ export function Row({
         {left}
       </div>
       <div>
-        <h4 style={{ fontFamily: T.serif, fontSize: 21, fontWeight: 400, color: T.fg, margin: '0 0 4px', lineHeight: 1.3 }}>
+        <h4 style={{ fontFamily: T.serif, fontSize: 18, fontWeight: 400, color: T.fg, margin: '0 0 4px', lineHeight: 1.3 }}>
           {title}
         </h4>
         {sub && <p style={{ color: T.fgMute, fontSize: 15, margin: '0 0 8px', fontStyle: 'italic' }}>{sub}</p>}
-        {body && <p style={{ color: T.fgDim, fontSize: 14.5, margin: 0, lineHeight: 1.6, maxWidth: 640 }}>{body}</p>}
+        {body && <p style={{ color: T.fgDim, fontSize: 15, margin: 0, lineHeight: 1.6, maxWidth: 640 }}>{body}</p>}
         {right}
       </div>
     </div>

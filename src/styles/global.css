@@ -96,7 +96,7 @@ button {
 .l-row         { display: grid; grid-template-columns: 140px 1fr; gap: 28px; }
 .l-row-date    { padding-top: 6px; }
 .l-pub-row     { display: grid; grid-template-columns: 50px 1fr 160px; gap: 24px; }
-.l-pub-year    { font-size: 88px; }
+.l-pub-year    { font-size: 64px; }
 .l-service-row { display: grid; grid-template-columns: 1fr 1.5fr; gap: 28px; }
 
 /* Tablet — up to 900 px */
@@ -122,6 +122,8 @@ button {
   .l-row-date       { padding-top: 0; font-size: 13px; }
   .l-pub-row        { grid-template-columns: 1fr; }
   .l-pub-index      { display: none; }
-  .l-pub-year       { font-size: 52px; }
+  .l-pub-year       { font-size: 40px; }
   .l-service-row    { grid-template-columns: 1fr; gap: 6px; }
+  .l-pub-row h4     { font-size: 16px; }
+  .l-pub-attrs      { display: block; text-align: left; font-size: 13px; padding-top: 4px; }
 }
