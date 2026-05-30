@@ -39,19 +39,10 @@ const IndexPage: React.FC<PageProps> = () => {
           <Signature size={48} color={T.fg} />
 
           <p style={{ fontFamily: T.serif, fontSize: 19, fontWeight: 400, lineHeight: 1.4, color: T.fg, margin: '32px 0 0', maxWidth: 600 }}>
-            {lang === 'en' ? (
-              <>
-                I am a PhD student at{' '}
-                <a href={ABOUT_DATA.xrgroupUrl} target="_blank" rel="noreferrer" style={{ color: T.fg, textDecorationColor: T.rule, textUnderlineOffset: 4 }}>XRGroup</a>
-                {' '}at the University of Osaka, majoring in Computer Vision, Graphics, Interaction for better understanding of human.
-              </>
-            ) : (
-              <>
-                大阪大学大学院基礎工学研究科博士後期課程、{' '}
-                <a href={ABOUT_DATA.xrgroupUrl} target="_blank" rel="noreferrer" style={{ color: T.fg, textDecorationColor: T.rule, textUnderlineOffset: 4 }}>XRGroup</a>
-                {' '}に所属。人間を知るためのコンピュータビジョン、グラフィックス、インタラクション等の研究に取り組む。
-              </>
-            )}
+            {(() => {
+              const [before, after] = t(ABOUT_DATA.heroIntro, lang).split('XRGroup');
+              return <>{before}<a href={ABOUT_DATA.xrgroupUrl} target="_blank" rel="noreferrer" style={{ color: T.fg, textDecorationColor: T.rule, textUnderlineOffset: 4 }}>XRGroup</a>{after}</>;
+            })()}
           </p>
 
           <p style={{ color: T.fgDim, fontSize: 15, lineHeight: 1.65, marginTop: 18, maxWidth: 620 }}>
