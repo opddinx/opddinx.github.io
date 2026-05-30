@@ -1,11 +1,9 @@
-'use client';
+import type { BL } from '../types/i18n';
 
-import React from 'react';
-
-export interface AcademicServiceItem {
-    title: string;
-    time: string;
-    description: string;
+interface AcademicServiceItem {
+    title: BL;
+    time: BL;
+    description: BL;
 }
 
 export const academicService: AcademicServiceItem[] = [
@@ -30,21 +28,3 @@ export const academicService: AcademicServiceItem[] = [
         description: "Introductory Programming, Intelligent Systems Seminar",
     },
 ];
-
-const AcademicService: React.FC = () => {
-    return (
-        <section className="academic-service">
-            <div className="timeline">
-                {academicService.map((item, index) => (
-                    <div key={index} className="timeline-item">
-                        <h3>{item.title}</h3>
-                        <p className="time">{item.time}</p>
-                        <p className="description">{item.description}</p>
-                    </div>
-                ))}
-            </div>
-        </section>
-    );
-};
-
-export default AcademicService;

@@ -1,24 +1,42 @@
-import React from 'react';
+import type { BL } from '../types/i18n';
 
-export interface Education {
-    title: string;
-    faculty: string;
-    period: string;
-    description: string;
+interface Education {
+    title: BL;
+    faculty: BL;
+    period: BL;
+    description: BL;
 }
 
 export const educations: Education[] = [
     {
-        title: "Ph.D. in Engineering",
-        faculty: "Department of Systems Innovation Science, Graduate School of Engineering Science, the University of Osaka (Osaka, Japan)",
+        title: {
+                en: "Ph.D. Student in Engineering",
+                ja: '博士後期課程（工学）',
+        },
+        faculty: {
+                en: "Department of Systems Innovation Science, Graduate School of Engineering Science, the University of Osaka (Osaka, Japan)",
+                ja: '大阪大学大学院基礎工学研究科システム創成専攻',
+        },
         period: "Apr. 2025 - Mar. 2028 (Expected)",
-        description: "Pursuing advanced research on 3D data processing technology for manual work, aiming to contribute to the field of computer vision and its applications in human-computer interaction.",
+        description:{
+            en: "Pursuing research on 3D data processing technology for manual work, aiming to contribute to the field of computer vision and its applications in human-computer interaction.",
+            ja: '手作業のための3Dデータ処理技術に関する研究を継続し、コンピュータビジョンとHuman-Computer Interactionの分野への貢献を目指す。',
+        },
     },
     {
-        title: "Master's Degree in Engineering",
-        faculty: "Department of Systems Innovation Science, Graduate School of Engineering Science, the University of Osaka (Osaka, Japan)",
+        title: {
+            en: "Master's Degree in Engineering",
+            ja: '修士（工学）',
+        },
+        faculty: {
+            en: "Department of Systems Innovation Science, Graduate School of Engineering Science, the University of Osaka (Osaka, Japan)",
+            ja: '大阪大学大学院基礎工学研究科システム創成専攻',
+        },
         period: "Apr. 2023 - Mar. 2025",
-        description: "Deepen the research and development of 3D data processing technology for manual work. I also study Liberal Arts as Graduate Programs for Advanced Interdisciplinary Studies",
+        description:{
+            en: "Deepen the research and development of 3D data processing technology for manual work. I also study Liberal Arts as Graduate Programs for Advanced Interdisciplinary Studies",
+            ja: '手作業のための3Dデータ処理技術の研究開発を深める。また、大学院高度副プログラムにてリベラルアーツも学ぶ。',
+        },
     },
     {
         title: "Italian Design Summer School, Non-degree program",
@@ -27,28 +45,19 @@ export const educations: Education[] = [
         description: "I learned the history of Italian art, design and the design process of products, practicing the design method and tools. I also visited the headquarters of Italian design companies and design museums.",
     },
     {
-        title: "Bachelor's Degree in Engineering",
-        faculty: "School of Engineering Science, the University of Osaka (Osaka, Japan)",
+        title: {
+            en: "Bachelor's Degree in Engineering",
+            ja: '学士（工学）',
+        },
+        faculty: {
+            en: "Department of Systems Science, School of Engineering Science, the University of Osaka (Osaka, Japan)",
+            ja: '大阪大学基礎工学部システム科学科',
+        },
         period: "Apr. 2019 - Mar. 2023",
-        description: "In my third year of undergraduate studies, I conducted an independent research on HAI under the guidance of Guest Associate Professor Takahashi and in my fourth year of undergraduate studies, I did research on 3D data processing technology for manual work by applying computer vision at SENSLab.",
+        description: {
+            en: "In my third year of undergraduate studies, I conducted an independent research on Human-Agent Interaction under the guidance of Guest Associate Professor Takahashi and in my fourth year of undergraduate studies, I did research on 3D data processing technology for manual work by applying computer vision.",
+            ja: '学部3年次に高橋特任准教授の指導のもと、Human-Agent Interactionに関する自主研究を行い、学部4年次にはコンピュータビジョンを応用した手作業のための3Dデータ処理技術に関する研究を行う。',
+        },
     },
 ];
 
-const Educations: React.FC = () => {
-    return (
-        <section className="Education">
-            <div className="timeline">
-                {educations.map((exp, index) => (
-                    <div key={index} className="timeline-item">
-                        <h3>{exp.title}</h3>
-                        <h4>{exp.faculty}</h4>
-                        <p className="period">{exp.period}</p>
-                        <p className="description">{exp.description}</p>
-                    </div>
-                ))}
-            </div>
-        </section>
-    );
-};
-
-export default Educations;

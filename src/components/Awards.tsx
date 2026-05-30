@@ -1,20 +1,27 @@
-'use client';
+import type { BL } from '../types/i18n';
 
-import React from 'react';
-
-export interface Award {
-    title: string;
-    givenby: string;
-    time: string;
-    description: string;
+interface Award {
+    title: BL;
+    givenby: BL;
+    time: BL;
+    description: BL;
 }
 
 export const awards: Award[] = [
     {
-        title: "Outstanding Student Award in the Division of System Science and Applied Informatics (Magna cum laude)",
-        givenby: "Graduate School of Engineering Science, the University of Osaka",
+        title: {
+                en: "Outstanding Student Award in the Division of System Science and Applied Informatics (Magna cum laude)",
+                ja: 'システム科学領域賞（次席）',
+        },
+        givenby: {
+                en: "Graduate School of Engineering Science, the University of Osaka",
+                ja: '大阪大学大学院基礎工学研究科',
+        },
         time: "Mar. 2025",
-        description: "Awarded for the outstanding achievements in academic performance and research activities during the Master's program",
+        description: {
+                en: "Awarded for the outstanding achievements in academic performance and research activities during the Master's program",
+                ja: '修士課程における学業成績と研究活動において優れた成果を収めたため授与',
+        },
     },
     {
         title: "Best Student Demo in Show Award",
@@ -23,28 +30,19 @@ export const awards: Award[] = [
         description: "Awarded for the students' demonstration of the research titled 'Casper DPM: Cascaded Perceptual Dynamic Projection Mapping onto Hands' as co-author",
     },
     {
-        title: "Student Presentation Award in SCI'23",
-        givenby: "The 67th Conference of the Institute of Systems, Control and Information Engineers",
+        title: {
+                en: "Student Presentation Award (Domestic Conference)",
+                ja: '学生発表賞',
+        },
+        givenby: {
+                en: "The 67th Conference of the Institute of Systems, Control and Information Engineers",
+                ja: '第67回システム制御情報学会（SCI\'23）',
+        },
         time: "May 2023",
-        description: "Awarded for the students' presentation of the research titled '3D Reconstruction of Hand Work Using Multiple RGB-D Cameras and Thermal Cameras'",
+        description: {
+                en: "Awarded for the students' presentation of the research titled '3D Reconstruction of Hand Work Using Multiple RGB-D Cameras and Thermal Cameras'",
+                ja: '研究発表「複数のRGB-Dカメラとサーモカメラを用いた手作業の3D再構築」に対して授与',
+        },
     },
 ];
 
-const Awards: React.FC = () => {
-    return (
-        <section className="awards">
-            <div className="timeline">
-                {awards.map((exp, index) => (
-                    <div key={index} className="timeline-item">
-                        <h3>{exp.title}</h3>
-                        <h4>{exp.givenby}</h4>
-                        <p className="time">{exp.time}</p>
-                        <p className="description">{exp.description}</p>
-                    </div>
-                ))}
-            </div>
-        </section>
-    );
-};
-
-export default Awards;

@@ -266,7 +266,7 @@ function ShaderTile({ title, note, src }: TileProps) {
         <canvas ref={canvasRef} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', display: 'block' }} />
       </div>
       <figcaption style={{ marginTop: 14 }}>
-        <div style={{ fontFamily: T.serif, fontSize: 17, fontWeight: 400, color: T.fg, fontStyle: 'italic' }}>{title}</div>
+        <div style={{ fontFamily: T.serif, fontSize: 17, fontWeight: 400, color: T.fg }}>{title}</div>
         <div style={{ fontFamily: T.serif, fontSize: 14, color: T.fgMute, marginTop: 3, lineHeight: 1.4 }}>{note}</div>
       </figcaption>
     </figure>
@@ -283,13 +283,13 @@ const PlaygroundsPage: React.FC<PageProps> = () => (
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-      <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..700;1,6..72,200..700&family=Allura&display=swap" rel="stylesheet" />
+      <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,200..700&family=Allura&family=Shippori+Mincho&display=swap" rel="stylesheet" />
       <title>Playgrounds — Kohei Miura</title>
     </Helmet>
 
     <section style={{ marginTop: 72, marginBottom: 24 }}>
       <SectionHeading>Playgrounds.</SectionHeading>
-      <p style={{ color: T.fgMute, fontFamily: T.serif, fontStyle: 'italic', fontSize: 15, margin: '-12px 0 48px', lineHeight: 1.6, maxWidth: 560 }}>
+      <p style={{ color: T.fgMute, fontFamily: T.serif, fontSize: 15, margin: '-12px 0 48px', lineHeight: 1.6, maxWidth: 560 }}>
         A working notebook on visual materiality — interactive GLSL sketches. Move the cursor over each tile to interact.
       </p>
 

@@ -7,12 +7,15 @@ import Signature from '../components/Signature';
 import { PageShell, SectionHeading, Row } from '../components/PortfolioLayout';
 import Footer from '../components/Footer';
 import { T } from '../styles/theme';
+import { useLang } from '../contexts/LangContext';
+import { t } from '../types/i18n';
 import { ABOUT_DATA } from '../components/AboutMe';
 import { SOCIAL_LINKS } from '../components/SocialLinks';
 import { newsItems } from '../components/News';
 import '../styles/global.css';
 
 const IndexPage: React.FC<PageProps> = () => {
+  const { lang } = useLang();
   const [newsExpanded, setNewsExpanded] = React.useState(false);
   const visibleNews = newsExpanded ? newsItems : newsItems.slice(0, 4);
 
@@ -24,7 +27,7 @@ const IndexPage: React.FC<PageProps> = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..700;1,6..72,200..700&family=Allura&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,200..700&family=Allura&family=Shippori+Mincho&display=swap" rel="stylesheet" />
         <title>Kohei Miura</title>
         <meta name="description" content="PhD student at XRGroup, Osaka University. Computer Vision, Graphics, Interaction." />
       </Helmet>
@@ -35,36 +38,50 @@ const IndexPage: React.FC<PageProps> = () => {
         <div>
           <Signature size={48} color={T.fg} />
 
-          <p style={{ fontFamily: T.serif, fontSize: 19, fontWeight: 300, fontStyle: 'italic', lineHeight: 1.4, color: T.fg, margin: '32px 0 0', letterSpacing: '-0.005em', maxWidth: 600 }}>
-            I am a PhD student at{' '}
-            <a href={ABOUT_DATA.xrgroupUrl} target="_blank" rel="noreferrer" style={{ color: T.fg, textDecorationColor: T.rule, textUnderlineOffset: 4 }}>
-              XRGroup
-            </a>{' '}
-            at the University of Osaka, majoring in Computer Vision, Graphics, Interaction.
+          <p style={{ fontFamily: T.serif, fontSize: 19, fontWeight: 400, lineHeight: 1.4, color: T.fg, margin: '32px 0 0', maxWidth: 600 }}>
+            {lang === 'en' ? (
+              <>
+                I am a PhD student at{' '}
+                <a href={ABOUT_DATA.xrgroupUrl} target="_blank" rel="noreferrer" style={{ color: T.fg, textDecorationColor: T.rule, textUnderlineOffset: 4 }}>XRGroup</a>
+                {' '}at the University of Osaka, majoring in Computer Vision, Graphics, Interaction for better understanding of human.
+              </>
+            ) : (
+              <>
+                大阪大学大学院基礎工学研究科博士後期課程、{' '}
+                <a href={ABOUT_DATA.xrgroupUrl} target="_blank" rel="noreferrer" style={{ color: T.fg, textDecorationColor: T.rule, textUnderlineOffset: 4 }}>XRGroup</a>
+                {' '}に所属。人間を知るためのコンピュータビジョン、グラフィックス、インタラクション等の研究に取り組む。
+              </>
+            )}
           </p>
 
           <p style={{ color: T.fgDim, fontSize: 15, lineHeight: 1.65, marginTop: 18, maxWidth: 620 }}>
-            {ABOUT_DATA.bio}
+            {t(ABOUT_DATA.bio, lang)}
           </p>
 
           <div className="l-meta-grid" style={{ marginTop: 28 }}>
             <div>
-              <div style={{ fontFamily: T.serif, fontStyle: 'italic', fontSize: 14, color: T.fgMute }}>Research Interests</div>
-              <p style={{ color: T.fgDim, fontSize: 14, lineHeight: 1.55, marginTop: 6 }}>{ABOUT_DATA.interests}</p>
+              <div style={{ fontFamily: T.serif, fontSize: 13, color: T.fgMute, letterSpacing: '0.06em' }}>
+                {lang === 'en' ? 'Research Interests' : '研究キーワード'}
+              </div>
+              <p style={{ color: T.fgDim, fontSize: 14, lineHeight: 1.55, marginTop: 6 }}>{t(ABOUT_DATA.interests, lang)}</p>
             </div>
             <div>
-              <div style={{ fontFamily: T.serif, fontStyle: 'italic', fontSize: 14, color: T.fgMute }}>E-mail</div>
+              <div style={{ fontFamily: T.serif, fontSize: 13, color: T.fgMute, letterSpacing: '0.06em' }}>
+                {lang === 'en' ? 'E-mail' : 'メール'}
+              </div>
               {ABOUT_DATA.emails.map((e) => (
                 <p key={e} style={{ marginTop: 6, fontSize: 14, color: T.fg, textIndent: 0, paddingLeft: 0 }}>{e}</p>
               ))}
             </div>
             <div>
-              <div style={{ fontFamily: T.serif, fontStyle: 'italic', fontSize: 14, color: T.fgMute }}>Affiliation</div>
+              <div style={{ fontFamily: T.serif, fontSize: 13, color: T.fgMute, letterSpacing: '0.06em' }}>
+                {lang === 'en' ? 'Affiliation' : '所属'}
+              </div>
               {ABOUT_DATA.affiliations.map((a) => (
-                <p key={a.name} style={{ marginTop: 6, fontSize: 14, color: T.fgDim, lineHeight: 1.5 }}>
+                <p key={typeof a.name === 'string' ? a.name : a.name.en} style={{ marginTop: 6, fontSize: 14, color: T.fgDim, lineHeight: 1.5 }}>
                   {a.url
-                    ? <a href={a.url} style={{ color: T.fgDim, textDecorationColor: T.rule, textUnderlineOffset: 3 }}>{a.name}</a>
-                    : a.name}
+                    ? <a href={a.url} style={{ color: T.fgDim, textDecorationColor: T.rule, textUnderlineOffset: 3 }}>{t(a.name, lang)}</a>
+                    : t(a.name, lang)}
                 </p>
               ))}
             </div>
@@ -78,7 +95,7 @@ const IndexPage: React.FC<PageProps> = () => {
             {SOCIAL_LINKS.map((s) => (
               <a key={s.label} href={s.url} target="_blank" rel="noreferrer" style={{
                 color: T.fg, textDecoration: 'none', borderBottom: `1px solid ${T.rule}`,
-                fontSize: 14, paddingBottom: 2, fontFamily: T.serif, fontStyle: 'italic',
+                fontSize: 14, paddingBottom: 2, fontFamily: T.serif,
               }}>
                 {s.label} ↗
               </a>
@@ -89,17 +106,19 @@ const IndexPage: React.FC<PageProps> = () => {
 
       {/* ── News ── */}
       <section id="news" style={{ marginTop: 72, marginBottom: 24 }}>
-        <SectionHeading>News.</SectionHeading>
+        <SectionHeading>{lang === 'en' ? 'News.' : 'ニュース.'}</SectionHeading>
         {visibleNews.map((n) => (
-          <Row key={n.id} left={n.date} title={n.title} body={n.summary} />
+          <Row key={n.id} left={t(n.date, lang)} title={t(n.title, lang)} />
         ))}
         {newsItems.length > 4 && (
           <button
             type="button"
             onClick={() => setNewsExpanded((v) => !v)}
-            style={{ marginTop: 20, background: 'transparent', border: `1px solid ${T.rule}`, color: T.fg, padding: '10px 18px', fontFamily: T.serif, fontStyle: 'italic', fontSize: 14, cursor: 'pointer', borderRadius: 999 }}
+            style={{ marginTop: 20, background: 'transparent', border: `1px solid ${T.rule}`, color: T.fg, padding: '10px 18px', fontFamily: T.serif, fontSize: 14, cursor: 'pointer', borderRadius: 999 }}
           >
-            {newsExpanded ? 'Show fewer' : `Show all (${newsItems.length})`}
+            {newsExpanded
+              ? (lang === 'en' ? 'Show fewer' : '折りたたむ')
+              : (lang === 'en' ? `Show all (${newsItems.length})` : `全て表示（${newsItems.length}）`)}
           </button>
         )}
       </section>
@@ -107,13 +126,15 @@ const IndexPage: React.FC<PageProps> = () => {
       {/* ── Projects ── */}
       <section id="projects" style={{ marginTop: 72, marginBottom: 24 }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 24 }}>
-          <SectionHeading>Projects.</SectionHeading>
-          <Link to="/projects" style={{ fontFamily: T.serif, fontStyle: 'italic', fontSize: 14, color: T.fgMute, textDecoration: 'none', borderBottom: `1px solid ${T.rule}`, paddingBottom: 2 }}>
-            View all ↗
+          <SectionHeading>{lang === 'en' ? 'Projects.' : 'プロジェクト.'}</SectionHeading>
+          <Link to="/projects" style={{ fontFamily: T.serif, fontSize: 14, color: T.fgMute, textDecoration: 'none', borderBottom: `1px solid ${T.rule}`, paddingBottom: 2 }}>
+            {lang === 'en' ? 'View all ↗' : '全て見る ↗'}
           </Link>
         </div>
-        <div style={{ padding: '24px 0', borderTop: `1px solid ${T.rule}`, color: T.fgMute, fontFamily: T.serif, fontStyle: 'italic', fontSize: 15 }}>
-          Coming soon — add entries in <code style={{ fontFamily: 'monospace', fontSize: 14, opacity: 0.7 }}>src/components/ProjectsTeaser.tsx</code>.
+        <div style={{ padding: '24px 0', borderTop: `1px solid ${T.rule}`, color: T.fgMute, fontFamily: T.serif, fontSize: 15 }}>
+          {lang === 'en'
+            ? <>Coming soon — <code style={{ fontFamily: 'monospace', fontSize: 14, opacity: 0.7 }}>src/components/ProjectsTeaser.tsx</code>.</>
+            : <>準備中 — <code style={{ fontFamily: 'monospace', fontSize: 14, opacity: 0.7 }}>src/components/ProjectsTeaser.tsx</code></>}
         </div>
       </section>
 

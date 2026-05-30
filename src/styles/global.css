@@ -24,7 +24,7 @@ html, body {
 
 body {
   font-family: 'Newsreader', Georgia, serif;
-  background: #0c0e16;
+  background: #08090f;
   color: #f1eee6;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -76,7 +76,7 @@ button {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #0c0e16;
+  background: #08090f;
 }
 ::-webkit-scrollbar-thumb {
   background: rgba(241, 238, 230, 0.15);

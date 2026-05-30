@@ -1,16 +1,14 @@
-'use client';
+import type { BL } from '../types/i18n';
 
-import React from 'react';
-
-export interface Publication {
-    title: string;
-    authors: string;
-    journal: string;
-    attributes: string;
+interface Publication {
+    title: BL;
+    authors: BL;
+    journal: BL;
+    attributes: BL;
     url?: string;
 }
 
-export interface YearGroup {
+interface YearGroup {
     year: number;
     items: Publication[];
 }
@@ -23,7 +21,7 @@ export const publications: YearGroup[] = [
                 title: "Breaking the Scalability Limit of Multi-projector Calibration with Embedded Cameras",
                 authors: "Takumi Kawano, Kohei Miura, Daisuke Iwai",
                 journal: "The IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2026",
-                attributes: "Main(Oral, <1.0%), Peer-reviewed"
+                attributes: "Main (Oral, <1.0%), Peer-reviewed"
             },
             {
                 title: "Preliminary Study on a Real-time CSF-based Blur Filter for Unobtrusively Saliency-modulated Augmented Reality",
@@ -87,34 +85,3 @@ export const publications: YearGroup[] = [
         ],
     },
 ];
-
-const PublicationList: React.FC = () => {
-    return (
-        <section className="publications">
-            {publications.map(yearGroup => (
-                <React.Fragment key={yearGroup.year}>
-                    <h3 className="publication-year">{yearGroup.year}</h3>
-                    <ul>
-                        {yearGroup.items.map((pub, index) => (
-                            <li key={index}>
-                                <p className="title" style={{ fontWeight: 900 }}>{pub.title}</p>
-                                <p className="authors">{pub.authors}</p>
-                                <p className="journal">
-                                    {pub.url ? (
-                                        <a href={pub.url} target="_blank" rel="noreferrer">{pub.journal}</a>
-                                    ) : (
-                                        pub.journal
-                                    )}
-                                </p>
-                                <p className="attributes">{pub.attributes}</p>
-                            </li>
-                        ))}
-                    </ul>
-                </React.Fragment>
-            ))}
-            <p>To see all achievement lists (CV) including domestic conferences and other small achievements, please contact me via e-mail or see <a href='https://researchmap.jp/koheimiura'>Researchmap</a> for domestic conferences.</p>
-        </section>
-    );
-};
-
-export default PublicationList;

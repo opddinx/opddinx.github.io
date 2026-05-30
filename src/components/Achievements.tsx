@@ -1,12 +1,10 @@
-'use client';
+import type { BL } from '../types/i18n';
 
-import React from 'react';
-
-export interface Achievement {
-    title: string;
-    company: string;
-    period: string;
-    description: string;
+interface Achievement {
+    title: BL;
+    company: BL;
+    period: BL;
+    description: BL;
 }
 
 export const achievements: Achievement[] = [
@@ -17,64 +15,102 @@ export const achievements: Achievement[] = [
         description: "\"Exploring thermal contact potentials for Hand-Object Interaction refinement\" at SPIE Photonics West 2026 (1000 USD).",
     },
     {
-        title: "\"Unobtrusive Behavioral Guidance in the Real Environment using Subliminal Saliency Modulation,\" Innovative, Educational Research Grant, Program for Leading Graduate Schools (co-applicant)",
-        company: "The University of Osaka, Japan",
+        title: {
+            en: "\"Unobtrusive Behavioral Guidance in the Real Environment using Subliminal Saliency Modulation,\" Innovative, Educational Research Grant (co-applicant)",
+            ja: "実環境におけるサブリミナルなSaliency Modulationを用いた無意識的な行動誘導、独創的教育研究活動経（共同申請者）",
+        },
+        company: {
+            en: "Institute for Transdisciplinary Graduate Degree Programs, The University of Osaka, Japan",
+            ja: "大阪大学学際大学院機構",
+        },
         period: "Jul. 2025 - Mar. 2026",
-        description: "900K JPY.",
+        description: {
+            en: "900K JPY.",
+            ja: "90万円",
+        },
     },
     {
-        title: "Half Exemption from Return for Particularly Outstanding Achievement",
-        company: "Japan Student Services Organization, Japan",
+        title: {
+            en: "Half Exemption from Return for Particularly Outstanding Achievement",
+            ja: "特に優れた業績に対する返還の半額免除",
+        },
+        company: {
+            en: "Japan Student Services Organization, Japan",
+            ja: "日本学生支援機構",
+        },
         period: "May. 2025",
-        description: "For academic achievement in MSc (1M JPY).",
+        description: {
+            en: "For academic achievement in MSc (About 1M JPY).",
+            ja: "修士課程における学業成績に対して授与（約100万円）。",
+        },
     },
     {
-        title: "\"Construction of an Immersive Story Editing Experience using Deep Generative Models and Virtual Reality,\"NEDO Entrepreneurs Program",
+        title: {
+            en: "\"Construction of an Immersive Story Editing Experience using Deep Generative Models and Virtual Reality,\" NEDO Entrepreneurs Program",
+            ja: "深層生成モデルと仮想現実感による没入型物語編集体験の構築、NEP開拓コース",
+        },
         company: "National Research and Development Agency (NEDO), Japan",
         period: "Apr. 2025 - Mar. 2026",
-        description: "To implement my R&D project into society by launching a startup (3M JPY).",
+        description: {
+            en: "To implement my R&D project into society by launching a startup (3M JPY).",
+            ja: "R&Dプロジェクトを社会実装するためのスタートアップの立ち上げ（300万円）。",
+        },
     },
     {
-        title: "\"Capturing Hand-Object Interaction for Soft Objects and Estimation of Their Deformation Using Neural Representations,\" JST BOOST Program",
-        company: "The University of Osaka",
+        title: {
+            en: "\"Capturing Hand-Object Interaction for Soft Objects and Estimation of Their Deformation Using Neural Representations,\" JST BOOST Program",
+            ja: "ニューラル表現を用いた柔らかい物体に対する手作業の計測と変形の推定、大阪大学次世代AI研究者育成プログラム（BOOST）",
+        },
+        company: {
+            en: "Japan Science and Technology Agency (JST) and The University of Osaka, Japan",
+            ja: "科学技術振興機構（JST）、大阪大学",
+        },
         period: "Apr. 2025 - Mar. 2028 (Expected)",
-        description: "Support AI related research activities (900K (research) + 3M (living / year) JPY).",
+        description: {
+            en: "Support AI related research activities (900K (research) + 3M (living / year) JPY).",
+            ja: "AI関連の研究活動を支援（研究費90万円＋生活費300万円/年）。",
+        },
     },
     {
-        title: "\"I2VR: An application that enables us to immerse ourselves in a story and edit,\" AKATSUKI Project: Kansai Tech Creator Challenge",
-        company: "Osaka Business Development Agency and Ministry of Economy, Trade and Industry, Japan",
+        title: {
+            en: "\"I2VR: An application that enables us to immerse ourselves in a story and edit,\" AKATSUKI Project: Kansai Tech Creator Challenge",
+            ja: "I2VR:物語の中に入り込んで物語を創作するアプリ、AKATSUKIプロジェクト：関西テック・クリエイター・チャレンジ",
+        },
+        company: {
+            en: "Osaka Business Development Agency and Ministry of Economy, Trade and Industry, Japan",
+            ja: "大阪産業局、経済産業省",
+        },
         period: "Sep. 2024 - Feb. 2025",
-        description: "This project aims to aid innovative IT creators in Kansai region (550K JPY).",
+        description: {
+            en: "This project aims to aid innovative IT creators in Kansai region (550K JPY).",
+            ja: "関西地域の革新的なITクリエイターを支援することを目的としたプロジェクト（55万円）。",
+        },
     },
     {
-        title: "DAIKIN Industries Ltd. Student Researcher Fellowship",
-        company: "DAIKIN Industries Ltd.",
+        title: {
+            en: "DAIKIN Industries Ltd. Student Researcher Fellowship",
+            ja: "ダイキン学生研究員プログラム",
+        },
+        company: {
+            en: "DAIKIN Industries Ltd. and The University of Osaka, Japan",
+            ja: "ダイキン工業株式会社、大阪大学",
+        },
         period: "Jul. 2024 - Mar. 2025",
-        description: "Offered based on the comprehensive cooperation between Osaka University and DAIKIN (120K JPY/month).",
+        description: {
+            en: "Offered based on the comprehensive cooperation between Osaka University and DAIKIN (120K JPY/month).",
+            ja: "大阪大学とダイキン工業株式会社の包括連携に基づいて提供（12万円/月）。",
+        },
     },
     {
-        title: "Humanware Innovation Program Scholarship",
-        company: "The University of Osaka",
+        title: {
+            en: "Humanware Innovation Program Scholarship",
+            ja: "ヒューマンウェアイノベーションプログラム奨学金",
+        },
+        company: {
+            en: "The University of Osaka, Japan",
+            ja: "大阪大学",
+        },
         period: "Apr. 2023 - Mar. 2025",
         description: "Aid for research activity",
     },
 ];
-
-const Achievements: React.FC = () => {
-    return (
-        <section className="achievements">
-            <div className="timeline">
-                {achievements.map((exp, index) => (
-                    <div key={index} className="timeline-item">
-                        <h3>{exp.title}</h3>
-                        <h4>{exp.company}</h4>
-                        <p className="period">{exp.period}</p>
-                        <p className="description">{exp.description}</p>
-                    </div>
-                ))}
-            </div>
-        </section>
-    );
-};
-
-export default Achievements;

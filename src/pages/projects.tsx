@@ -19,19 +19,19 @@ const ProjectsPage: React.FC<PageProps> = () => (
     <PageShell active="top">
         <section style={{ marginTop: 72, marginBottom: 24 }}>
             <SectionHeading>Projects.</SectionHeading>
-            <p style={{ color: T.fgMute, fontStyle: 'italic', fontSize: 15, margin: '-12px 0 40px', lineHeight: 1.6 }}>
+            <p style={{ color: T.fgMute, fontSize: 15, margin: '-12px 0 40px', lineHeight: 1.6 }}>
                 Selected systems, prototypes, and tools.
             </p>
 
             {projects.length === 0 ? (
-                <div style={{ padding: '24px 0', borderTop: `1px solid ${T.rule}`, color: T.fgMute, fontFamily: T.serif, fontStyle: 'italic', fontSize: 15 }}>
+                <div style={{ padding: '24px 0', borderTop: `1px solid ${T.rule}`, color: T.fgMute, fontFamily: T.serif, fontSize: 15 }}>
                     No projects listed yet — add entries in <code style={{ fontFamily: 'monospace', fontSize: 14, opacity: 0.7 }}>src/pages/projects.tsx</code>.
                 </div>
             ) : (
                 <div>
                     {projects.map((project) => (
                         <div key={project.title} className="l-row" style={{ padding: '24px 0', borderTop: `1px solid ${T.rule}` }}>
-                            <div className="l-row-date" style={{ fontFamily: T.serif, fontStyle: 'italic', fontSize: 14, color: T.fgMute }}>
+                            <div className="l-row-date" style={{ fontFamily: T.serif, fontSize: 14, color: T.fgMute }}>
                                 {project.timeframe}
                             </div>
                             <div>
@@ -42,14 +42,14 @@ const ProjectsPage: React.FC<PageProps> = () => (
                                 {project.tags.length > 0 && (
                                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginTop: 12 }}>
                                         {project.tags.map((tag) => (
-                                            <span key={tag} style={{ border: `1px solid ${T.rule}`, borderRadius: 999, padding: '2px 10px', fontSize: 13, color: T.fgMute, fontFamily: T.serif, fontStyle: 'italic' }}>
+                                            <span key={tag} style={{ border: `1px solid ${T.rule}`, borderRadius: 999, padding: '2px 10px', fontSize: 13, color: T.fgMute, fontFamily: T.serif }}>
                                                 {tag}
                                             </span>
                                         ))}
                                     </div>
                                 )}
                                 {project.link && (
-                                    <a href={project.link} style={{ display: 'inline-block', marginTop: 12, fontFamily: T.serif, fontStyle: 'italic', fontSize: 14, color: T.fg, textDecorationColor: T.rule, textUnderlineOffset: 3 }}>
+                                    <a href={project.link} style={{ display: 'inline-block', marginTop: 12, fontFamily: T.serif, fontSize: 14, color: T.fg, textDecorationColor: T.rule, textUnderlineOffset: 3 }}>
                                         View project ↗
                                     </a>
                                 )}

@@ -30,14 +30,14 @@ export function Row({
 }: { left: string; title: string; sub?: string; body?: string; right?: React.ReactNode }) {
   return (
     <div className="l-row" style={{ padding: '24px 0', borderTop: `1px solid ${T.rule}` }}>
-      <div className="l-row-date" style={{ fontFamily: T.serif, fontStyle: 'italic', fontSize: 14, color: T.fgMute, letterSpacing: '0.01em' }}>
+      <div className="l-row-date" style={{ fontFamily: T.serif, fontSize: 13, color: T.fgMute, letterSpacing: '0.05em' }}>
         {left}
       </div>
       <div>
         <h4 style={{ fontFamily: T.serif, fontSize: 18, fontWeight: 400, color: T.fg, margin: '0 0 4px', lineHeight: 1.3 }}>
           {title}
         </h4>
-        {sub && <p style={{ color: T.fgMute, fontSize: 15, margin: '0 0 8px', fontStyle: 'italic' }}>{sub}</p>}
+        {sub && <p style={{ color: T.fgMute, fontSize: 15, margin: '0 0 8px' }}>{sub}</p>}
         {body && <p style={{ color: T.fgDim, fontSize: 15, margin: 0, lineHeight: 1.6, maxWidth: 640 }}>{body}</p>}
         {right}
       </div>
