@@ -10,7 +10,7 @@ interface Experience {
 export const experiences: Experience[] = [
     {
         title: {
-            en: "Research Internship Stundent",
+            en: "Research Internship Student",
             ja: "学生研究インターン",
         },
         company: {

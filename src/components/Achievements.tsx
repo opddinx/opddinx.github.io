@@ -17,7 +17,7 @@ export const achievements: Achievement[] = [
     {
         title: {
             en: "\"Unobtrusive Behavioral Guidance in the Real Environment using Subliminal Saliency Modulation,\" Innovative, Educational Research Grant (co-applicant)",
-            ja: "実環境におけるサブリミナルなSaliency Modulationを用いた無意識的な行動誘導、独創的教育研究活動経（共同申請者）",
+            ja: "実環境におけるサブリミナルなSaliency Modulationを用いた無意識的な行動誘導、独創的教育研究活動経費（共同申請者）",
         },
         company: {
             en: "Institute for Transdisciplinary Graduate Degree Programs, The University of Osaka, Japan",
@@ -25,14 +25,14 @@ export const achievements: Achievement[] = [
         },
         period: "Jul. 2025 - Mar. 2026",
         description: {
-            en: "900K JPY.",
-            ja: "90万円",
+            en: "800K JPY.",
+            ja: "80万円",
         },
     },
     {
         title: {
             en: "Half Exemption from Return for Particularly Outstanding Achievement",
-            ja: "特に優れた業績に対する返還の半額免除",
+            ja: "特に優れた業績による返還免除（半額）",
         },
         company: {
             en: "Japan Student Services Organization, Japan",
