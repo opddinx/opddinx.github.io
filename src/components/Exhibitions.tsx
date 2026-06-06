@@ -23,6 +23,7 @@ export const exhibitions: Exhibition[] = [
       en: 'Exhibited the immersive story editing system developed with the support of the Kansai Tech Creator Challenge 2024 as part of a limited-time event during Expo 2025.',
       ja: '2024年度関西テック・クリエイター・チャレンジの助成を得て開発した没入型物語編集システムをEXPO 2025の開催期間中の期間限定イベントの一部として展示。',
     },
+    link: 'https://www.spark-awards.com/',
   },
   {
     period: 'Jun. 2025 –',
@@ -38,5 +39,6 @@ export const exhibitions: Exhibition[] = [
       en: 'Developed thermography-based physical switch interaction system for a robotic display exhibit, now part of the permanent "Hello! Robot" exhibition.',
       ja: 'サーモグラフィーと物理スイッチを用いたインタラクションシステムを開発。常設展「ハロー！ロボット」の一部として展示中。',
     },
+    link: 'https://www.miraikan.jst.go.jp/news/press/202506124090.html',
   },
 ];

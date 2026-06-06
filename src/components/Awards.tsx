@@ -24,7 +24,7 @@ export const awards: Award[] = [
         },
     },
     {
-        title: "Best Student Demo in Show Award",
+        title: "Best Student Demo in Show Award (1/18)",
         givenby: "The 17th ACM SIGGRAPH Conference and Exhibition on Computer Graphics and Interactive Techniques in Asia (SIGGRAPH Asia 2024)",
         time: "Dec. 2024",
         description: "Awarded for the students' demonstration of the research titled 'Casper DPM: Cascaded Perceptual Dynamic Projection Mapping onto Hands' as co-author",

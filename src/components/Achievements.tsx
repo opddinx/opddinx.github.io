@@ -9,6 +9,21 @@ interface Achievement {
 
 export const achievements: Achievement[] = [
     {
+        title: {
+            en: "\"Walk Guidance in the Real Environment by Blur Modulation using an AR Device,\" Innovative, Educational Research Grant (co-applicant)",
+            ja: "ARデバイスを用いたブラー変調による実環境における歩行方向の誘導、独創的教育研究活動経費（共同申請者）",
+        },
+        company: {
+            en: "Institute for Transdisciplinary Graduate Degree Programs, The University of Osaka, Japan",
+            ja: "大阪大学学際大学院機構",
+        },
+        period: "Jul. 2026 - Mar. 2027",
+        description: {
+            en: "570K JPY.",
+            ja: "57万円",
+        },
+    },
+    {
         title: "SPIE Photonics West Student Travel Support",
         company: "SPIE, the international society for optics and photonics",
         period: "Jan. 2026",
