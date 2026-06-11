@@ -41,7 +41,7 @@ export const awards: Award[] = [
         time: "May 2023",
         description: {
                 en: "Awarded for the students' presentation of the research titled '3D Reconstruction of Hand Work Using Multiple RGB-D Cameras and Thermal Cameras'",
-                ja: '研究発表「複数のRGB-Dカメラとサーモカメラを用いた手作業の3D再構築」に対して授与',
+                ja: '研究発表「複数のRGB-Dカメラと熱カメラを用いた手作業の三次元復元」に対して授与',
         },
     },
 ];

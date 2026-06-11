@@ -20,7 +20,7 @@ export const educations: Education[] = [
         period: "Apr. 2025 - Mar. 2028 (Expected)",
         description:{
             en: "Pursuing research on 3D data processing technology for manual work, aiming to contribute to the field of computer vision and its applications in human-computer interaction.",
-            ja: '手作業のための3Dデータ処理技術に関する研究を継続し、コンピュータビジョンとHuman-Computer Interactionの分野への貢献を目指す。',
+            ja: '手作業のための3Dデータ処理技術に関する研究を継続し、コンピュータビジョンとHuman-Computer Interactionの分野への貢献を目指しています。',
         },
     },
     {
@@ -34,8 +34,8 @@ export const educations: Education[] = [
         },
         period: "Apr. 2023 - Mar. 2025",
         description:{
-            en: "Deepen the research and development of 3D data processing technology for manual work. I also study Liberal Arts as Graduate Programs for Advanced Interdisciplinary Studies",
-            ja: '手作業のための3Dデータ処理技術の研究開発を深める。また、大学院高度副プログラムにてリベラルアーツも学ぶ。',
+            en: "Deepen the research and development of 3D data processing technology for manual work. I also study Liberal Arts in the art field as Graduate Programs for Advanced Interdisciplinary Studies",
+            ja: '手作業のための3Dデータ処理技術の研究開発を深める。また、大学院高度副プログラムにて芸術領域のリベラルアーツも学びました。',
         },
     },
     {

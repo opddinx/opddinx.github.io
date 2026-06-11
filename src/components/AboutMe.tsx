@@ -4,11 +4,11 @@ export const ABOUT_DATA = {
     xrgroupUrl: 'https://www.xr.sys.es.osaka-u.ac.jp/',
     heroIntro: {
         en: 'I am a PhD student at XRGroup at the University of Osaka, majoring in Computer Vision, Graphics, Interaction for better understanding of human.',
-        ja: '大阪大学大学院基礎工学研究科博士後期課程、XRGroup に所属。人間を知るためのコンピュータビジョン、グラフィックス、インタラクション等の研究に従事。',
+        ja: '大阪大学大学院基礎工学研究科博士後期課程、XRGroup に所属。人間を知るためのコンピュータビジョン、グラフィックス、インタラクション等の研究を行っています。',
     } satisfies BL,
     bio: {
         en: 'I study how humans perceive, feel, think, express, and interpret through the design of novel capture/display systems and experimental experiences. My goal is to reveal how subjective experience is formed and communicated, and to translate this understanding into new forms of human-computer interaction and expressive media.',
-        ja: '人間が知覚・感覚・思考・表現・解釈する方法を、新しいキャプチャ/ディスプレイシステムと実験的体験のデザインを通じて研究・開発。特に主観的体験がどのように形成・伝達されるかを明らかにすることを目指す。',
+        ja: '人間が知覚・感覚・思考・表現・解釈する方法を、新しいキャプチャ/ディスプレイシステムと実験的体験のデザインを通じて研究・開発しています。特に主観的体験が形成・伝達されるプロセスを計測・変調・表示・解釈のループとして捉え、それぞれの切り口で計算的に探求しています。',
     } satisfies BL,
     interests: {
         en: 'Computer Vision, Computer Graphics, Geometry Processing, Machine Learning, Human-Computer Interaction, Fabrication, Physics Simulation, XR/AR/VR, Cognitive Science',
