@@ -42,7 +42,7 @@ export const projects: Project[] = [
     {
         title: {
             en: "Unobtrusive Human Guidance with Artificial Blur Effects",
-            ja: "人工ブラー効果を用いた目立ちにくい人の誘導",
+            ja: "目立ちにくい人工ブラー効果を用いた人の誘導",
         },
         summary: {
             en: "We explores the potential of artificial blur effects for unobtrusive human guidance in augmented reality by psychophysics-based blur design and walking guidance prototype.",
