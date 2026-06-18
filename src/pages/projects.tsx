@@ -11,6 +11,7 @@ import "../styles/global.css";
 
 export const projects: Project[] = [
     {
+        id: "multi-projector-calibration",
         title: {
             ja: "埋め込みカメラを用いたマルチプロジェクタ較正におけるスケーラビリティ限界の打破",
             en: "Breaking the Scalability Limit of Multi-Projector Calibration with Embedded Cameras",
@@ -36,10 +37,13 @@ export const projects: Project[] = [
         tags: ["Multi-view systems", "Display", "Computer Vision", "CVPR"],
         links: [
             { label: "Project page", url: "https://www.xr.sys.es.osaka-u.ac.jp/projects/26-06-06-kawano-cvpr/" },
-            { label: "Paper (CVPR 2026)", url: "https://openaccess.thecvf.com/content/CVPR2026/html/Kawano_Breaking_the_Scalability_Limit_of_Multi-Projector_Calibration_with_Embedded_Cameras_CVPR_2026_paper.html" },
         ],
+        related: {
+            publications: ["multi-projector-calibration-cvpr2026"],
+        },
     },
     {
+        id: "unobtrusive-blur-guidance",
         title: {
             en: "Unobtrusive Human Guidance with Artificial Blur Effects",
             ja: "目立ちにくい人工ブラー効果を用いた人の誘導",
@@ -67,19 +71,21 @@ export const projects: Project[] = [
             alt: "Teaser for artificial blur effects for human guidance project",
         },
         tags: ["Augmented Reality", "Modulation", "AH's"],
-        links: [
-            { label: "Poster1 (ACM)", url: "https://doi.org/10.1145/3795011.3797359" },
-            { label: "Poster2 (ACM)", url: "https://doi.org/10.1145/3795011.3797379" }
-        ],
+        links: [],
+        related: {
+            publications: ["blur-filter-ahs2026", "walking-guidance-blur-ahs2026"],
+            grants: ["subliminal-saliency-grant-2025", "blur-walk-guidance-grant-2026"],
+        },
     },
     {
+        id: "thermal-hoi-refinement",
         title: {
             en: "Exploring thermal contact potentials for hand-object refinement",
             ja: "手作業補正のための熱接触ポテンシャルの探索",
         },
         summary: {
-            en: "We explore the potential of thermal information for hand-object interaction refinement by analyzing the relationship between thermal contact potentials and hand-object interaction refinement.",
-            ja: "熱接触ポテンシャルと手作業補正の関係を分析することによって、手作業補正のための熱情報の可能性を探る。",
+            en: "We explore the potential of thermal information for hand-object interaction refinement using post-contact thermal images.",
+            ja: "接触後に見える熱画像を用いて、復元した手作業データ補正のための熱情報の可能性を探る。",
         },
         timeframe: "Oct. 2022 - ",
         venue: {
@@ -96,12 +102,14 @@ export const projects: Project[] = [
             alt: "Teaser for thermal HOI project",
         },
         tags: ["Multi-view systems", "Capture", "Computer Vision", "SIGGRAPH Asia", "SPIE Photonics West"],
-        links: [
-            { label: "Poster", url: "https://doi.org/10.1145/3681756.3697895" },
-            { label: "Conf. Paper", url: "https://doi.org/10.1117/12.3078027" }
-        ],
+        links: [],
+        related: {
+            publications: ["soft-object-contact-siggraph-asia2024", "thermal-hoi-spie2026"],
+            grants: ["jst-boost-soft-hoi-2025", "spie-travel-thermal-2026"],
+        },
     },
     {
+        id: "i2s",
         title: {
             en: "I2S: An App for Interactive Story Editing with Immersive Experience",
             ja: "I2S: 物語を没入体験しながら対話的に編集するアプリ",
@@ -126,15 +134,19 @@ export const projects: Project[] = [
         links: [
             { label: "Award page", url: "https://www.spark-awards.com/" },
         ],
+        related: {
+            grants: ["akatsuki-i2vr-2024", "nedo-nep-i2s-2025"],
+        },
     },
     {
+        id: "pocchan",
         title: {
             en: "A Switch Robot \"Pocchan\"",
             ja: "スイッチロボット「ぽっちゃん」",
         },
         summary: {
-            en: "",
-            ja: "人間と異なる仕組みで動くロボットを、",
+            en: "A system to understand robots that operate on mechanisms different from humans.",
+            ja: "人間と異なる仕組みで動くロボットとわかりあうためのシステムを構築。",
         },
         timeframe: "Jun. 2025 –",
         venue: {
@@ -143,7 +155,11 @@ export const projects: Project[] = [
         },
         members: [
             { name: "Hideyuki Takahashi", isMe: false },
+            { name: "Chie Hieida", isMe: false },
+            { name: "Mayu Omichi", isMe: false },
             { name: "Kohei Miura", isMe: true },
+            { name: "Takuya Maekawa", isMe: false },
+            { name: "Shunsuke Aoki", isMe: false },
         ],
         teaser: {
             src: "/teasers/202507pocchan.jpg",
@@ -155,6 +171,7 @@ export const projects: Project[] = [
         ],
     },
     {
+        id: "intellicid",
         title: {
             ja: "IntelliCID: コースティクス照明と生活空間の調和",
             en: "IntelliCID: Harmonizing Caustic Lighting with Living Spaces",
@@ -178,11 +195,14 @@ export const projects: Project[] = [
         },
         tags: ["Display", "HCI", "UIST"],
         links: [
-            { label: "Proceeding", url: "https://dl.acm.org/doi/abs/10.1145/3672539.3686733" },
             { label: "Hackathon Page", url: "https://sensing-solution-hackathon.sonyged.com/2024_report" },
         ],
+        related: {
+            publications: ["intellicid-uist2024"],
+        },
     },
     {
+        id: "remake-player-experience",
         title: {
             ja: "ゲームのオリジナル-リメイク作品の関係を記述する体験要素の分析",
             en: "Factors of player experience in describing the relationship between remade and original works",
@@ -208,11 +228,13 @@ export const projects: Project[] = [
             alt: "Teaser for IEEECoG2024 project",
         },
         tags: ["HCI", "Interpretation"],
-        links: [
-            { label: "Proceeding", url: "https://ieeexplore.ieee.org/abstract/document/10645618" },
-        ],
+        links: [],
+        related: {
+            publications: ["remake-player-experience-cog2024"],
+        },
     },
     {
+        id: "hai-shared-experience",
         title: {
             ja: "人-エージェント共有体験と相補的関係の設計と評価",
             en: "Design and Evaluation of Shared Experience and Complementary Relationship between Humans and Agents",

@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
 import { useLang } from '../contexts/LangContext';
+import { achievements } from './Achievements';
+import { publications } from './PublicationList';
 import { T } from '../styles/theme';
 import { t, type BL } from '../types/i18n';
 
@@ -15,6 +17,7 @@ export type ProjectLink = {
 };
 
 export type Project = {
+  id: string;
   title: BL;
   summary: BL;
   timeframe: BL;
@@ -26,7 +29,61 @@ export type Project = {
   };
   tags: BL[];
   links: ProjectLink[];
+  related?: {
+    publications?: string[];
+    grants?: string[];
+  };
 };
+
+const publicationItems = publications.flatMap((group) => group.items);
+
+function RelatedItems({ project }: { project: Project }) {
+  const { lang } = useLang();
+  const relatedPublications = project.related?.publications ?? [];
+  const relatedGrants = project.related?.grants ?? [];
+
+  if (relatedPublications.length === 0 && relatedGrants.length === 0) return null;
+
+  return (
+    <div style={{ marginTop: 14 }}>
+      <div style={{ color: T.fgMute, fontFamily: T.serif, fontSize: 13, letterSpacing: '0.05em', marginBottom: 6 }}>
+        {lang === 'en' ? 'Related' : '関連'}
+      </div>
+      <div style={{ display: 'grid', gap: 4, maxWidth: 720 }}>
+        {relatedPublications.map((id) => {
+          const publication = publicationItems.find((item) => item.id === id);
+          if (!publication) return null;
+          const title = t(publication.title, lang);
+          const attributes = t(publication.attributes, lang);
+
+          return (
+            <div key={publication.id} style={{ color: T.fgDim, fontSize: 14, lineHeight: 1.45 }}>
+              <span style={{ color: T.fgMute }}>{lang === 'en' ? 'Publication: ' : '論文: '}</span>
+              <Link to={`/about#pub-${publication.id}`} style={{ color: T.fgDim, textDecorationColor: T.rule, textUnderlineOffset: 3 }}>
+                {title}
+              </Link>
+              <span style={{ color: T.fgMute }}> · {attributes}</span>
+            </div>
+          );
+        })}
+        {relatedGrants.map((id) => {
+          const grant = achievements.find((item) => item.id === id);
+          if (!grant) return null;
+          const title = t(grant.title, lang);
+
+          return (
+            <div key={grant.id} style={{ color: T.fgDim, fontSize: 14, lineHeight: 1.45 }}>
+              <span style={{ color: T.fgMute }}>{lang === 'en' ? 'Grant: ' : '助成: '}</span>
+              <Link to={`/about#grant-${grant.id}`} style={{ color: T.fgDim, textDecorationColor: T.rule, textUnderlineOffset: 3 }}>
+                {title}
+              </Link>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
 
 function ProjectTeaser({ project }: { project: Project }) {
   const { lang } = useLang();
@@ -123,19 +180,26 @@ export default function ProjectSummary({
               </div>
             )}
 
+            <RelatedItems project={project} />
+
             {project.links.length > 0 && (
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px 18px', marginTop: 14 }}>
-                {project.links.map((link) => (
-                  <a
-                    key={`${t(link.label, 'en')}-${link.url}`}
-                    href={link.url}
-                    target="_blank"
-                    rel="noreferrer"
-                    style={{ fontFamily: T.serif, fontSize: 14, color: T.fg, textDecorationColor: T.rule, textUnderlineOffset: 3 }}
-                  >
-                    {t(link.label, lang)} ↗
-                  </a>
-                ))}
+              <div style={{ marginTop: 14 }}>
+                <div style={{ color: T.fgMute, fontFamily: T.serif, fontSize: 13, letterSpacing: '0.05em', marginBottom: 6 }}>
+                  {lang === 'en' ? 'Links' : 'リンク'}
+                </div>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px 18px' }}>
+                  {project.links.map((link) => (
+                    <a
+                      key={`${t(link.label, 'en')}-${link.url}`}
+                      href={link.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      style={{ fontFamily: T.serif, fontSize: 14, color: T.fg, textDecorationColor: T.rule, textUnderlineOffset: 3 }}
+                    >
+                      {t(link.label, lang)} ↗
+                    </a>
+                  ))}
+                </div>
               </div>
             )}
           </>
@@ -148,6 +212,14 @@ export default function ProjectSummary({
 export function ProjectGalleryCard({ project }: { project: Project }) {
   const { lang } = useLang();
   const title = t(project.title, lang);
+  const publicationAttributes = Array.from(
+    new Set(
+      project.related?.publications
+        ?.map((id) => publicationItems.find((publication) => publication.id === id))
+        .filter(Boolean)
+        .map((publication) => t(publication.attributes, lang)) ?? []
+    )
+  );
 
   return (
     <Link
@@ -201,6 +273,11 @@ export function ProjectGalleryCard({ project }: { project: Project }) {
         {project.venue && (
           <p style={{ color: T.fgMute, fontSize: 13, lineHeight: 1.4, marginTop: 6 }}>
             {t(project.venue, lang)}
+          </p>
+        )}
+        {publicationAttributes.length > 0 && (
+          <p style={{ color: T.fgMute, fontSize: 12, lineHeight: 1.4, marginTop: 6 }}>
+            {publicationAttributes.join(' · ')}
           </p>
         )}
       </div>

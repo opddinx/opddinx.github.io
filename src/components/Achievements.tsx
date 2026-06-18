@@ -1,6 +1,7 @@
 import type { BL } from '../types/i18n';
 
-interface Achievement {
+export interface Achievement {
+    id: string;
     title: BL;
     company: BL;
     period: BL;
@@ -9,6 +10,7 @@ interface Achievement {
 
 export const achievements: Achievement[] = [
     {
+        id: "blur-walk-guidance-grant-2026",
         title: {
             en: "\"Walk Guidance in the Real Environment by Blur Modulation using an AR Device,\" Innovative, Educational Research Grant (co-applicant)",
             ja: "ARデバイスを用いたブラー変調による実環境における歩行方向の誘導、独創的教育研究活動経費（共同申請者）",
@@ -24,12 +26,14 @@ export const achievements: Achievement[] = [
         },
     },
     {
+        id: "spie-travel-thermal-2026",
         title: "SPIE Photonics West Student Travel Support",
         company: "SPIE, the international society for optics and photonics",
         period: "Jan. 2026",
         description: "\"Exploring thermal contact potentials for Hand-Object Interaction refinement\" at SPIE Photonics West 2026 (1000 USD).",
     },
     {
+        id: "subliminal-saliency-grant-2025",
         title: {
             en: "\"Unobtrusive Behavioral Guidance in the Real Environment using Subliminal Saliency Modulation,\" Innovative, Educational Research Grant (co-applicant)",
             ja: "実環境におけるサブリミナルなSaliency Modulationを用いた無意識的な行動誘導、独創的教育研究活動経費（共同申請者）",
@@ -45,6 +49,7 @@ export const achievements: Achievement[] = [
         },
     },
     {
+        id: "jasso-exemption-2025",
         title: {
             en: "Half Exemption from Return for Particularly Outstanding Achievement",
             ja: "特に優れた業績による返還免除（半額）",
@@ -60,6 +65,7 @@ export const achievements: Achievement[] = [
         },
     },
     {
+        id: "nedo-nep-i2s-2025",
         title: {
             en: "\"Construction of an Immersive Story Editing Experience using Deep Generative Models and Virtual Reality,\" NEDO Entrepreneurs Program",
             ja: "深層生成モデルと仮想現実感による没入型物語編集体験の構築、NEP開拓コース",
@@ -72,6 +78,7 @@ export const achievements: Achievement[] = [
         },
     },
     {
+        id: "jst-boost-soft-hoi-2025",
         title: {
             en: "\"Capturing Hand-Object Interaction for Soft Objects and Estimation of Their Deformation Using Neural Representations,\" JST BOOST Program",
             ja: "ニューラル表現を用いた柔らかい物体に対する手作業の計測と変形の推定、大阪大学次世代AI研究者育成プログラム（BOOST）",
@@ -87,6 +94,7 @@ export const achievements: Achievement[] = [
         },
     },
     {
+        id: "akatsuki-i2vr-2024",
         title: {
             en: "\"I2VR: An application that enables us to immerse ourselves in a story and edit,\" AKATSUKI Project: Kansai Tech Creator Challenge",
             ja: "I2VR:物語の中に入り込んで物語を創作するアプリ、AKATSUKIプロジェクト：関西テック・クリエイター・チャレンジ",
@@ -102,6 +110,7 @@ export const achievements: Achievement[] = [
         },
     },
     {
+        id: "daikin-fellowship-2024",
         title: {
             en: "DAIKIN Industries Ltd. Student Researcher Fellowship",
             ja: "ダイキン学生研究員プログラム",
@@ -117,6 +126,7 @@ export const achievements: Achievement[] = [
         },
     },
     {
+        id: "humanware-scholarship-2023",
         title: {
             en: "Humanware Innovation Program Scholarship",
             ja: "ヒューマンウェアイノベーションプログラム奨学金",

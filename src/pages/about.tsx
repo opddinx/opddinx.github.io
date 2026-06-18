@@ -111,7 +111,7 @@ const AboutPage: React.FC<PageProps> = () => {
               {yg.year}
             </div>
             {yg.items.map((p, i) => (
-              <div key={i} className="l-pub-row" style={{ padding: '22px 0', borderTop: `1px solid ${T.rule}` }}>
+              <div id={`pub-${p.id}`} key={p.id} className="l-pub-row" style={{ padding: '22px 0', borderTop: `1px solid ${T.rule}`, scrollMarginTop: 24 }}>
                 <div className="l-pub-index" style={{ fontFamily: T.serif, fontSize: 14, color: T.fgMute, paddingTop: 6 }}>
                   {String(i + 1).padStart(2, '0')}
                 </div>
@@ -146,7 +146,9 @@ const AboutPage: React.FC<PageProps> = () => {
       <section id="grants" style={{ marginTop: 72, marginBottom: 24 }}>
         <SectionHeading>{t(HEADINGS.grants, lang)}</SectionHeading>
         {achievements.map((a, i) => (
-          <Row key={i} left={t(a.period, lang)} title={t(a.title, lang)} sub={t(a.company, lang)} body={t(a.description, lang)} />
+          <div id={`grant-${a.id}`} key={a.id} style={{ scrollMarginTop: 24 }}>
+            <Row left={t(a.period, lang)} title={t(a.title, lang)} sub={t(a.company, lang)} body={t(a.description, lang)} />
+          </div>
         ))}
       </section>
 
