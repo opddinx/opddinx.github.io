@@ -5,6 +5,7 @@ interface Award {
     givenby: BL;
     time: BL;
     description: BL;
+    url?: string;
 }
 
 export const awards: Award[] = [
@@ -28,6 +29,7 @@ export const awards: Award[] = [
         givenby: "The 17th ACM SIGGRAPH Conference and Exhibition on Computer Graphics and Interactive Techniques in Asia (SIGGRAPH Asia 2024)",
         time: "Dec. 2024",
         description: "Awarded for the students' demonstration of the research titled 'Casper DPM: Cascaded Perceptual Dynamic Projection Mapping onto Hands' as co-author",
+        url: "https://asia.siggraph.org/2024/ja/for-the-press/press-releases/siggraph-asia-2024-award-winners/"
     },
     {
         title: {
@@ -43,6 +45,6 @@ export const awards: Award[] = [
                 en: "Awarded for the students' presentation of the research titled '3D Reconstruction of Hand Work Using Multiple RGB-D Cameras and Thermal Cameras'",
                 ja: '研究発表「複数のRGB-Dカメラと熱カメラを用いた手作業の三次元復元」に対して授与',
         },
+        url: "https://sci23.iscie.or.jp/award/"
     },
 ];
-

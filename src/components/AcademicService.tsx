@@ -9,7 +9,7 @@ interface AcademicServiceItem {
 export const academicService: AcademicServiceItem[] = [
     {
         title: "Student Volunteer",
-        time: "IEEE AIxVR 2026",
+        time: "IEEE AIXVR 2026",
         description: "",
     },
     {

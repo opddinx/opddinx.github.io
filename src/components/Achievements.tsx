@@ -68,7 +68,7 @@ export const achievements: Achievement[] = [
         period: "Apr. 2025 - Mar. 2026",
         description: {
             en: "To implement my R&D project into society by launching a startup (3M JPY).",
-            ja: "R&Dプロジェクトを社会実装するためのスタートアップの立ち上げ（300万円）。",
+            ja: "R&Dプロジェクトを社会実装するためのスタートアップの立ち上げ補助（300万円）。",
         },
     },
     {

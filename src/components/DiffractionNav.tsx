@@ -4,11 +4,12 @@ import Signature from './Signature';
 import { T } from '../styles/theme';
 import { useLang } from '../contexts/LangContext';
 
-export type NavPage = 'top' | 'about' | 'playgrounds';
+export type NavPage = 'top' | 'about' | 'projects' | 'playgrounds';
 
 const LINKS: { label: string; to: string; page: NavPage }[] = [
   { label: 'Top',         to: '/',            page: 'top'         },
   { label: 'About',       to: '/about',       page: 'about'       },
+  { label: 'Projects',    to: '/projects',    page: 'projects'    },
   { label: 'Playgrounds', to: '/playgrounds', page: 'playgrounds' },
 ];
 

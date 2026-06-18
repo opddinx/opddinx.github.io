@@ -77,7 +77,18 @@ const AboutPage: React.FC<PageProps> = () => {
       <section id="awards" style={{ marginTop: 72, marginBottom: 24 }}>
         <SectionHeading>{t(HEADINGS.awards, lang)}</SectionHeading>
         {awards.map((a, i) => (
-          <Row key={i} left={t(a.time, lang)} title={t(a.title, lang)} sub={t(a.givenby, lang)} body={t(a.description, lang)} />
+          <Row
+            key={i}
+            left={t(a.time, lang)}
+            title={t(a.title, lang)}
+            sub={t(a.givenby, lang)}
+            body={t(a.description, lang)}
+            right={a.url ? (
+              <a href={a.url} target="_blank" rel="noreferrer" style={{ display: 'inline-block', marginTop: 10, fontFamily: T.serif, fontSize: 14, color: T.fg, textDecorationColor: T.rule, textUnderlineOffset: 3 }}>
+                {lang === 'en' ? 'Award page' : '受賞ページ'} ↗
+              </a>
+            ) : undefined}
+          />
         ))}
       </section>
 

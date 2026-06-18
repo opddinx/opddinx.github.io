@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
-import { Link } from 'gatsby';
 import type { HeadFC, PageProps } from 'gatsby';
 import ShaderCircle from '../components/ShaderCircle';
 import Signature from '../components/Signature';
@@ -12,12 +11,18 @@ import { t } from '../types/i18n';
 import { ABOUT_DATA } from '../components/AboutMe';
 import { SOCIAL_LINKS } from '../components/SocialLinks';
 import { newsItems } from '../components/News';
+import { ProjectGalleryCard } from '../components/ProjectSummary';
+import { projects } from './projects';
 import '../styles/global.css';
+
+const RECENT_PROJECT_COUNT = 3;
 
 const IndexPage: React.FC<PageProps> = () => {
   const { lang } = useLang();
   const [newsExpanded, setNewsExpanded] = React.useState(false);
+  const [projectsExpanded, setProjectsExpanded] = React.useState(false);
   const visibleNews = newsExpanded ? newsItems : newsItems.slice(0, 4);
+  const visibleProjects = projectsExpanded ? projects : projects.slice(0, RECENT_PROJECT_COUNT);
 
   return (
     <PageShell active="top">
@@ -40,8 +45,8 @@ const IndexPage: React.FC<PageProps> = () => {
 
           <p style={{ fontFamily: T.serif, fontSize: 19, fontWeight: 400, lineHeight: 1.4, color: T.fg, margin: '32px 0 0', maxWidth: 600 }}>
             {(() => {
-              const [before, after] = t(ABOUT_DATA.heroIntro, lang).split('XRGroup');
-              return <>{before}<a href={ABOUT_DATA.xrgroupUrl} target="_blank" rel="noreferrer" style={{ color: T.fg, textDecorationColor: T.rule, textUnderlineOffset: 4 }}>XRGroup</a>{after}</>;
+              const [before, after] = t(ABOUT_DATA.heroIntro, lang).split('XR Group');
+              return <>{before}<a href={ABOUT_DATA.xrgroupUrl} target="_blank" rel="noreferrer" style={{ color: T.fg, textDecorationColor: T.rule, textUnderlineOffset: 4 }}>XR Group</a>{after}</>;
             })()}
           </p>
 
@@ -116,17 +121,23 @@ const IndexPage: React.FC<PageProps> = () => {
 
       {/* ── Projects ── */}
       <section id="projects" style={{ marginTop: 72, marginBottom: 24 }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 24 }}>
-          <SectionHeading>{lang === 'en' ? 'Projects.' : 'プロジェクト.'}</SectionHeading>
-          <Link to="/projects" style={{ fontFamily: T.serif, fontSize: 14, color: T.fgMute, textDecoration: 'none', borderBottom: `1px solid ${T.rule}`, paddingBottom: 2 }}>
-            {lang === 'en' ? 'View all ↗' : '全て見る ↗'}
-          </Link>
+        <SectionHeading>{lang === 'en' ? 'Projects.' : 'プロジェクト.'}</SectionHeading>
+        <div className="l-project-gallery">
+          {visibleProjects.map((project) => (
+            <ProjectGalleryCard key={t(project.title, 'en')} project={project} />
+          ))}
         </div>
-        <div style={{ padding: '24px 0', borderTop: `1px solid ${T.rule}`, color: T.fgMute, fontFamily: T.serif, fontSize: 15 }}>
-          {lang === 'en'
-            ? <>Coming soon — <code style={{ fontFamily: 'monospace', fontSize: 14, opacity: 0.7 }}>src/components/ProjectsTeaser.tsx</code>.</>
-            : <>準備中 — <code style={{ fontFamily: 'monospace', fontSize: 14, opacity: 0.7 }}>src/components/ProjectsTeaser.tsx</code></>}
-        </div>
+        {projects.length > RECENT_PROJECT_COUNT && (
+          <button
+            type="button"
+            onClick={() => setProjectsExpanded((v) => !v)}
+            style={{ marginTop: 20, background: 'transparent', border: `1px solid ${T.rule}`, color: T.fg, padding: '10px 18px', fontFamily: T.serif, fontSize: 14, cursor: 'pointer', borderRadius: 999 }}
+          >
+            {projectsExpanded
+              ? (lang === 'en' ? 'Show fewer' : '折りたたむ')
+              : (lang === 'en' ? `Show all (${projects.length})` : `全て表示（${projects.length}）`)}
+          </button>
+        )}
       </section>
 
       <Footer revised="May 2026" />
