@@ -102,6 +102,25 @@ const AboutPage: React.FC<PageProps> = () => {
         </section>
       )}
 
+      {/* ── Exhibitions ── */}
+      <section id="exhibitions" style={{ marginTop: 72, marginBottom: 24 }}>
+        <SectionHeading>{t(HEADINGS.exhibitions, lang)}</SectionHeading>
+        {exhibitions.map((e, i) => (
+          <Row
+            key={i}
+            left={t(e.period, lang)}
+            title={t(e.title, lang)}
+            sub={e.venue ? t(e.venue, lang) : undefined}
+            body={e.description ? t(e.description, lang) : undefined}
+            right={e.link ? (
+              <a href={e.link} target="_blank" rel="noreferrer" style={{ display: 'inline-block', marginTop: 10, fontFamily: T.serif, fontSize: 14, color: T.fg, textDecorationColor: T.rule, textUnderlineOffset: 3 }}>
+                {lang === 'en' ? 'View ↗' : '詳細 ↗'}
+              </a>
+            ) : undefined}
+          />
+        ))}
+      </section>
+
       {/* ── Publications ── */}
       <section id="publications" style={{ marginTop: 72, marginBottom: 24 }}>
         <SectionHeading>{t(HEADINGS.publications, lang)}</SectionHeading>
@@ -169,25 +188,6 @@ const AboutPage: React.FC<PageProps> = () => {
               )}
             </div>
           </div>
-        ))}
-      </section>
-
-      {/* ── Exhibitions ── */}
-      <section id="exhibitions" style={{ marginTop: 72, marginBottom: 24 }}>
-        <SectionHeading>{t(HEADINGS.exhibitions, lang)}</SectionHeading>
-        {exhibitions.map((e, i) => (
-          <Row
-            key={i}
-            left={t(e.period, lang)}
-            title={t(e.title, lang)}
-            sub={e.venue ? t(e.venue, lang) : undefined}
-            body={e.description ? t(e.description, lang) : undefined}
-            right={e.link ? (
-              <a href={e.link} target="_blank" rel="noreferrer" style={{ display: 'inline-block', marginTop: 10, fontFamily: T.serif, fontSize: 14, color: T.fg, textDecorationColor: T.rule, textUnderlineOffset: 3 }}>
-                {lang === 'en' ? 'View ↗' : '詳細 ↗'}
-              </a>
-            ) : undefined}
-          />
         ))}
       </section>
 

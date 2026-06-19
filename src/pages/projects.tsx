@@ -17,8 +17,8 @@ export const projects: Project[] = [
             en: "Breaking the Scalability Limit of Multi-Projector Calibration with Embedded Cameras",
         },
         summary: {
-            ja: "プロジェクタに埋め込んだカメラを用いて、プロジェクタの数に依存しない較正手法を提案。",
-            en: "Proposed a calibration method that does not depend on the number of projectors by using cameras embedded in the projectors.",
+            ja: "プロジェクタにはセンシングの機能がないため、その較正には別のセンサでプロジェクタの光を受光する必要がある。外部センサとしてプロジェクタに埋め込んだカメラを用いて、撮像回数がプロジェクタの数に依存しない較正手法を提案。",
+            en: "Since projectors do not have sensing capabilities, their calibration requires receiving the projector's light with another sensor. We propose a calibration method that uses cameras embedded in the projectors as external sensors, allowing for a calibration process where the number of captures does not depend on the number of projectors.",
         },
         timeframe: "Jul. 2026",
         venue: {
@@ -85,7 +85,7 @@ export const projects: Project[] = [
         },
         summary: {
             en: "We explore the potential of thermal information for hand-object interaction refinement using post-contact thermal images.",
-            ja: "接触後に見える熱画像を用いて、復元した手作業データ補正のための熱情報の可能性を探る。",
+            ja: "接触後に見える熱画像を用いて、復元した手作業データ補正のための熱情報の活用可能性を調査。",
         },
         timeframe: "Oct. 2022 - ",
         venue: {
