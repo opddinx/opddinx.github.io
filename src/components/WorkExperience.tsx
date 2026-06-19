@@ -56,7 +56,7 @@ export const experiences: Experience[] = [
         period: "Jan. 2023 - Mar. 2026",
         description: {
             en: "I was working on a project called AnyLight (PI: Yuichiro Takeuchi), which reproduces illumination effects. I also edit some videos for public relations.",
-            ja: "AnyLightという照明効果を再現するプロジェクト（竹内雄一郎研究員）の研究補助および広報用の動画編集を担当。",
+            ja: "AnyLightと呼ばれる照明効果を再現するプロジェクト（竹内雄一郎研究員）の研究補助および広報用の動画編集を担当。",
         },
     },
 ];

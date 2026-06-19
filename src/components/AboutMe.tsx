@@ -3,12 +3,12 @@ import type { BL } from '../types/i18n';
 export const ABOUT_DATA = {
     xrgroupUrl: 'https://www.xr.sys.es.osaka-u.ac.jp/',
     heroIntro: {
-        en: 'I am a Ph.D. student in the XR Group at the University of Osaka, advised by Daisuke Iwai. I work across computer vision, computer graphics, and human-computer interaction to create computational media for subjective and creative experiences.',
-        ja: '大阪大学大学院基礎工学研究科博士後期課程、XR Group に所属。コンピュータビジョン、グラフィクス、インタラクションを横断し、主観的・創造的体験のための計算メディアを研究しています。',
+        en: 'I am a Ph.D. student in the XR Group at the University of Osaka, advised by Daisuke Iwai. I work across computer vision, computer graphics, and human-computer interaction to create computational media for creative and experiential systems.',
+        ja: '大阪大学大学院基礎工学研究科博士後期課程、XR Group に所属。コンピュータビジョン、グラフィクス、インタラクションを横断し、創作と体験のための計算メディアを研究しています。',
     } satisfies BL,
     bio: {
-        en: 'I study human subjective experience as an interplay between perception, interpretation, thought, and expression. My work explores how technology can capture, modulate, and mediate this interplay through computational systems. I implement these ideas as novel capture and display systems, interactive systems, and experimental experiences. Beyond technical functionality, I view humans and creative artifacts as socially and culturally situated entities whose meanings evolve through use, interpretation, and communication. Through this perspective, I explore how technology can expand the possibilities of expression, interpretation, and communication.',
-        ja: '人の主観体験を「知覚・解釈・思考・表現が相互に影響し合うプロセス」として捉え、そのプロセスを取得・変調・媒介する計算システムを研究しています。これらの考えを新しいキャプチャ、ディスプレイシステム、インタラクティブシステム、実験的体験として実装することを目指しています。また、人間やその創作物を社会や文化の中で意味を変えながら生きる存在として捉え、技術が表現・解釈・コミュニケーションのあり方をどのように拡張しうるかにも関心があります。',
+        en: 'My research explores how computational technologies can expand creative and experiential media. Drawing on computer vision, graphics, and interaction, I design systems that change how people create, perceive, interpret, and communicate experiences. My strength lies in connecting technical research with playful, expressive, and culturally situated forms of experience.',
+        ja: '計算技術が、創作と体験のためのメディアをどのように拡張できるかを探究しています。コンピュータビジョン、グラフィクス、インタラクションを基盤に、人が創作し、知覚し、解釈し、コミュニケーションする体験のあり方を変えるシステムを設計しています。私の強みは、技術研究を、遊び・表現・文化の中で意味を持つ体験へと接続することにあります。',
     } satisfies BL,
     interests: {
         en: 'Computer Vision, Computer Graphics, Geometry Processing, Machine Learning, Human-Computer Interaction, Fabrication, Physics Simulation, XR/AR/VR, Cognitive Science',
@@ -26,7 +26,7 @@ export const ABOUT_DATA = {
         {
             name: {
                 en: 'Humanware Innovation Program, the University of Osaka',
-                ja: '大阪大学ヒューマンウェアイノベーションプログラム',
+                ja: '大阪大学ヒューマンウェアイノベーション博士課程プログラム',
             } satisfies BL,
             url: 'https://www.humanware.osaka-u.ac.jp/',
         },
