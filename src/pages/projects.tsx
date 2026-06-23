@@ -17,8 +17,8 @@ export const projects: Project[] = [
             en: "Breaking the Scalability Limit of Multi-Projector Calibration with Embedded Cameras",
         },
         summary: {
-            ja: "プロジェクタにはセンシングの機能がないため、その較正には別のセンサでプロジェクタの光を受光する必要がある。外部センサとしてプロジェクタに埋め込んだカメラを用いて、撮像回数がプロジェクタの数に依存しない較正手法を提案。",
-            en: "Since projectors do not have sensing capabilities, their calibration requires receiving the projector's light with another sensor. We propose a calibration method that uses cameras embedded in the projectors as external sensors, allowing for a calibration process where the number of captures does not depend on the number of projectors.",
+            ja: "プロジェクタにはセンシングの機能がないため、その較正には別のセンサでプロジェクタの光を受光する必要がある。外部センサとして較正版に埋め込んだカメラを用いて、撮像回数がプロジェクタの数に依存しない較正手法を提案。",
+            en: "Since projectors do not have sensing capabilities, their calibration requires receiving the projector's light with another sensor. We propose a calibration method that uses cameras embedded in the calibration board as external sensors, allowing for a calibration process where the number of captures does not depend on the number of projectors.",
         },
         timeframe: "Jul. 2026",
         venue: {
@@ -264,6 +264,9 @@ export const projects: Project[] = [
             { label: "Proceeding1 (in Japanese), first author", url: "https://hai-conference.net/proceedings/HAI2022/html/paper/paper-P-34.html" },
             { label: "Proceeding2 (in Japanese), second author", url: "https://hai-conference.net/proceedings/HAI2022/html/paper/paper-G-18.html" },
         ],
+        related: {
+            grants: ["independent-research"],
+        },
     },
 ];
 

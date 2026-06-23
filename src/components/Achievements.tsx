@@ -138,4 +138,20 @@ export const achievements: Achievement[] = [
         period: "Apr. 2023 - Mar. 2025",
         description: "Aid for research activity",
     },
+    {
+        id: "independent-research",
+        title: {
+            en: "\"Inducing Intentional Interpretation through Shared Experiences with Plush Toys,\" Independent Research Encouragement Project by Undergraduate Students",
+            ja: "\"ぬいぐるみとの共有体験演出による志向的解釈の誘出\"、学部学生による自主研究奨励事業",
+        },
+        company: {
+            en: "The University of Osaka, Japan",
+            ja: "大阪大学",
+        },
+        period: "Jul. 2021 - Mar. 2022",
+        description: {
+            en: "Research fund to encourage independent research by undergraduate students (100K JPY) .",
+            ja: "学部生の自主研究を奨励するための研究費（10万円）",
+        }
+    },
 ];
