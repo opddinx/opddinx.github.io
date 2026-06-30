@@ -10,8 +10,8 @@ interface Experience {
 export const experiences: Experience[] = [
     {
         title: {
-            en: "Research Internship Student",
-            ja: "学生研究インターン",
+            en: "R&D Internship Student",
+            ja: "R&Dインターン",
         },
         company: {
             en: "Huawei Technologies Japan K.K.",
@@ -23,7 +23,7 @@ export const experiences: Experience[] = [
     {
         title: {
             en: "Research Internship Student",
-            ja: "学生研究インターン",
+            ja: "研究インターン",
         },
         company: {
             en: "Nippon Telegraph and Telephone Corporation (NTT R&D)",
@@ -35,7 +35,7 @@ export const experiences: Experience[] = [
     {
         title: {
             en: "R&D Internship Student",
-            ja: "学生研究インターン",
+            ja: "R&Dインターン",
         },
         company: {
             en: "Sony Corporation",

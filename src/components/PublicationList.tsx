@@ -82,7 +82,7 @@ export const publications: YearGroup[] = [
             {
                 id: "intellicid-uist2024",
                 title: "IntelliCID: Intelligent Caustics Illumination Device",
-                authors: "Shun Hanai and Kohei Miura (equal contribution)",
+                authors: "Shun Hanai* and Kohei Miura*",
                 journal: "Adjunct Proceedings of the 36th Annual ACM Symposium on User Interface Software and Technology (UIST '24 Adjunct)",
                 attributes: "Student Innovation Contest (Demonstration), Peer-reviewed",
                 url: "https://dl.acm.org/doi/abs/10.1145/3672539.3686733",

@@ -7,12 +7,12 @@ export const ABOUT_DATA = {
         ja: '大阪大学大学院基礎工学研究科博士後期課程、XR Group に所属。コンピュータビジョン、グラフィクス、インタラクションを横断し、創作と体験のための計算メディアを研究しています。',
     } satisfies BL,
     bio: {
-        en: 'My research explores how computational technologies can expand creative and experiential media. Drawing on computer vision, graphics, and interaction, I design systems that change how people create, perceive, interpret, and communicate experiences. My strength lies in connecting technical research with playful, expressive, and culturally situated forms of experience.',
-        ja: '計算技術が、創作と体験のためのメディアをどのように拡張できるかを探究しています。コンピュータビジョン、グラフィクス、インタラクションを基盤に、人が創作し、知覚し、解釈し、コミュニケーションする体験のあり方を変えるシステムを設計しています。私の強みは、技術研究を、遊び・表現・文化の中で意味を持つ体験へと接続することにあります。',
+        en: 'My research explores expressive phenomenal media: computational media that turn physical phenomena, perceptual effects, and embodied interactions into materials for expression and experience. Grounded in computer vision, graphics, and interaction, I design systems that expand how people create, perceive, interpret, and communicate experiences. My central interest is not only in what technologies can do, but in how they can be used to shape playful, expressive, and culturally situated forms of media.',
+        ja: '物理現象、知覚効果、身体的相互作用を、表現と体験の素材として捉える計算メディアを研究しています。コンピュータビジョン、グラフィクス、インタラクションを基盤に、人が創作し、知覚し、解釈し、コミュニケーションする体験のあり方を拡張するシステムを設計しています。私の中心的な関心は、技術に何ができるかだけでなく、それをどのように使えば、遊び・表現・文化の中で意味を持つメディアを形づくれるかにあります。',
     } satisfies BL,
     interests: {
-        en: 'Computer Vision, Computer Graphics, Geometry Processing, Machine Learning, Human-Computer Interaction, Fabrication, Physics Simulation, XR/AR/VR, Cognitive Science',
-        ja: 'コンピュータビジョン、グラフィクス、形状処理、機械学習、ヒューマンコンピュータインタラクション、ファブリケーション、物理シミュレーション、XR/AR/VR、認知科学',
+        en: 'Computer Vision, Computer Graphics, Human-Computer Interaction, Geometry Processing, XR/AR/VR, Fabrication, Physics Simulation, Machine Learning, Cognitive Science',
+        ja: 'コンピュータビジョン、グラフィクス、ヒューマンコンピュータインタラクション、XR/AR/VR、ファブリケーション、物理シミュレーション、形状処理、機械学習、認知科学',
     } satisfies BL,
     emails: ['miura.kohei.h75[at]ecs.osaka-u.ac.jp', 'opddinx[at]gmail.com'],
     affiliations: [
