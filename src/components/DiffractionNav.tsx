@@ -19,36 +19,32 @@ const DiffractionNav: React.FC<{ active: NavPage }> = ({ active }) => {
   const { toggleTheme } = useTheme();
 
   return (
-    <nav style={{
-      display: 'flex',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-      padding: '22px 0',
-      borderBottom: `1px solid ${T.rule}`,
-    }}>
-      <Link to="/" style={{ textDecoration: 'none', borderBottom: 'none' }}>
+    <nav className="l-nav">
+      <Link to="/" style={{ textDecoration: 'none', borderBottom: 'none', flexShrink: 0 }}>
         <Signature size={28} />
       </Link>
 
-      <div style={{ display: 'flex', alignItems: 'center', gap: 24 }}>
-        <ul className="l-nav-links" style={{ listStyle: 'none', margin: 0, fontSize: 15 }}>
-          {LINKS.map(({ label, to, page }) => (
-            <li key={page}>
-              <Link
-                to={to}
-                style={{
-                  color: T.fg,
-                  textDecoration: 'none',
-                  opacity: active === page ? 1 : 0.62,
-                  borderBottom: active === page ? `1px solid ${T.rule}` : 'none',
-                }}
-              >
-                {label}
-              </Link>
-            </li>
-          ))}
-        </ul>
+      {/* Page links — collapses to second row on mobile */}
+      <ul className="l-nav-links">
+        {LINKS.map(({ label, to, page }) => (
+          <li key={page}>
+            <Link
+              to={to}
+              style={{
+                color: T.fg,
+                textDecoration: 'none',
+                opacity: active === page ? 1 : 0.62,
+                borderBottom: active === page ? `1px solid ${T.rule}` : 'none',
+              }}
+            >
+              {label}
+            </Link>
+          </li>
+        ))}
+      </ul>
 
+      {/* Lang switcher + theme toggle — always stays top-right */}
+      <div className="l-nav-actions">
         <div style={{ display: 'flex', gap: 8, fontSize: 13, alignItems: 'center' }}>
           {(['en', 'ja'] as const).map((l) => (
             <button
