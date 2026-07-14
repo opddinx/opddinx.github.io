@@ -40,8 +40,8 @@ const IndexPage: React.FC<PageProps> = () => {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Allura&display=swap" rel="stylesheet" />
-        <title>Kohei Miura</title>
-        <meta name="description" content="PhD student at XRGroup, Osaka University. Computer Vision, Graphics, Interaction." />
+        <title>Kohei Miura / 三浦康平</title>
+        <meta name="description" content="PhD student at XRGroup, UOsaka. Computer Vision, Graphics, Interaction." />
       </Helmet>
 
       {/* ── Hero ── */}

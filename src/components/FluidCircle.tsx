@@ -64,8 +64,9 @@ const FluidCircle: React.FC<FluidCircleProps> = ({
         isolation: 'isolate',
         flexShrink: 0,
         boxShadow: '0 24px 60px rgba(15, 25, 60, 0.24)',
-        /* CSS fallback visible before WebGL runs or when WebGL is unavailable */
-        background: 'radial-gradient(circle at 42% 38%, #f8e9c9 0 12%, #f2ab6b 12% 26%, #d96e42 26% 42%, #99492e 42% 60%, #52301f 60% 78%, #241d18 78%)',
+        background: palette === 'dark'
+          ? 'radial-gradient(circle at 42% 38%, #fce0a0 0 12%, #f19f7c 12% 26%, #ba6397 26% 42%, #834fa3 42% 60%, #1e1d4c 60% 78%, #12141f 78%)'
+          : 'radial-gradient(circle at 42% 38%, #f8e9c9 0 12%, #f2ab6b 12% 26%, #d96e42 26% 42%, #99492e 42% 60%, #52301f 60% 78%, #241d18 78%)',
       }}
       title="Stir me — hover or drag"
     >
