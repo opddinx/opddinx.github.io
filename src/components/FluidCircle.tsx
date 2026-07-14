@@ -46,11 +46,11 @@ const FluidCircle: React.FC<FluidCircleProps> = ({
   }, []);
 
   useEffect(() => {
-    const el = ref.current as any;
+    const el = ref.current;
     if (!el) return;
-    el.bands = bands;
-    el.speed = speed;
-    el.palette = palette;
+    el.setAttribute('bands', String(bands));
+    el.setAttribute('speed', String(speed));
+    el.setAttribute('palette', palette);
   }, [bands, speed, palette]);
 
   return (
