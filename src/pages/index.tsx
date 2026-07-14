@@ -36,6 +36,7 @@ const IndexPage: React.FC<PageProps> = () => {
         <meta charSet="utf-8" />
         <link rel="canonical" href="https://opddinx.github.io/" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="preload" href="/fonts/LinBiolinum_R.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Allura&display=swap" rel="stylesheet" />
