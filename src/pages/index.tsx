@@ -108,8 +108,8 @@ const IndexPage: React.FC<PageProps> = () => {
           <div style={{ fontSize: 13, color: T.fgMute, letterSpacing: '0.06em' }}>
             {lang === 'en' ? 'E-mail' : 'メール'}
           </div>
-          {ABOUT_DATA.emails.map((e) => (
-            <p key={e} style={{ marginTop: 8, fontSize: 14, color: T.fg, wordBreak: 'keep-all', overflowWrap: 'normal', whiteSpace: 'nowrap', lineHeight: 1.6 }}>
+          {ABOUT_DATA.emails.map((e, i) => (
+            <p key={e} style={{ marginTop: i === 0 ? 8 : 6, fontSize: 14, color: T.fg, wordBreak: 'keep-all', overflowWrap: 'normal', whiteSpace: 'nowrap', lineHeight: 1.6 }}>
               {e}
             </p>
           ))}
@@ -118,13 +118,21 @@ const IndexPage: React.FC<PageProps> = () => {
           <div style={{ fontSize: 13, color: T.fgMute, letterSpacing: '0.06em' }}>
             {lang === 'en' ? 'Affiliation' : '所属'}
           </div>
-          {ABOUT_DATA.affiliations.map((a) => (
-            <p key={typeof a.name === 'string' ? a.name : a.name.en} style={{ marginTop: 8, fontSize: 14, color: T.fgDim, lineHeight: 1.6 }}>
-              {a.url
-                ? <a href={a.url} style={{ color: T.fgDim, textUnderlineOffset: 3 }}>{t(a.name, lang)}</a>
-                : t(a.name, lang)}
-            </p>
-          ))}
+          {ABOUT_DATA.affiliations.map((a, i) => {
+            const name = t(a.name, lang);
+            const parts = lang === 'en' ? name.split(/, the /) : null;
+            const nameEl = parts && parts.length === 2
+              ? <>{parts[0]},<br /><span style={{ whiteSpace: 'nowrap' }}>the {parts[1]}</span></>
+              : name;
+            return (
+              <p key={typeof a.name === 'string' ? a.name : a.name.en}
+                style={{ marginTop: i === 0 ? 8 : 6, fontSize: 14, color: T.fgDim, lineHeight: 1.6, wordBreak: 'keep-all', overflowWrap: 'normal' }}>
+                {a.url
+                  ? <a href={a.url} style={{ color: T.fgDim, textUnderlineOffset: 3 }}>{nameEl}</a>
+                  : nameEl}
+              </p>
+            );
+          })}
         </div>
       </div>
 

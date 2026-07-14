@@ -10,12 +10,11 @@ interface ThemeCtx {
 const ThemeContext = createContext<ThemeCtx>({ theme: null, toggleTheme: () => {} });
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [theme, setTheme] = useState<Theme>(null);
-
-  useEffect(() => {
+  const [theme, setTheme] = useState<Theme>(() => {
+    if (typeof window === 'undefined') return null;
     const stored = localStorage.getItem('km-theme') as Theme;
-    if (stored === 'dark' || stored === 'light') setTheme(stored);
-  }, []);
+    return stored === 'dark' || stored === 'light' ? stored : null;
+  });
 
   useEffect(() => {
     const h = document.documentElement;
