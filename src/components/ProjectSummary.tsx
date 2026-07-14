@@ -1,39 +1,10 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
 import { useLang } from '../contexts/LangContext';
-import { achievements } from './Achievements';
-import { publications } from './PublicationList';
+import { achievements, publications } from '../data/about';
+import type { Project } from '../data/projects';
 import { T } from '../styles/theme';
-import { t, type BL } from '../types/i18n';
-
-export type ProjectMember = {
-  name: BL;
-  isMe?: boolean;
-};
-
-export type ProjectLink = {
-  label: BL;
-  url: string;
-};
-
-export type Project = {
-  id: string;
-  title: BL;
-  summary: BL;
-  timeframe: BL;
-  venue?: BL;
-  members: ProjectMember[];
-  teaser: {
-    src?: string;
-    alt: BL;
-  };
-  tags: BL[];
-  links: ProjectLink[];
-  related?: {
-    publications?: string[];
-    grants?: string[];
-  };
-};
+import { t } from '../types/i18n';
 
 const publicationItems = publications.flatMap((group) => group.items);
 

@@ -5,33 +5,20 @@ const config: GatsbyConfig = {
     title: `Kohei MIURA - opddinx personal website`,
     siteUrl: `https://opddinx.github.io/`,
     description:
-      "Hogwarts Potions master, Head of Slytherin house and former Death Eater.",
+      "PhD student at XRGroup, UOsaka. Computer Vision, Graphics, Interaction.",
     twitterUsername: "@opddinx",
   },
-  // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
-  // If you use VSCode you can also use the GraphQL plugin
-  // Learn more at: https://gatsby.dev/graphql-typegen
-  graphqlTypegen: true,
-  plugins: ["gatsby-plugin-postcss", `gatsby-plugin-react-helmet`,
+  plugins: [
+    "gatsby-plugin-postcss",
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingIds: ["G-8JW0PZKDZR"],  // 控えておいた、測定IDを記載します。
+        trackingIds: ["G-8JW0PZKDZR"],
         pluginConfig: {
-          head: true  // headタグに記載されるようにコンフィグを設定します。
+          head: true,
         }
       }
     },
-    {
-      resolve: `gatsby-plugin-google-fonts`,
-      options: {
-        fonts: [
-          `source sans pro\:300,400,400i,700`,
-          `Cormorant Garamond\:400,500,600`
-        ],
-        display: 'swap'
-      }
-    }
   ]
 };
 

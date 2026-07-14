@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { Helmet } from 'react-helmet';
 import type { HeadFC, PageProps } from 'gatsby';
 import FluidCircle from '../components/FluidCircle';
 import Signature from '../components/Signature';
@@ -9,12 +8,10 @@ import { T } from '../styles/theme';
 import { useLang } from '../contexts/LangContext';
 import { useTheme } from '../contexts/ThemeContext';
 import { t } from '../types/i18n';
-import { ABOUT_DATA } from '../components/AboutMe';
-import { SOCIAL_LINKS } from '../components/SocialLinks';
-import { newsItems } from '../components/News';
+import { ABOUT_DATA, SOCIAL_LINKS, newsItems } from '../data/home';
 import { ProjectGalleryCard } from '../components/ProjectSummary';
-import { projects } from './projects';
-import '../styles/global.css';
+import { projects } from '../data/projects';
+import SiteHead from '../components/SiteHead';
 
 const RECENT_PROJECT_COUNT = 3;
 
@@ -32,18 +29,6 @@ const IndexPage: React.FC<PageProps> = () => {
 
   return (
     <PageShell active="top">
-      <Helmet>
-        <meta charSet="utf-8" />
-        <link rel="canonical" href="https://opddinx.github.io/" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="preload" href="/fonts/LinBiolinum_R.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Allura&display=swap" rel="stylesheet" />
-        <title>Kohei Miura / 三浦康平</title>
-        <meta name="description" content="PhD student at XRGroup, UOsaka. Computer Vision, Graphics, Interaction." />
-      </Helmet>
-
       {/* ── Hero ── */}
       <section id="about" className="l-hero" style={{ padding: '52px 0 28px' }}>
         {/* LEFT */}
@@ -178,4 +163,4 @@ const IndexPage: React.FC<PageProps> = () => {
 };
 
 export default IndexPage;
-export const Head: HeadFC = () => <title>Kohei Miura</title>;
+export const Head: HeadFC = () => <SiteHead title="Kohei Miura / 三浦康平" pathname="/" />;

@@ -1,21 +1,22 @@
 import * as React from 'react';
-import { Helmet } from 'react-helmet';
 import type { HeadFC, PageProps } from 'gatsby';
 import { PageShell, SectionHeading, Row } from '../components/PortfolioLayout';
 import Footer from '../components/Footer';
 import { T } from '../styles/theme';
 import { useLang } from '../contexts/LangContext';
 import { t } from '../types/i18n';
-import { educations } from '../components/Education';
-import { experiences } from '../components/WorkExperience';
-import { awards } from '../components/Awards';
-import { publications } from '../components/PublicationList';
-import { achievements } from '../components/Achievements';
-import { academicService } from '../components/AcademicService';
-import { exhibitions } from '../components/Exhibitions';
-import { invitedTalks } from '../components/InvitedTalks';
-import { mediaItems } from '../components/Media';
-import '../styles/global.css';
+import {
+  academicService,
+  achievements,
+  awards,
+  educations,
+  exhibitions,
+  experiences,
+  invitedTalks,
+  mediaItems,
+  publications,
+} from '../data/about';
+import SiteHead from '../components/SiteHead';
 
 const HEADINGS = {
   education:    { en: 'Education.',                       ja: '学歴.' },
@@ -47,16 +48,6 @@ const AboutPage: React.FC<PageProps> = () => {
 
   return (
     <PageShell active="about">
-      <Helmet>
-        <meta charSet="utf-8" />
-        <link rel="canonical" href="https://opddinx.github.io/about" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,200..700&family=Allura&family=Shippori+Mincho&display=swap" rel="stylesheet" />
-        <title>About — Kohei Miura</title>
-      </Helmet>
-
       {/* ── Education ── */}
       <section id="education" style={{ marginTop: 72, marginBottom: 24 }}>
         <SectionHeading>{t(HEADINGS.education, lang)}</SectionHeading>
@@ -222,4 +213,4 @@ const AboutPage: React.FC<PageProps> = () => {
 };
 
 export default AboutPage;
-export const Head: HeadFC = () => <title>About — Kohei Miura</title>;
+export const Head: HeadFC = () => <SiteHead title="About — Kohei Miura" pathname="/about" />;

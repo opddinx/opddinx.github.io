@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import type { HeadFC, PageProps } from 'gatsby';
 import { PageShell } from '../components/PortfolioLayout';
 import { T } from '../styles/theme';
-import '../styles/global.css';
+import SiteHead from '../components/SiteHead';
 
 const NotFoundPage: React.FC<PageProps> = () => (
   <PageShell active="top">
@@ -18,4 +18,4 @@ const NotFoundPage: React.FC<PageProps> = () => (
 );
 
 export default NotFoundPage;
-export const Head: HeadFC = () => <title>Not found — Kohei Miura</title>;
+export const Head: HeadFC = () => <SiteHead title="Not found — Kohei Miura" noIndex />;

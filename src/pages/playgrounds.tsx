@@ -1,10 +1,9 @@
 import * as React from 'react';
-import { Helmet } from 'react-helmet';
 import type { HeadFC, PageProps } from 'gatsby';
 import { PageShell, SectionHeading } from '../components/PortfolioLayout';
 import Footer from '../components/Footer';
 import { T } from '../styles/theme';
-import '../styles/global.css';
+import SiteHead from '../components/SiteHead';
 
 // ─── Shared GLSL preamble ──────────────────────────────────────────────────
 
@@ -277,16 +276,6 @@ function ShaderTile({ title, note, src }: TileProps) {
 
 const PlaygroundsPage: React.FC<PageProps> = () => (
   <PageShell active="playgrounds">
-    <Helmet>
-      <meta charSet="utf-8" />
-      <link rel="canonical" href="https://opddinx.github.io/playgrounds" />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-      <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,200..700&family=Allura&family=Shippori+Mincho&display=swap" rel="stylesheet" />
-      <title>Playgrounds — Kohei Miura</title>
-    </Helmet>
-
     <section style={{ marginTop: 72, marginBottom: 24 }}>
       <SectionHeading>Playgrounds.</SectionHeading>
       <p style={{ color: T.fgMute, fontFamily: T.serif, fontSize: 15, margin: '-12px 0 48px', lineHeight: 1.6, maxWidth: 560 }}>
@@ -305,4 +294,4 @@ const PlaygroundsPage: React.FC<PageProps> = () => (
 );
 
 export default PlaygroundsPage;
-export const Head: HeadFC = () => <title>Playgrounds — Kohei Miura</title>;
+export const Head: HeadFC = () => <SiteHead title="Playgrounds — Kohei Miura" pathname="/playgrounds" />;
