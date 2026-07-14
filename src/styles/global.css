@@ -1,13 +1,67 @@
-/* Direction B — Diffraction theme
-   All layout & section styling is handled via inline styles in index.tsx.
-   This file provides only the base reset, font setup, and a few structural
-   overrides that can't be handled inline (scrollbar, selection, etc.).
-*/
+@font-face {
+  font-family: 'Linux Biolinum';
+  src: url('/fonts/LinBiolinum_R.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Linux Biolinum';
+  src: url('/fonts/LinBiolinum_RB.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Linux Biolinum';
+  src: url('/fonts/LinBiolinum_RI.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
 
 html {
   scroll-behavior: smooth;
-  min-height: 100%;
   box-sizing: border-box;
+
+  --bg: #f2ecdf;
+  --bg2: #e9e1cf;
+  --fg: #282419;
+  --fg-dim: #544d3c;
+  --fg-mute: #7f7767;
+  --rule: rgba(40, 36, 25, 0.17);
+  --card: rgba(40, 36, 25, 0.045);
+  --grain: 0.7;
+  --grainmix: multiply;
+  --sel: rgba(101, 145, 130, 0.30);
+}
+
+html[data-theme="dark"] {
+  --bg: #14151b;
+  --bg2: #1b1c24;
+  --fg: #eae5d7;
+  --fg-dim: #c7c0b0;
+  --fg-mute: #9c9382;
+  --rule: rgba(234, 229, 215, 0.14);
+  --card: rgba(234, 229, 215, 0.05);
+  --grain: 0.55;
+  --grainmix: overlay;
+  --sel: rgba(101, 145, 130, 0.40);
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) {
+    --bg: #14151b;
+    --bg2: #1b1c24;
+    --fg: #eae5d7;
+    --fg-dim: #c7c0b0;
+    --fg-mute: #9c9382;
+    --rule: rgba(234, 229, 215, 0.14);
+    --card: rgba(234, 229, 215, 0.05);
+    --grain: 0.55;
+    --grainmix: overlay;
+    --sel: rgba(101, 145, 130, 0.40);
+  }
 }
 
 *, *::before, *::after {
@@ -23,11 +77,14 @@ html, body {
 }
 
 body {
-  font-family: 'Newsreader', Georgia, serif;
-  background: #08090f;
-  color: #f1eee6;
+  font-family: 'Linux Biolinum', 'Noto Sans JP', Georgia, serif;
+  background: var(--bg);
+  color: var(--fg);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  font-size: 16px;
+  line-height: 1.6;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 #___gatsby,
@@ -40,11 +97,11 @@ a {
   color: inherit;
   text-decoration: underline;
   text-underline-offset: 3px;
-  text-decoration-color: rgba(241, 238, 230, 0.22);
+  text-decoration-color: var(--rule);
 }
 
 a:hover {
-  text-decoration-color: rgba(241, 238, 230, 0.6);
+  text-decoration-color: var(--fg-mute);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -68,31 +125,25 @@ button {
 }
 
 ::selection {
-  background: rgba(101, 145, 130, 0.35);
+  background: var(--sel);
 }
 
-/* Scrollbar (Webkit) — keep subtle on dark bg */
 ::-webkit-scrollbar {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #08090f;
+  background: var(--bg);
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(241, 238, 230, 0.15);
+  background: var(--rule);
   border-radius: 3px;
 }
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(241, 238, 230, 0.28);
-}
 
-/* ─── Responsive layout helpers ─────────────────────────────────────────────
-   Grid layouts that must reflow at breakpoints live here so @media rules can
-   override them. Colors and typography stay inline in the components.        */
+/* ─── Responsive layout helpers ─────────────────────────────────────────────*/
 
 .l-nav-links   { display: flex; gap: 22px; flex-wrap: wrap; justify-content: flex-end; align-items: center; }
-.l-hero        { display: grid; grid-template-columns: 1.75fr 1fr; gap: 56px; align-items: start; }
-.l-meta-grid   { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.l-hero        { display: grid; grid-template-columns: minmax(0, 1.85fr) minmax(240px, 0.8fr); gap: clamp(36px, 5vw, 64px); align-items: start; }
+.l-meta-grid   { display: grid; grid-template-columns: 1.25fr 0.85fr 1.25fr; gap: clamp(24px, 4vw, 48px); }
 .l-row         { display: grid; grid-template-columns: 140px 1fr; gap: 28px; }
 .l-row-date    { padding-top: 6px; }
 .l-pub-row     { display: grid; grid-template-columns: 50px 1fr 160px; gap: 24px; }
@@ -106,7 +157,7 @@ button {
   position: absolute;
   inset: auto 0 0;
   padding: 42px 16px 16px;
-  background: linear-gradient(180deg, rgba(8,9,15,0) 0%, rgba(8,9,15,0.84) 48%, rgba(8,9,15,0.96) 100%);
+  background: linear-gradient(180deg, rgba(12,12,16,0) 0%, rgba(12,12,16,.80) 48%, rgba(12,12,16,.94) 100%);
   opacity: 0;
   transform: translateY(10px);
   transition: opacity 180ms ease, transform 180ms ease;

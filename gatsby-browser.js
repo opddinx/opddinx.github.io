@@ -1,7 +1,10 @@
 import './src/styles/global.css';
 import React from 'react';
 import { LangProvider } from './src/contexts/LangContext';
+import { ThemeProvider } from './src/contexts/ThemeContext';
 
 export const wrapRootElement = ({ element }) => (
-  <LangProvider>{element}</LangProvider>
+  <ThemeProvider>
+    <LangProvider>{element}</LangProvider>
+  </ThemeProvider>
 );

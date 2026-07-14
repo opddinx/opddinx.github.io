@@ -1,8 +1,10 @@
 export const T = {
-  bg: '#08090f',
-  fg: '#f1eee6',
-  fgDim: '#cec8bc',
-  fgMute: '#b8b0a8',
-  rule: 'rgba(241,238,230,0.12)',
-  serif: '"Newsreader", "Shippori Mincho", Georgia, "Hiragino Mincho ProN", serif',
+  bg: 'var(--bg)',
+  bg2: 'var(--bg2)',
+  fg: 'var(--fg)',
+  fgDim: 'var(--fg-dim)',
+  fgMute: 'var(--fg-mute)',
+  rule: 'var(--rule)',
+  card: 'var(--card)',
+  serif: "'Linux Biolinum', 'Noto Sans JP', Georgia, serif",
 } as const;

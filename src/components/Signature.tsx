@@ -7,10 +7,9 @@ interface SignatureProps {
   style?: React.CSSProperties;
 }
 
-// Allura cursive wordmark — stands in for a real handwritten signature.
 const Signature: React.FC<SignatureProps> = ({
   size = 64,
-  color = '#f1eee6',
+  color = 'var(--fg)',
   opacity = 1,
   style,
 }) => (
