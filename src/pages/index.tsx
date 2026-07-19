@@ -35,7 +35,7 @@ const IndexPage: React.FC<PageProps> = () => {
         <div>
           <Signature size={52} />
 
-          <p style={{ fontSize: 19, lineHeight: 1.55, color: T.fg, margin: '28px 0 0', maxWidth: '56ch' }}>
+          <p style={{ fontSize: 19, lineHeight: 1.55, color: T.fg, margin: '28px 0 0', maxWidth: '78ch' }}>
             {(() => {
               const [before, after] = t(ABOUT_DATA.heroIntro, lang).split('XR Group');
               return (
@@ -49,8 +49,10 @@ const IndexPage: React.FC<PageProps> = () => {
               );
             })()}
           </p>
-
-          <p style={{ color: T.fgDim, fontSize: 15, lineHeight: 1.7, marginTop: 16, maxWidth: 500 }}>
+          <p style={{ color: T.fgDim, fontSize: 16, lineHeight: 1.7, marginTop: 16, maxWidth: 700 }}>
+            {t(ABOUT_DATA.born, lang)}
+          </p>
+          <p style={{ color: T.fgDim, fontSize: 15, lineHeight: 1.7, marginTop: 16, maxWidth: 700 }}>
             {t(ABOUT_DATA.bio, lang)}
           </p>
         </div>
