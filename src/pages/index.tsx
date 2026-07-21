@@ -49,11 +49,11 @@ const IndexPage: React.FC<PageProps> = () => {
               );
             })()}
           </p>
-          <p style={{ color: T.fgDim, fontSize: 16, lineHeight: 1.7, marginTop: 16, maxWidth: 700 }}>
-            {t(ABOUT_DATA.born, lang)}
-          </p>
           <p style={{ color: T.fgDim, fontSize: 15, lineHeight: 1.7, marginTop: 16, maxWidth: 700 }}>
             {t(ABOUT_DATA.bio, lang)}
+          </p>
+          <p style={{ color: T.fgDim, fontSize: 15, lineHeight: 1.7, marginTop: 16, maxWidth: 700 }}>
+            {t(ABOUT_DATA.born, lang)}
           </p>
         </div>
 
