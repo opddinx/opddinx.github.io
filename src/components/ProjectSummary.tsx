@@ -238,16 +238,16 @@ export function ProjectGalleryCard({ project }: { project: Project }) {
       </div>
 
       <div className="c-project-gallery-overlay">
-        <h3 style={{ color: T.fg, fontFamily: T.serif, fontSize: 16, fontWeight: 400, lineHeight: 1.3, margin: 0 }}>
+        <h3 style={{ color: '#f2ecdf', fontFamily: T.serif, fontSize: 16, fontWeight: 400, lineHeight: 1.3, margin: 0 }}>
           {title}
         </h3>
         {project.venue && (
-          <p style={{ color: T.fgMute, fontSize: 13, lineHeight: 1.4, marginTop: 6 }}>
+          <p style={{ color: 'rgba(242, 236, 223, 0.78)', fontSize: 13, lineHeight: 1.4, marginTop: 6 }}>
             {t(project.venue, lang)}
           </p>
         )}
         {publicationAttributes.length > 0 && (
-          <p style={{ color: T.fgMute, fontSize: 12, lineHeight: 1.4, marginTop: 6 }}>
+          <p style={{ color: 'rgba(242, 236, 223, 0.78)', fontSize: 12, lineHeight: 1.4, marginTop: 6 }}>
             {publicationAttributes.join(' · ')}
           </p>
         )}

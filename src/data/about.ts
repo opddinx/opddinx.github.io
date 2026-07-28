@@ -196,7 +196,7 @@ interface Award {
 export const awards: Award[] = [
     {
         title: {
-                en: "Outstanding Student Award in the Division of System Science and Applied Informatics (Magna cum laude)",
+                en: "Outstanding Student Award (Salutatorian)",
                 ja: 'システム科学領域賞（次席）',
         },
         givenby: {
@@ -210,7 +210,7 @@ export const awards: Award[] = [
         },
     },
     {
-        title: "Best Student Demo in Show Award (1/18)",
+        title: "Best Student Demo in Show Award (1st student work in 18 works)",
         givenby: "The 17th ACM SIGGRAPH Conference and Exhibition on Computer Graphics and Interactive Techniques in Asia (SIGGRAPH Asia 2024)",
         time: "Dec. 2024",
         description: "Awarded for the students' demonstration of the research titled 'Casper DPM: Cascaded Perceptual Dynamic Projection Mapping onto Hands' as co-author",

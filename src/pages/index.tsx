@@ -165,4 +165,23 @@ const IndexPage: React.FC<PageProps> = () => {
 };
 
 export default IndexPage;
-export const Head: HeadFC = () => <SiteHead title="Kohei Miura / 三浦康平" pathname="/" />;
+export const Head: HeadFC = () => (
+  <>
+    <SiteHead
+      title="Kohei Miura / 三浦康平 — Research Portfolio"
+      pathname="/"
+    />
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'WebSite',
+          name: 'Kohei Miura / 三浦康平',
+          alternateName: ['Kohei Miura', '三浦康平', 'opddinx'],
+          url: 'https://opddinx.github.io/',
+        }),
+      }}
+    />
+  </>
+);
