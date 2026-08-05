@@ -486,7 +486,7 @@ export const experiences: Experience[] = [
             en: "Huawei Technologies Japan K.K.",
             ja: "華為技術日本株式会社",
         },
-        period: "Apr. 2026 - Pre.",
+        period: "Apr. - Jul. 2026",
         description: "Computer Graphics, Human-Computer Interaction.",
     },
     {
@@ -510,7 +510,7 @@ export const experiences: Experience[] = [
             en: "Sony Corporation",
             ja: "ソニー株式会社",
         },
-        period: "Feb. 2024 (3weeks)",
+        period: "Feb. 2024 (3 weeks)",
         description: "3D Computer Vision and Radiance Fields",
     },
     {
