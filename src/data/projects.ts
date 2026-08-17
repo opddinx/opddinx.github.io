@@ -70,7 +70,7 @@ export const projects: Project[] = [
         },
         summary: {
             en: "We explores the potential of artificial blur effects for unobtrusive human guidance in augmented reality by psychophysics-based blur design and walking guidance prototype.",
-            ja: "心理物理学に基づくブラー設計と歩行誘導プロトタイプによって、拡張現実における目立ちにくい人の誘導のための人工ブラー効果の可能性を探る。",
+            ja: "心理物理学に基づくブラー設計と歩行誘導プロトタイプによって、拡張現実における人の誘導のための目立ちにくい人工ブラー効果の可能性を探る。",
         },
         timeframe: "Jun. 2025 - ",
         venue: {
