@@ -80,10 +80,7 @@ const IndexPage: React.FC<PageProps> = () => {
             {lang === 'en' ? 'Research Interests' : '研究キーワード'}
           </div>
           <ul style={{ color: T.fgDim, fontSize: 14, lineHeight: 1.7, marginTop: 8, display: 'flex', flexWrap: 'wrap', gap: '2px 14px' }}>
-            {(lang === 'en'
-              ? ['Computer Vision', 'Computer Graphics', 'Human-Computer Interaction', 'Geometry Processing', 'XR/AR/VR', 'Fabrication', 'Physics Simulation', 'Machine Learning', 'Cognitive Science']
-              : ['コンピュータビジョン', 'グラフィクス', 'ヒューマンコンピュータインタラクション', 'XR/AR/VR', 'ファブリケーション', '物理シミュレーション', '形状処理', '機械学習', '認知科学']
-            ).map((item) => (
+            {t(ABOUT_DATA.interests, lang).split(lang === 'en' ? ', ' : '、').map((item) => (
               <li key={item} style={{ whiteSpace: 'nowrap' }}>{item}</li>
             ))}
           </ul>
@@ -156,7 +153,7 @@ const IndexPage: React.FC<PageProps> = () => {
         </button>
       </section>
 
-      <Footer revised="Jul. 2026" />
+      <Footer revised="Aug. 2026" />
     </PageShell>
   );
 };

@@ -11,8 +11,8 @@ export const ABOUT_DATA = {
         ja: '物理現象や知覚効果、身体的相互作用を、表現と体験の素材として扱う計算メディアの研究者。コンピュータビジョンとグラフィクス、インタラクションを基盤に、人が創作により表現し、知覚と解釈を通してコミュニケーションする体験のあり方を拡張するシステムの設計を行う。特に、技術に何ができるかだけでなく、それをどのように使えば、遊びや文化の中で意味を持つメディアを形づくれるかという点から探求している。',
     } satisfies BL,
     interests: {
-        en: 'Computer Vision, Computer Graphics, Human-Computer Interaction, Geometry Processing, XR/AR/VR, Fabrication, Physics Simulation, Machine Learning, Cognitive Science',
-        ja: 'コンピュータビジョン、グラフィクス、ヒューマンコンピュータインタラクション、XR/AR/VR、ファブリケーション、物理シミュレーション、形状処理、機械学習、認知科学',
+        en: 'Computer Vision, Computer Graphics, Human-Computer Interaction, Computational Media',
+        ja: 'コンピュータビジョン、コンピュータグラフィクス、ヒューマンコンピュータインタラクション、計算メディア',
     } satisfies BL,
     emails: ['miura.kohei.h75[at]ecs.osaka-u.ac.jp', 'opddinx[at]gmail.com'],
     affiliations: [

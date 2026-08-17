@@ -145,9 +145,9 @@ const AboutPage: React.FC<PageProps> = () => {
         ))}
         <p style={{ color: T.fgDim, fontSize: 15, marginTop: 28, lineHeight: 1.6, fontFamily: T.serif }}>
           {lang === 'en' ? (
-            <>To see all achievement lists (CV) including domestic conferences and other small achievements, please contact me via e-mail or see <a href="https://researchmap.jp/koheimiura" style={{ color: T.fgDim, textDecorationColor: T.rule, textUnderlineOffset: 3 }}>Researchmap</a> for domestic conferences.</>
+            <>For a full CV, please contact me. Domestic publications are also listed on <a href="https://researchmap.jp/koheimiura" style={{ color: T.fgDim, textDecorationColor: T.rule, textUnderlineOffset: 3 }}>Researchmap</a>.</>
           ) : (
-            <>国内学会発表等を含む全業績リスト（CV）については、メールにてご連絡いただくか、国内学会については <a href="https://researchmap.jp/koheimiura" style={{ color: T.fgDim, textDecorationColor: T.rule, textUnderlineOffset: 3 }}>Researchmap</a> をご覧ください。</>
+            <>完全版のCVについては、メールでお問い合わせください。国内発表は <a href="https://researchmap.jp/koheimiura" style={{ color: T.fgDim, textDecorationColor: T.rule, textUnderlineOffset: 3 }}>Researchmap</a> にも掲載しています。</>
           )}
         </p>
       </section>
@@ -207,7 +207,7 @@ const AboutPage: React.FC<PageProps> = () => {
         )}
       </section>
 
-      <Footer revised="May 2026" />
+      <Footer revised="Aug. 2026" />
     </PageShell>
   );
 };

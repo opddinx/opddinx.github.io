@@ -69,13 +69,13 @@ export const projects: Project[] = [
             ja: "目立ちにくい人工ブラー効果を用いた人の誘導",
         },
         summary: {
-            en: "We explores the potential of artificial blur effects for unobtrusive human guidance in augmented reality by psychophysics-based blur design and walking guidance prototype.",
+            en: "We explore the potential of artificial blur effects for unobtrusive human guidance in augmented reality through psychophysics-based blur design and a walking guidance prototype.",
             ja: "心理物理学に基づくブラー設計と歩行誘導プロトタイプによって、拡張現実における人の誘導のための目立ちにくい人工ブラー効果の可能性を探る。",
         },
         timeframe: "Jun. 2025 - ",
         venue: {
-            en: "AH's 26 (Okinawa, Japan)",
-            ja: "AH's 26（沖縄）",
+            en: "Augmented Humans 2026 (AHs '26), Okinawa, Japan",
+            ja: "Augmented Humans 2026 (AHs '26)（沖縄）",
         },
         members: [
             { name: "Hiroki Kusuyama", isMe: false },
@@ -90,7 +90,7 @@ export const projects: Project[] = [
             src: "/teasers/202603blur.jpg",
             alt: "Teaser for artificial blur effects for human guidance project",
         },
-        tags: ["Augmented Reality", "Modulation", "AH's"],
+        tags: ["Augmented Reality", "Modulation", "AHs"],
         links: [],
         related: {
             publications: ["blur-filter-ahs2026", "walking-guidance-blur-ahs2026"],
@@ -100,7 +100,7 @@ export const projects: Project[] = [
     {
         id: "thermal-hoi-refinement",
         title: {
-            en: "Exploring thermal contact potentials for hand-object refinement",
+            en: "Exploring thermal contact potentials for Hand-Object Interaction refinement",
             ja: "手作業補正のための熱接触ポテンシャルの探索",
         },
         summary: {

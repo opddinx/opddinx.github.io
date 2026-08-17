@@ -177,10 +177,10 @@ export const achievements: Achievement[] = [
             en: "The University of Osaka, Japan",
             ja: "大阪大学",
         },
-        period: "Jul. 2021 - Mar. 2022",
+        period: "Jul. 2021 - Dec. 2021",
         description: {
-            en: "Research fund to encourage independent research by undergraduate students (100K JPY) .",
-            ja: "学部生の自主研究を奨励するための研究費（10万円）",
+            en: "Research fund to encourage independent research by undergraduate students (200K JPY).",
+            ja: "学部生の自主研究を奨励するための研究費（20万円）",
         }
     },
 ];
@@ -213,7 +213,7 @@ export const awards: Award[] = [
         title: "Best Student Demo in Show Award (1st student work in 18 works)",
         givenby: "The 17th ACM SIGGRAPH Conference and Exhibition on Computer Graphics and Interactive Techniques in Asia (SIGGRAPH Asia 2024)",
         time: "Dec. 2024",
-        description: "Awarded for the students' demonstration of the research titled 'Casper DPM: Cascaded Perceptual Dynamic Projection Mapping onto Hands' as co-author",
+        description: "Awarded for the demonstration of the research titled 'Casper DPM: Cascaded Perceptual Dynamic Projection Mapping onto Hands'; I contributed as a co-author.",
         url: "https://asia.siggraph.org/2024/ja/for-the-press/press-releases/siggraph-asia-2024-award-winners/"
     },
     {
@@ -227,7 +227,7 @@ export const awards: Award[] = [
         },
         time: "May 2023",
         description: {
-                en: "Awarded for the students' presentation of the research titled '3D Reconstruction of Hand Work Using Multiple RGB-D Cameras and Thermal Cameras'",
+                en: "Awarded for my presentation of the research titled '3D Reconstruction of Hand Work Using Multiple RGB-D Cameras and Thermal Cameras'.",
                 ja: '研究発表「複数のRGB-Dカメラと熱カメラを用いた手作業の三次元復元」に対して授与',
         },
         url: "https://sci23.iscie.or.jp/award/"
@@ -536,7 +536,7 @@ export const experiences: Experience[] = [
         },
         period: "Jan. 2023 - Mar. 2026",
         description: {
-            en: "I was working on a project called AnyLight (PI: Yuichiro Takeuchi), which reproduces illumination effects. I also edit some videos for public relations.",
+            en: "I worked on AnyLight (PI: Yuichiro Takeuchi), a project that reproduces illumination effects, and also contributed to video editing for public relations.",
             ja: "AnyLightと称される照明効果を再現するプロジェクト（竹内雄一郎研究員）の研究補助および広報用の動画編集を担当。",
         },
     },
