@@ -120,27 +120,33 @@ const AboutPage: React.FC<PageProps> = () => {
             <div className="l-pub-year" style={{ fontFamily: T.serif, fontWeight: 300, color: T.fg, lineHeight: 1, margin: '20px 0 4px', letterSpacing: '-0.04em', opacity: 0.18 }}>
               {yg.year}
             </div>
-            {yg.items.map((p, i) => (
-              <div id={`pub-${p.id}`} key={p.id} className="l-pub-row" style={{ padding: '22px 0', borderTop: `1px solid ${T.rule}`, scrollMarginTop: 24 }}>
-                <div className="l-pub-index" style={{ fontFamily: T.serif, fontSize: 14, color: T.fgMute, paddingTop: 6 }}>
-                  {String(i + 1).padStart(2, '0')}
+            {yg.items.map((p, i) => {
+              const attributes = t(p.attributes, lang);
+
+              return (
+                <div id={`pub-${p.id}`} key={p.id} className={`l-pub-row${attributes ? '' : ' is-without-attrs'}`} style={{ padding: '22px 0', borderTop: `1px solid ${T.rule}`, scrollMarginTop: 24 }}>
+                  <div className="l-pub-index" style={{ fontFamily: T.serif, fontSize: 14, color: T.fgMute, paddingTop: 6 }}>
+                    {String(i + 1).padStart(2, '0')}
+                  </div>
+                  <div>
+                    <h4 style={{ fontFamily: T.serif, fontSize: 17, fontWeight: 500, color: T.fg, margin: '0 0 6px', lineHeight: 1.3 }}>{t(p.title, lang)}</h4>
+                    <p style={{ color: T.fgDim, fontSize: 15, margin: '0 0 4px' }}>
+                      <AuthorLine authors={t(p.authors, lang)} />
+                    </p>
+                    <p style={{ color: T.fgMute, fontSize: 14, margin: 0 }}>
+                      {p.url
+                        ? <a href={p.url} target="_blank" rel="noreferrer" style={{ color: T.fgMute, textDecorationColor: T.rule, textUnderlineOffset: 3 }}>{t(p.journal, lang)}</a>
+                        : t(p.journal, lang)}
+                    </p>
+                  </div>
+                  {attributes && (
+                    <div className="l-pub-attrs" style={{ fontFamily: T.serif, fontSize: 14, color: T.fgMute, paddingTop: 6, textAlign: 'right', lineHeight: 1.5 }}>
+                      {attributes}
+                    </div>
+                  )}
                 </div>
-                <div>
-                  <h4 style={{ fontFamily: T.serif, fontSize: 17, fontWeight: 500, color: T.fg, margin: '0 0 6px', lineHeight: 1.3 }}>{t(p.title, lang)}</h4>
-                  <p style={{ color: T.fgDim, fontSize: 15, margin: '0 0 4px' }}>
-                    <AuthorLine authors={t(p.authors, lang)} />
-                  </p>
-                  <p style={{ color: T.fgMute, fontSize: 14, margin: 0 }}>
-                    {p.url
-                      ? <a href={p.url} target="_blank" rel="noreferrer" style={{ color: T.fgMute, textDecorationColor: T.rule, textUnderlineOffset: 3 }}>{t(p.journal, lang)}</a>
-                      : t(p.journal, lang)}
-                  </p>
-                </div>
-                <div className="l-pub-attrs" style={{ fontFamily: T.serif, fontSize: 14, color: T.fgMute, paddingTop: 6, textAlign: 'right', lineHeight: 1.5 }}>
-                  {t(p.attributes, lang)}
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         ))}
         <p style={{ color: T.fgDim, fontSize: 15, marginTop: 28, lineHeight: 1.6, fontFamily: T.serif }}>

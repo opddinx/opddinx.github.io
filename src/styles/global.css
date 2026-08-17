@@ -90,6 +90,19 @@ body {
   transition: background-color 0.4s ease, color 0.4s ease;
 }
 
+.l-page-shell {
+  word-break: normal;
+  overflow-wrap: break-word;
+  line-break: strict;
+}
+
+/* Prefer phrase boundaries for Japanese where the browser supports them. */
+@supports (word-break: auto-phrase) {
+  .l-page-shell[lang="ja"] {
+    word-break: auto-phrase;
+  }
+}
+
 #___gatsby,
 #gatsby-focus-wrapper {
   min-height: 100%;
@@ -197,8 +210,10 @@ html[data-theme="dark"] .fluid-circle-wrap {
 .l-hero        { display: grid; grid-template-columns: minmax(0, 1.85fr) minmax(240px, 0.8fr); gap: clamp(36px, 5vw, 64px); align-items: start; }
 .l-meta-grid   { display: grid; grid-template-columns: 1.25fr 0.85fr 1.25fr; gap: clamp(24px, 4vw, 48px); }
 .l-row         { display: grid; grid-template-columns: 140px 1fr; gap: 28px; }
+.l-row.is-without-left { grid-template-columns: 1fr; }
 .l-row-date    { padding-top: 6px; }
 .l-pub-row     { display: grid; grid-template-columns: 50px 1fr 160px; gap: 24px; }
+.l-pub-row.is-without-attrs { grid-template-columns: 50px 1fr; }
 .l-pub-year    { font-size: 64px; }
 .l-service-row { display: grid; grid-template-columns: 1fr 1.5fr; gap: 28px; }
 .l-project-row { display: grid; grid-template-columns: 120px minmax(180px, 260px) 1fr; gap: 28px; align-items: start; }
@@ -218,6 +233,13 @@ html[data-theme="dark"] .fluid-circle-wrap {
 .c-project-gallery-card:focus-visible .c-project-gallery-overlay {
   opacity: 1;
   transform: translateY(0);
+}
+
+.l-row > *,
+.l-pub-row > *,
+.l-service-row > *,
+.l-project-row > * {
+  min-width: 0;
 }
 
 /* Tablet — up to 900 px */
@@ -255,7 +277,8 @@ html[data-theme="dark"] .fluid-circle-wrap {
   .l-meta-grid      { grid-template-columns: 1fr; gap: 16px; }
   .l-row            { grid-template-columns: 1fr; gap: 6px; }
   .l-row-date       { padding-top: 0; font-size: 13px; }
-  .l-pub-row        { grid-template-columns: 1fr; }
+  .l-pub-row,
+  .l-pub-row.is-without-attrs { grid-template-columns: 1fr; }
   .l-pub-index      { display: none; }
   .l-pub-year       { font-size: 40px; }
   .l-service-row    { grid-template-columns: 1fr; gap: 6px; }
