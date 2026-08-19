@@ -480,6 +480,18 @@ export const experiences: Experience[] = [
     {
         title: {
             en: "Part-time developer",
+            ja: "研究開発アルバイト",
+        },
+        company: {
+            en: "Otemon Gakuin University",
+            ja: "追手門学院大学",
+        },
+        period: "Aug. 2026 - Present",
+        description: "Human-Agent Interaction, Computer Vision",
+    },
+    {
+        title: {
+            en: "Part-time developer",
             ja: "開発アルバイト",
         },
         company: {
@@ -487,7 +499,7 @@ export const experiences: Experience[] = [
             ja: "EI&Co. 株式会社",
         },
         period: "Aug. 2026 - Present",
-        description: "Developing Model Context Protocol (MCP) for practical use.",
+        description: "Developing Model Context Protocol Server for practical use.",
     },
     {
         title: {

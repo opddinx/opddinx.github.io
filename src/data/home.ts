@@ -4,7 +4,7 @@ export const ABOUT_DATA = {
     xrgroupUrl: 'https://www.xr.sys.es.osaka-u.ac.jp/',
     heroIntro: {
         en: 'Ph.D. student in the XR Group at the University of Osaka, advised by Daisuke Iwai, working across computer vision, computer graphics, and human-computer interaction on computational media for creative practice and experience.',
-        ja: '大阪大学大学院基礎工学研究科博士後期課程、XR Group に所属。コンピュータビジョンとグラフィクス、インタラクションを横断し、創作と体験のための計算メディアを研究する。',
+        ja: '大阪大学大学院基礎工学研究科博士後期課程、XR Group に所属。コンピュータビジョンとグラフィクス、インタラクションを横断し、創作と体験のための計算メディアの研究を行う。',
     } satisfies BL,
     bio: {
         en: 'A researcher in computational media that treats physical phenomena, perceptual effects, and embodied interactions as materials for expression and experience. Drawing on computer vision, graphics, and interaction, he designs systems that expand the ways people express through creative practice and communicate through perception and interpretation. His particular interest lies not only in what technologies can do, but in how they can be used to shape media that gain meaning through play and culture.',
