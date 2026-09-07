@@ -4,19 +4,22 @@ import Signature from './Signature';
 import { T } from '../styles/theme';
 import { useLang } from '../contexts/LangContext';
 import { useTheme } from '../contexts/ThemeContext';
+import { notes } from '../data/notes';
 
-export type NavPage = 'top' | 'about' | 'projects' | 'playgrounds';
+export type NavPage = 'top' | 'about' | 'projects' | 'notes' | 'playgrounds';
 
-const LINKS: { label: string; to: string; page: NavPage }[] = [
-  { label: 'Top',         to: '/',            page: 'top'         },
-  { label: 'About',       to: '/about',       page: 'about'       },
-  { label: 'Projects',    to: '/projects',    page: 'projects'    },
+const LINKS: { label: string; to: string; page: NavPage; visible?: () => boolean }[] = [
+  { label: 'Top',         to: '/',            page: 'top' },
+  { label: 'About',       to: '/about',       page: 'about' },
+  { label: 'Projects',    to: '/projects',    page: 'projects' },
+  { label: 'Notes',       to: '/notes',       page: 'notes', visible: () => notes.length > 0 },
   { label: 'Playgrounds', to: '/playgrounds', page: 'playgrounds' },
 ];
 
 const DiffractionNav: React.FC<{ active: NavPage }> = ({ active }) => {
   const { lang, setLang } = useLang();
   const { toggleTheme } = useTheme();
+  const visibleLinks = LINKS.filter((link) => link.visible?.() ?? true);
 
   return (
     <nav className="l-nav">
@@ -24,9 +27,8 @@ const DiffractionNav: React.FC<{ active: NavPage }> = ({ active }) => {
         <Signature size={28} />
       </Link>
 
-      {/* Page links — collapses to second row on mobile */}
       <ul className="l-nav-links">
-        {LINKS.map(({ label, to, page }) => (
+        {visibleLinks.map(({ label, to, page }) => (
           <li key={page}>
             <Link
               to={to}
@@ -43,7 +45,6 @@ const DiffractionNav: React.FC<{ active: NavPage }> = ({ active }) => {
         ))}
       </ul>
 
-      {/* Lang switcher + theme toggle — always stays top-right */}
       <div className="l-nav-actions">
         <div style={{ display: 'flex', gap: 8, fontSize: 13, alignItems: 'center' }}>
           {(['en', 'ja'] as const).map((l) => (
