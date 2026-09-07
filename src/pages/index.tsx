@@ -37,18 +37,11 @@ const IndexPage: React.FC<PageProps> = () => {
           <Signature size={52} />
 
           <p style={{ fontSize: 19, lineHeight: 1.55, color: T.fg, margin: '28px 0 0', maxWidth: '78ch' }}>
-            {(() => {
-              const [before, after] = t(ABOUT_DATA.heroIntro, lang).split('XR Group');
-              return (
-                <>
-                  {before}
-                  <a href={ABOUT_DATA.xrgroupUrl} target="_blank" rel="noreferrer" style={{ color: T.fg, textUnderlineOffset: 4 }}>
-                    XR Group
-                  </a>
-                  {after}
-                </>
-              );
-            })()}
+            {t(ABOUT_DATA.heroIntroBeforeXRGroup, lang)}
+            <a href={ABOUT_DATA.xrgroupUrl} target="_blank" rel="noreferrer" style={{ color: T.fg, textUnderlineOffset: 4 }}>
+              XR Group
+            </a>
+            {t(ABOUT_DATA.heroIntroAfterXRGroup, lang)}
           </p>
           <p style={{ color: T.fgDim, fontSize: 15, lineHeight: 1.7, marginTop: 16, maxWidth: 700 }}>
             {t(ABOUT_DATA.bio, lang)}
@@ -183,10 +176,7 @@ const IndexPage: React.FC<PageProps> = () => {
 export default IndexPage;
 export const Head: HeadFC = () => (
   <>
-    <SiteHead
-      title="Kohei Miura / 三浦康平"
-      pathname="/"
-    />
+    <SiteHead title="Kohei Miura / 三浦康平" pathname="/" />
     <script
       type="application/ld+json"
       dangerouslySetInnerHTML={{
