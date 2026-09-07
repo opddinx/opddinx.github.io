@@ -11,9 +11,11 @@ import { t } from '../types/i18n';
 import { ABOUT_DATA, SOCIAL_LINKS, newsItems } from '../data/home';
 import { ProjectGalleryCard } from '../components/ProjectSummary';
 import { projects } from '../data/projects';
+import { notes } from '../data/notes';
 import SiteHead from '../components/SiteHead';
 
 const RECENT_PROJECT_COUNT = 3;
+const RECENT_NOTE_COUNT = 3;
 
 const IndexPage: React.FC<PageProps> = () => {
   const { lang } = useLang();
@@ -22,6 +24,7 @@ const IndexPage: React.FC<PageProps> = () => {
   const [projectsExpanded, setProjectsExpanded] = React.useState(false);
   const visibleNews = newsExpanded ? newsItems : newsItems.slice(0, 4);
   const visibleProjects = projectsExpanded ? projects : projects.slice(0, RECENT_PROJECT_COUNT);
+  const visibleNotes = notes.slice(0, RECENT_NOTE_COUNT);
 
   const palette = theme === 'dark' ? 'dark'
     : theme === 'light' ? 'light'
@@ -29,9 +32,7 @@ const IndexPage: React.FC<PageProps> = () => {
 
   return (
     <PageShell active="top">
-      {/* ── Hero ── */}
       <section id="about" className="l-hero" style={{ padding: '52px 0 28px' }}>
-        {/* LEFT */}
         <div>
           <Signature size={52} />
 
@@ -54,7 +55,6 @@ const IndexPage: React.FC<PageProps> = () => {
           </p>
         </div>
 
-        {/* RIGHT — fluid circle + socials */}
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 20, paddingTop: 10 }}>
           <FluidCircle diameter={240} bands={7} speed={1} palette={palette} />
           <div style={{ display: 'flex', gap: 18, marginTop: 8 }}>
@@ -73,7 +73,6 @@ const IndexPage: React.FC<PageProps> = () => {
         </div>
       </section>
 
-      {/* ── Meta grid (Research Interests, Email, Affiliation) ── */}
       <div className="l-meta-grid" style={{ marginTop: 40, paddingTop: 28, borderTop: `1px solid ${T.rule}` }}>
         <div>
           <div style={{ fontSize: 13, color: T.fgMute, letterSpacing: '0.06em' }}>
@@ -117,7 +116,6 @@ const IndexPage: React.FC<PageProps> = () => {
         </div>
       </div>
 
-      {/* ── News ── */}
       <section id="news" style={{ marginTop: 72, marginBottom: 24 }}>
         <SectionHeading>{lang === 'en' ? 'News.' : 'ニュース.'}</SectionHeading>
         {visibleNews.map((n) => (
@@ -134,7 +132,6 @@ const IndexPage: React.FC<PageProps> = () => {
         </button>
       </section>
 
-      {/* ── Projects ── */}
       <section id="projects" style={{ marginTop: 72, marginBottom: 24 }}>
         <SectionHeading>{lang === 'en' ? 'Projects.' : 'プロジェクト.'}</SectionHeading>
         <div className="l-project-gallery">
@@ -153,7 +150,32 @@ const IndexPage: React.FC<PageProps> = () => {
         </button>
       </section>
 
-      <Footer revised="Aug. 2026" />
+      {visibleNotes.length > 0 && (
+        <section id="notes" style={{ marginTop: 72, marginBottom: 24 }}>
+          <SectionHeading>{lang === 'en' ? 'Notes.' : 'ノート.'}</SectionHeading>
+          {visibleNotes.map((item) => (
+            <Row
+              key={item.id}
+              left={t(item.date, lang)}
+              title={t(item.title, lang)}
+              sub={`${item.kind === 'essay' ? 'Essay' : item.kind === 'making' ? 'Making' : 'Research note'} · ${item.source}`}
+              body={item.summary ? t(item.summary, lang) : undefined}
+              right={(
+                <a
+                  href={item.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{ display: 'inline-block', marginTop: 10, fontSize: 14, color: T.fg, textDecorationColor: T.rule, textUnderlineOffset: 3 }}
+                >
+                  {lang === 'en' ? 'Open' : '読む'} ↗
+                </a>
+              )}
+            />
+          ))}
+        </section>
+      )}
+
+      <Footer />
     </PageShell>
   );
 };
@@ -162,7 +184,7 @@ export default IndexPage;
 export const Head: HeadFC = () => (
   <>
     <SiteHead
-      title="Kohei Miura / 三浦康平 — Research Portfolio"
+      title="Kohei Miura / 三浦康平"
       pathname="/"
     />
     <script
