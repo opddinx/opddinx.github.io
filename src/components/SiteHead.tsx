@@ -2,7 +2,7 @@ import * as React from 'react';
 
 const SITE_URL = 'https://opddinx.github.io';
 const DEFAULT_DESCRIPTION =
-  'PhD student at XRGroup, UOsaka. Computer Vision, Graphics, Interaction.';
+  'Kohei Miura — research, projects, experiments, and writing across computer vision, graphics, interaction, and computational media.';
 const GOOGLE_FONT_URL =
   'https://fonts.googleapis.com/css2?family=Allura&family=Noto+Sans+JP:wght@400;500;700&display=swap';
 
